@@ -10,6 +10,13 @@
   <component name="CodeStyleSettingsInfer">
     <option name="done" value="true" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="ZIpispsZ" />
   </component>
@@ -111,7 +118,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1578838300085</updated>
-      <workItem from="1578838308259" duration="722000" />
+      <workItem from="1578838308259" duration="1346000" />
     </task>
     <servers />
   </component>

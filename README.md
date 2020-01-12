@@ -4,7 +4,8 @@ Use testcontainers instead of simulated ones
 https://www.testcontainers.org/
 
 # TODO
-- [x] Connectors
+- [x] Connegit push --set-upstream origin master
+ctors
 - [x] Dotenv integration
 - [ ] Models
 - [ ] Services
