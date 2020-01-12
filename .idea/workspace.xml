@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7e7d5aa8-ede2-449a-bcb8-81f61201ba90" name="Default Changelist" comment="" />
+    <list default="true" id="7e7d5aa8-ede2-449a-bcb8-81f61201ba90" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_iban4j_iban4j_3_2_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bancomat-Connector.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Bancomat-Connector.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bi/models/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bi/models/Account.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bi/models/Bancomat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bi/models/Bancomat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bi/models/BillCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bi/models/BillCollection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bi/models/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bi/models/Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bi/models/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bi/models/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bi/models/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bi/models/Transaction.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,8 +29,18 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="ZIpispsZ" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
@@ -32,6 +54,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -118,7 +141,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1578838300085</updated>
-      <workItem from="1578838308259" duration="1346000" />
+      <workItem from="1578838308259" duration="2500000" />
+      <workItem from="1578850839645" duration="1077000" />
     </task>
     <servers />
   </component>
@@ -126,21 +150,25 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1638" height="295" key="GridCell.Tab.0.bottom" timestamp="1578845465909">
+    <state x="653" y="248" key="#com.intellij.ide.util.MemberChooser" timestamp="1578851934233">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="295" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1578845465909" />
-    <state width="1638" height="295" key="GridCell.Tab.0.center" timestamp="1578845465907">
+    <state x="653" y="248" key="#com.intellij.ide.util.MemberChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1578851934233" />
+    <state width="1638" height="295" key="GridCell.Tab.0.bottom" timestamp="1578850777753">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="295" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1578845465907" />
-    <state width="1638" height="295" key="GridCell.Tab.0.left" timestamp="1578845465906">
+    <state width="1638" height="295" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1578850777753" />
+    <state width="1638" height="295" key="GridCell.Tab.0.center" timestamp="1578850777752">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="295" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1578845465906" />
-    <state width="1638" height="295" key="GridCell.Tab.0.right" timestamp="1578845465908">
+    <state width="1638" height="295" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1578850777752" />
+    <state width="1638" height="295" key="GridCell.Tab.0.left" timestamp="1578850777751">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="295" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1578845465908" />
+    <state width="1638" height="295" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1578850777751" />
+    <state width="1638" height="295" key="GridCell.Tab.0.right" timestamp="1578850777752">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="295" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1578850777752" />
   </component>
 </project>

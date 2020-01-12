@@ -230,5 +230,10 @@
       <artifactId>jboss-logging</artifactId>
       <version>3.4.1.Final</version>
     </dependency>
+    <dependency>
+      <groupId>org.iban4j</groupId>
+      <artifactId>iban4j</artifactId>
+      <version>3.2.1</version>
+    </dependency>
   </dependencies>
 </project>
