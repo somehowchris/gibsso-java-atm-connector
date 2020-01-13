@@ -17,7 +17,7 @@ public enum ORMSupportedDatabases {
   /**
    * My sql orm supported databases.
    */
-  MySQL("com.mysql.jdbc.Driver", "org.hibernate.dialect.MySQL8Dialect"),
+  MySQL("com.mysql.cj.jdbc.Driver", "org.hibernate.dialect.MySQL8Dialect"),
   /**
    * Mssql orm supported databases.
    */

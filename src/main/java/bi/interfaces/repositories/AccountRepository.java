@@ -1,4 +1,7 @@
 package bi.interfaces.repositories;
 
-public interface AccountRepository {
+import bi.models.Account;
+
+public interface AccountRepository extends Repository<Account> {
+  Account findByIban(String iban);
 }

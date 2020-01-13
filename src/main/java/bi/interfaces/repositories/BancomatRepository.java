@@ -1,4 +1,6 @@
 package bi.interfaces.repositories;
 
-public interface BancomatRepository {
+import bi.models.Bancomat;
+
+public interface BancomatRepository extends Repository<Bancomat> {
 }

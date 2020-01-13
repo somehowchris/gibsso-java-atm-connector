@@ -1,18 +1,23 @@
 package bi.models;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import org.hibernate.annotations.GenericGenerator;
+
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
+@Table(name="bancomat")
 public class Bancomat {
 
-  @Id
-  @GeneratedValue(generator = "uuid")
+  @Id @GeneratedValue(generator="system-uuid")
+  @GenericGenerator(name="system-uuid", strategy = "uuid")
   private String id;
 
+  @Column(name="location", unique = true)
   private String location;
 
+  @OneToMany(mappedBy = "bancomat", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
   private List<BillCollection> billCollections = new ArrayList<>();
 
   public Bancomat() {

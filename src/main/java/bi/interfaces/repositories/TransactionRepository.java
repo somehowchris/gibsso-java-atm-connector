@@ -1,4 +1,6 @@
 package bi.interfaces.repositories;
 
-public interface TransactionRepository {
+import bi.models.Transaction;
+
+public interface TransactionRepository extends Repository<Transaction> {
 }

@@ -1,9 +1,9 @@
 package bi.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import bi.utils.HashUtil;
+import org.hibernate.annotations.GenericGenerator;
+
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,26 +11,35 @@ import java.util.List;
 @Table(name="person")
 public class Person {
 
-  @Id
-  @GeneratedValue(generator = "uuid")
+  @Id @GeneratedValue(generator="system-uuid")
+  @GenericGenerator(name="system-uuid", strategy = "uuid")
+  @Column(name="id")
   private String id;
 
-  private String firstName;
-  private String lastName;
+  @Column(name="email", unique = true)
   private String email;
+
+  @Column(name="first_name")
+  private String firstName;
+
+  @Column(name="last_name")
+  private String lastName;
+
+  @Column(name="password")
   private String password;
 
+  @OneToMany(mappedBy = "person", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
   private List<Account> accounts = new ArrayList<>();
 
-  public Person(String firstName, String lastName, String email, String password, List<Account> accounts) {
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.email = email;
-    this.password = password;
-    this.accounts = accounts;
+  public Person() {
   }
 
-  public Person() {
+  public Person(String email, String firstName, String lastName, String password, List<Account> accounts) {
+    this.email = email;
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.password = password;
+    this.accounts = accounts;
   }
 
   public String getId() {
@@ -39,6 +48,14 @@ public class Person {
 
   public void setId(String id) {
     this.id = id;
+  }
+
+  public String getEmail() {
+    return email;
+  }
+
+  public void setEmail(String email) {
+    this.email = email;
   }
 
   public String getFirstName() {
@@ -55,14 +72,6 @@ public class Person {
 
   public void setLastName(String lastName) {
     this.lastName = lastName;
-  }
-
-  public String getEmail() {
-    return email;
-  }
-
-  public void setEmail(String email) {
-    this.email = email;
   }
 
   public String getPassword() {

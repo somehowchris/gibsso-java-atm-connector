@@ -1,4 +1,6 @@
 package bi.interfaces.repositories;
 
-public interface BillCollectionRepository {
+import bi.models.BillCollection;
+
+public interface BillCollectionRepository extends Repository<BillCollection> {
 }

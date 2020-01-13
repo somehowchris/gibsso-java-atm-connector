@@ -10,6 +10,7 @@ https://www.testcontainers.org/
 - [ ] Services
 - [ ] Repositories for databases
 - [ ] Detailed exceptions
+- [ ] Validation
 - [ ] Restcalls
 - [ ] Fix OGM
 - [ ] TestContainers Dockerfile 4 sqlite, redis
@@ -17,6 +18,7 @@ https://www.testcontainers.org/
 - [ ] General dockerfile 2 test & build
 - [ ] Readme
 - [ ] Uml
+- [ ] Logging
 - [ ] .gitlab-ci.yaml file to test on push 
 https://docs.gitlab.com/ee/user/packages/maven_repository/
 - [ ] Reuse artifact

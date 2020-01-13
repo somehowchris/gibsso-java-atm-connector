@@ -5,6 +5,7 @@ import bi.exceptions.ConnectionRefusedException;
 import bi.interfaces.Connector;
 import bi.models.configs.ORMConfig;
 import bi.models.enums.ORMSupportedDatabases;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
@@ -20,6 +21,7 @@ import java.io.IOException;
 public class ORMConnector implements Connector {
 
   private ORMConfig config;
+  private SessionFactory sessionFactory;
 
   /**
    * Instantiates a new Orm connector.
@@ -51,8 +53,7 @@ public class ORMConnector implements Connector {
 
     reflections.getTypesAnnotatedWith(javax.persistence.Entity.class).forEach(clazz -> config.addAnnotatedClass(clazz));
 
-    StandardServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder().applySettings(config.getProperties()).build();
-    return config.buildSessionFactory(serviceRegistry);
+    return config.buildSessionFactory();
   }
 
   public boolean setUp() throws IOException, AccessNotGrantedException, ConnectionRefusedException {
@@ -60,7 +61,6 @@ public class ORMConnector implements Connector {
       File file = new File(this.config.getUrl().replace("jdbc:sqlite://", "").replace("jdbc:sqlite:", ""));
       if(!file.exists())file.createNewFile();
     }
-
     SessionFactory sf = connect();
     sf.openSession().close();
     return true;

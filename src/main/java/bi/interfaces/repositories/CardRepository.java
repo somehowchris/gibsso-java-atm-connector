@@ -1,4 +1,6 @@
 package bi.interfaces.repositories;
 
-public interface CardRepository {
+import bi.models.Card;
+
+public interface CardRepository extends Repository<Card> {
 }

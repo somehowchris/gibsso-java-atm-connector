@@ -1,41 +1,60 @@
 package bi.models;
 
-import javax.persistence.Column;
-import javax.persistence.Id;
+import bi.utils.CreditCardUtil;
+
+import javax.persistence.*;
 import java.time.Duration;
 import java.time.temporal.TemporalUnit;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+@Entity
+@Table(name="card")
 public class Card {
 
   @Id
-  private String cardNumber;
+  @Column(name="card_number")
+  private String cardNumber = CreditCardUtil.generateCardNumber();
 
-  @Column(nullable = false)
-  private String pin;
+  @Column(name = "pin", nullable = false)
+  private String pin = CreditCardUtil.generatePin();
 
+  @Column(name="expires_at")
   private Date expiresAt = Date.from(new Date().toInstant().plus(Duration.ofDays(365*4)));
+
+  @Column(name = "locked")
   private boolean locked = false;
-  private double maxWithdraw = 2000.0;
+
+  @Column(name ="credit")
   private double credit = 2000.0;
 
+  @Column(name = "max_withdraw")
+  private double maxWithdraw = 2000.0;
+
+  @OneToMany(mappedBy = "card", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
   private List<Withdraw> withdraws = new ArrayList<>();
+
+  @OneToMany(mappedBy = "card", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
   private List<Transaction> transactions = new ArrayList<>();
 
-  public Card(String cardNumber, String pin, Date expiresAt, boolean locked, double maxWithdraw, double credit, List<Withdraw> withdraws, List<Transaction> transactions) {
+  @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name = "account_iban", referencedColumnName = "iban", nullable = false)
+  private Account account;
+
+  public Card() {
+  }
+
+  public Card(String cardNumber, String pin, Date expiresAt, boolean locked, double credit, double maxWithdraw, List<Withdraw> withdraws, List<Transaction> transactions, Account account) {
     this.cardNumber = cardNumber;
     this.pin = pin;
     this.expiresAt = expiresAt;
     this.locked = locked;
-    this.maxWithdraw = maxWithdraw;
     this.credit = credit;
+    this.maxWithdraw = maxWithdraw;
     this.withdraws = withdraws;
     this.transactions = transactions;
-  }
-
-  public Card() {
+    this.account = account;
   }
 
   public String getCardNumber() {
@@ -70,20 +89,20 @@ public class Card {
     this.locked = locked;
   }
 
-  public double getMaxWithdraw() {
-    return maxWithdraw;
-  }
-
-  public void setMaxWithdraw(double maxWithdraw) {
-    this.maxWithdraw = maxWithdraw;
-  }
-
   public double getCredit() {
     return credit;
   }
 
   public void setCredit(double credit) {
     this.credit = credit;
+  }
+
+  public double getMaxWithdraw() {
+    return maxWithdraw;
+  }
+
+  public void setMaxWithdraw(double maxWithdraw) {
+    this.maxWithdraw = maxWithdraw;
   }
 
   public List<Withdraw> getWithdraws() {
@@ -100,5 +119,13 @@ public class Card {
 
   public void setTransactions(List<Transaction> transactions) {
     this.transactions = transactions;
+  }
+
+  public Account getAccount() {
+    return account;
+  }
+
+  public void setAccount(Account account) {
+    this.account = account;
   }
 }

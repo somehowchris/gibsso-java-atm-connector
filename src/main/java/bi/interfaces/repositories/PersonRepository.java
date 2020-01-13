@@ -1,4 +1,7 @@
 package bi.interfaces.repositories;
 
-public interface PersonRepository {
+import bi.models.Person;
+
+public interface PersonRepository extends Repository<Person> {
+  Person findById(String id);
 }
