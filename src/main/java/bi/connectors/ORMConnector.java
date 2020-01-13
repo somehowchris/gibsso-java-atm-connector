@@ -50,6 +50,9 @@ public class ORMConnector implements Connector {
     config.setProperty("hibernate.dbcp.minIdle", "5");
     config.setProperty("hibernate.dbcp.maxWaitMillis", "-1");
     config.setProperty("hibernate.dialect", this.config.getType().getHibernateDialect());
+    config.setProperty("hibernate.show_sql", "true");
+    config.setProperty("hibernate.format_sql", "true");
+    config.setProperty("hibernate.use_sql_comments", "true");
 
     reflections.getTypesAnnotatedWith(javax.persistence.Entity.class).forEach(clazz -> config.addAnnotatedClass(clazz));
 

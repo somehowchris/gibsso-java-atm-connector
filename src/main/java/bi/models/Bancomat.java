@@ -12,6 +12,7 @@ public class Bancomat {
 
   @Id @GeneratedValue(generator="system-uuid")
   @GenericGenerator(name="system-uuid", strategy = "uuid")
+  @Column(name="id")
   private String id;
 
   @Column(name="location", unique = true)

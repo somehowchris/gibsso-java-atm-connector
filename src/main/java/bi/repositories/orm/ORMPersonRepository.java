@@ -35,6 +35,11 @@ public class ORMPersonRepository implements PersonRepository {
   }
 
   @Override
+  public Person save(Person obj, Transaction transaction) {
+    return null;
+  }
+
+  @Override
   public void update(Person obj) {
     Transaction transaction = DatabaseController.session.beginTransaction();
     try{
@@ -44,6 +49,11 @@ public class ORMPersonRepository implements PersonRepository {
       e.printStackTrace();
       transaction.rollback();
     }
+  }
+
+  @Override
+  public void update(Person obj, Transaction transaction) {
+
   }
 
   @Override

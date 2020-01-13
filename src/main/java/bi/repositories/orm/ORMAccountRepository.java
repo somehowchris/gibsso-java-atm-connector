@@ -4,6 +4,7 @@ import bi.controllers.DatabaseController;
 import bi.interfaces.repositories.AccountRepository;
 import bi.models.Account;
 import org.hibernate.Transaction;
+import org.hibernate.resource.transaction.spi.TransactionStatus;
 
 import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaBuilder;
@@ -48,8 +49,24 @@ public class ORMAccountRepository implements AccountRepository {
   }
 
   @Override
-  public void update(Account obj) {
+  public Account save(Account obj, Transaction transaction) {
+    return null;
+  }
 
+  @Override
+  public void update(Account obj) {
+    Transaction transaction = DatabaseController.session.beginTransaction();
+    try {
+      this.update(obj, transaction);
+      transaction.commit();
+    } catch (Exception e){
+      transaction.rollback();
+    }
+  }
+
+  public void update(Account obj, Transaction transaction) {
+      if(transaction.getStatus() == TransactionStatus.NOT_ACTIVE) transaction.begin();
+      DatabaseController.session.update(obj);
   }
 
   @Override

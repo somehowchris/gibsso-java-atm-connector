@@ -23,7 +23,7 @@ public class Card {
   @Column(name="expires_at")
   private Date expiresAt = Date.from(new Date().toInstant().plus(Duration.ofDays(365*4)));
 
-  @Column(name = "locked")
+  @Column(name = "locked", columnDefinition = "tinyint default false")
   private boolean locked = false;
 
   @Column(name ="credit")

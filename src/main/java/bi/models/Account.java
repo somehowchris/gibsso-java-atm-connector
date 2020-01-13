@@ -14,9 +14,9 @@ public class Account {
   private String iban = Iban.random(CountryCode.CH).toFormattedString();
 
   @Column(name="balance")
-  private double balance = 0.0;
+  private double balance = 100.0;
 
-  @Column(name="locked")
+  @Column(name="locked", columnDefinition = "tinyint default false")
   private boolean locked = false;
 
   @OneToMany(mappedBy = "account", cascade = CascadeType.ALL, fetch = FetchType.LAZY)

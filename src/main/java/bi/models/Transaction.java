@@ -13,7 +13,8 @@ public class Transaction {
 
   @Id @GeneratedValue(generator="system-uuid")
   @GenericGenerator(name="system-uuid", strategy = "uuid")
-  private int id;
+  @Column(name="id")
+  private String id;
 
   @Column(name = "amount")
   private double amount = 0.0;
@@ -53,11 +54,17 @@ public class Transaction {
     this.card = card;
   }
 
-  public int getId() {
+  public Transaction(double amount, Account to, Account from){
+    this.amount = amount;
+    this.to = to;
+    this.from = from;
+  }
+
+  public String getId() {
     return id;
   }
 
-  public void setId(int id) {
+  public void setId(String id) {
     this.id = id;
   }
 

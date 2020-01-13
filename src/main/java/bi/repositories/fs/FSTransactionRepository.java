@@ -15,7 +15,17 @@ public class FSTransactionRepository implements TransactionRepository {
   }
 
   @Override
+  public Transaction save(Transaction obj, org.hibernate.Transaction transaction) {
+    return null;
+  }
+
+  @Override
   public void update(Transaction obj) {
+
+  }
+
+  @Override
+  public void update(Transaction obj, org.hibernate.Transaction transaction) {
 
   }
 

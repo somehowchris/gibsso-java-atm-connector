@@ -24,7 +24,17 @@ public class ORMBancomatRepository implements BancomatRepository {
   }
 
   @Override
+  public Bancomat save(Bancomat obj, Transaction transaction) {
+    return null;
+  }
+
+  @Override
   public void update(Bancomat obj) {
+
+  }
+
+  @Override
+  public void update(Bancomat obj, Transaction transaction) {
 
   }
 

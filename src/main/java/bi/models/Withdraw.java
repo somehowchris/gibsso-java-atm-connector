@@ -13,7 +13,8 @@ public class Withdraw {
 
   @Id @GeneratedValue(generator="system-uuid")
   @GenericGenerator(name="system-uuid", strategy = "uuid")
-  private int id;
+  @Column(name="id")
+  private String id;
 
   @Column(name="total_amount")
   private double totalAmount = 0.0;
@@ -47,11 +48,11 @@ public class Withdraw {
     this.card = card;
   }
 
-  public int getId() {
+  public String getId() {
     return id;
   }
 
-  public void setId(int id) {
+  public void setId(String id) {
     this.id = id;
   }
 

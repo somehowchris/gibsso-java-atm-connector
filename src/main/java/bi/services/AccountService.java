@@ -31,11 +31,53 @@ public class AccountService {
 
     if(fromAccount == null){
       // TODO throw not found error
+      return null;
+    }
+
+    if(fromAccount.getBalance() < transaction.getAmount()){
+      // TODO too low balance error
+      return null;
+    }
+
+    if(fromAccount.isLocked()){
+      // TODO source account locked;
+      return null;
+    }
+
+    if(transaction.getTo() == null){
+      // TODO no receiving account specified
+      return null;
+    }
+
+    Account toAccount = getAccountByIBAN(transaction.getTo().getIban());
+
+    if(toAccount == null){
+      // TODO receiving account not found
+      return null;
+    }
+
+    if(toAccount.isLocked()){
+      // TODO receiving account locked;
+      return null;
     }
 
 
+    Transaction finalTransaction = new Transaction(transaction.getAmount(), toAccount, fromAccount);
 
-    return null;
+    fromAccount.setBalance(fromAccount.getBalance()-finalTransaction.getAmount());
+    toAccount.setBalance(toAccount.getBalance()+finalTransaction.getAmount());
+
+    org.hibernate.Transaction dbTransaction = DatabaseController.session.beginTransaction();
+    try{
+      accountRepository.update(fromAccount, dbTransaction);
+      accountRepository.update(toAccount, dbTransaction);
+      dbTransaction.commit();
+    }catch (Exception e){
+      dbTransaction.rollback();
+      // TODO couldn't transact exception
+    }
+
+    return finalTransaction;
   }
 
   public Account createAccount(Person person){
@@ -54,7 +96,12 @@ public class AccountService {
     return account;
   }
 
-  public void lockAccount(Account account){
-    logger.info("Locking "+account.getIban());
+  public void lockAccount(String iban){
+    logger.info("Locking "+iban);
+
+    Account account = getAccountByIBAN(iban);
+    account.setLocked(true);
+
+    accountRepository.update(account);
   }
 }
