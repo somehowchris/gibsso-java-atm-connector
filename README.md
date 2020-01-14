@@ -7,6 +7,7 @@ https://www.testcontainers.org/
 - [x] Connectors
 - [x] Dotenv integration
 - [x] Models
+- [ ] Seeder => Bank konto
 - [ ] Services
 - [ ] Repositories for databases
 - [ ] Detailed exceptions

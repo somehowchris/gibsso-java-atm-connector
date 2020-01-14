@@ -9,6 +9,7 @@ import bi.interfaces.repositories.AccountRepository;
 import bi.models.Account;
 import bi.models.Person;
 import bi.models.Transaction;
+import bi.seeder.BankSeeder;
 import bi.services.AccountService;
 import bi.services.PeopleService;
 

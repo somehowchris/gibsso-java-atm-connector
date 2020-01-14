@@ -10,10 +10,11 @@ public class BillCollectionService {
   BillCollectionRepository billCollectionRepository = RepositoryUtil.getRepository(BillCollectionRepository.class, DatabaseController.type);
 
   public BillCollection updateBillCollection(BillCollection bills){
-    return null;
+    this.billCollectionRepository.update(bills);
+    return this.getBillCollection(bills.getId());
   }
 
   public BillCollection getBillCollection(String id){
-    return null;
+    return this.billCollectionRepository.find(id);
   }
 }

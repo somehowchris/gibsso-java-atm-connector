@@ -17,16 +17,16 @@ public class BancomatService {
   }
 
   public List<BillCollection> getAvailableBills(String bancomatId){
-    return getBancomat(bancomatId).getBillCollections();
+    return this.getBancomat(bancomatId).getBillCollections();
   }
 
   public Bancomat updateBancomat(Bancomat bancomat){
-    bancomatRepository.update(bancomat);
-    return getBancomat(bancomat.getId());
+    this.bancomatRepository.update(bancomat);
+    return this.getBancomat(bancomat.getId());
   }
 
   public Bancomat registerBancomat(String location){
     Bancomat bancomat = new Bancomat(location, null);
-    return bancomatRepository.save(bancomat);
+    return this.bancomatRepository.save(bancomat);
   }
 }

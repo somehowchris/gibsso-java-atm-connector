@@ -12,12 +12,20 @@ public class CardService {
 
   CardRepository cardRepository = RepositoryUtil.getRepository(CardRepository.class, DatabaseController.type);
 
-  public void lockCard(Card card){
+  public void lockCard(String cardNumber){
+    Card card = this.cardRepository.find(cardNumber);
 
+    if(card == null){
+      // TODO card not found exception
+    }
+
+    card.setLocked(true);
+
+    this.cardRepository.update(card);
   }
 
   public void removeCard(Card card){
-
+    this.cardRepository.delete(card);
   }
 
   public Withdraw withdraw(Card card){

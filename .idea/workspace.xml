@@ -2,57 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7e7d5aa8-ede2-449a-bcb8-81f61201ba90" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/bi/repositories/orm/ORMRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/bi/utils/TypeT.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/bi/interfaces/Seeder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/bi/seeder/BankSeeder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/interfaces/repositories/AccountRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bi/interfaces/repositories/AccountRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/interfaces/repositories/PersonRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bi/interfaces/repositories/PersonRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/interfaces/repositories/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bi/interfaces/repositories/Repository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/bi/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bi/main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/repositories/fs/FSAccountRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bi/repositories/fs/FSAccountRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/repositories/fs/FSBancomatRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bi/repositories/fs/FSBancomatRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/repositories/fs/FSBillCollectionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bi/repositories/fs/FSBillCollectionRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/repositories/fs/FSCardRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bi/repositories/fs/FSCardRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/repositories/fs/FSPersonRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bi/repositories/fs/FSPersonRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/repositories/fs/FSTransactionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bi/repositories/fs/FSTransactionRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/repositories/fs/FSWithdrawRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bi/repositories/fs/FSWithdrawRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/repositories/orm/ORMAccountRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bi/repositories/orm/ORMAccountRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/repositories/orm/ORMBancomatRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bi/repositories/orm/ORMBancomatRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/repositories/orm/ORMBillCollectionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bi/repositories/orm/ORMBillCollectionRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/repositories/orm/ORMCardRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bi/repositories/orm/ORMCardRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/repositories/orm/ORMPersonRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bi/repositories/orm/ORMPersonRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/repositories/orm/ORMTransactionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bi/repositories/orm/ORMTransactionRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/repositories/orm/ORMWithdrawRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bi/repositories/orm/ORMWithdrawRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/services/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bi/services/AccountService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/bi/services/BancomatService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bi/services/BancomatService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/bi/services/BillCollectionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bi/services/BillCollectionService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/bi/services/CardService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bi/services/CardService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/services/PeopleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bi/services/PeopleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/utils/LoggingUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bi/utils/LoggingUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/interfaces/repositories/AccountRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bi/interfaces/repositories/AccountRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/interfaces/repositories/PersonRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bi/interfaces/repositories/PersonRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/interfaces/repositories/Repository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bi/interfaces/repositories/Repository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/bi/main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bi/main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/repositories/fs/FSAccountRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bi/repositories/fs/FSAccountRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/repositories/fs/FSBancomatRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bi/repositories/fs/FSBancomatRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/repositories/fs/FSBillCollectionRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bi/repositories/fs/FSBillCollectionRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/repositories/fs/FSCardRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bi/repositories/fs/FSCardRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/repositories/fs/FSPersonRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bi/repositories/fs/FSPersonRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/repositories/fs/FSTransactionRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bi/repositories/fs/FSTransactionRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/repositories/fs/FSWithdrawRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bi/repositories/fs/FSWithdrawRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/repositories/orm/ORMAccountRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bi/repositories/orm/ORMAccountRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/repositories/orm/ORMBancomatRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bi/repositories/orm/ORMBancomatRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/repositories/orm/ORMBillCollectionRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bi/repositories/orm/ORMBillCollectionRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/repositories/orm/ORMCardRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bi/repositories/orm/ORMCardRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/repositories/orm/ORMPersonRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bi/repositories/orm/ORMPersonRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/repositories/orm/ORMTransactionRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bi/repositories/orm/ORMTransactionRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/repositories/orm/ORMWithdrawRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bi/repositories/orm/ORMWithdrawRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/services/AccountService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bi/services/AccountService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/services/BancomatService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bi/services/BancomatService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/bi/services/BillCollectionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bi/services/BillCollectionService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/bi/services/CardService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bi/services/CardService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/services/PeopleService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bi/services/PeopleService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/utils/LoggingUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bi/utils/LoggingUtil.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,8 +25,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -209,7 +169,7 @@
       <workItem from="1578850839645" duration="4803000" />
       <workItem from="1578860772961" duration="12713000" />
       <workItem from="1578948387245" duration="1580000" />
-      <workItem from="1578950760940" duration="11331000" />
+      <workItem from="1578950760940" duration="12148000" />
     </task>
     <servers />
   </component>
@@ -217,35 +177,35 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="653" y="248" key="#com.intellij.ide.util.MemberChooser" timestamp="1578962089823">
+    <state x="653" y="248" key="#com.intellij.ide.util.MemberChooser" timestamp="1578963021881">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="653" y="248" key="#com.intellij.ide.util.MemberChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1578962089823" />
-    <state width="1638" height="295" key="GridCell.Tab.0.bottom" timestamp="1578962399863">
+    <state x="653" y="248" key="#com.intellij.ide.util.MemberChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1578963021881" />
+    <state width="1638" height="295" key="GridCell.Tab.0.bottom" timestamp="1578963305780">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="295" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1578962399863" />
+    <state width="1638" height="295" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1578963305780" />
     <state width="1638" height="295" key="GridCell.Tab.0.bottom/0.23.1680.970@0.23.1680.970" timestamp="1578958461346" />
     <state width="1638" height="295" key="GridCell.Tab.0.bottom/0.23.1680.974@0.23.1680.974" timestamp="1578947067600" />
     <state width="1638" height="295" key="GridCell.Tab.0.bottom/0.23.1680.975@0.23.1680.975" timestamp="1578932761391" />
-    <state width="1638" height="295" key="GridCell.Tab.0.center" timestamp="1578962399862">
+    <state width="1638" height="295" key="GridCell.Tab.0.center" timestamp="1578963305778">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="295" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1578962399862" />
+    <state width="1638" height="295" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1578963305778" />
     <state width="1638" height="295" key="GridCell.Tab.0.center/0.23.1680.970@0.23.1680.970" timestamp="1578958461343" />
     <state width="1638" height="295" key="GridCell.Tab.0.center/0.23.1680.974@0.23.1680.974" timestamp="1578947067598" />
     <state width="1638" height="295" key="GridCell.Tab.0.center/0.23.1680.975@0.23.1680.975" timestamp="1578932761389" />
-    <state width="1638" height="295" key="GridCell.Tab.0.left" timestamp="1578962399861">
+    <state width="1638" height="295" key="GridCell.Tab.0.left" timestamp="1578963305778">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="295" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1578962399861" />
+    <state width="1638" height="295" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1578963305778" />
     <state width="1638" height="295" key="GridCell.Tab.0.left/0.23.1680.970@0.23.1680.970" timestamp="1578958461340" />
     <state width="1638" height="295" key="GridCell.Tab.0.left/0.23.1680.974@0.23.1680.974" timestamp="1578947067597" />
     <state width="1638" height="295" key="GridCell.Tab.0.left/0.23.1680.975@0.23.1680.975" timestamp="1578932761388" />
-    <state width="1638" height="295" key="GridCell.Tab.0.right" timestamp="1578962399862">
+    <state width="1638" height="295" key="GridCell.Tab.0.right" timestamp="1578963305779">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="295" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1578962399862" />
+    <state width="1638" height="295" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1578963305779" />
     <state width="1638" height="295" key="GridCell.Tab.0.right/0.23.1680.970@0.23.1680.970" timestamp="1578958461344" />
     <state width="1638" height="295" key="GridCell.Tab.0.right/0.23.1680.974@0.23.1680.974" timestamp="1578947067599" />
     <state width="1638" height="295" key="GridCell.Tab.0.right/0.23.1680.975@0.23.1680.975" timestamp="1578932761390" />
