@@ -7,7 +7,7 @@ import org.hibernate.Transaction;
 public class FSWithdrawRepository implements WithdrawRepository {
 
   @Override
-  public Withdraw find(Withdraw obj) {
+  public Withdraw find(String identifier) {
     return null;
   }
 

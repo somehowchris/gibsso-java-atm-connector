@@ -7,7 +7,7 @@ import org.hibernate.Transaction;
 public class FSBillCollectionRepository implements BillCollectionRepository {
 
   @Override
-  public BillCollection find(BillCollection obj) {
+  public BillCollection find(String identifier) {
     return null;
   }
 

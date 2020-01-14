@@ -7,12 +7,7 @@ import org.hibernate.Transaction;
 public class FSAccountRepository implements AccountRepository {
 
   @Override
-  public Account findByIban(String iban) {
-    return null;
-  }
-
-  @Override
-  public Account find(Account obj) {
+  public Account find(String identifier) {
     return null;
   }
 

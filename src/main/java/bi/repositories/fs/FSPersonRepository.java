@@ -6,12 +6,7 @@ import org.hibernate.Transaction;
 
 public class FSPersonRepository implements PersonRepository {
   @Override
-  public Person findById(String id) {
-    return null;
-  }
-
-  @Override
-  public Person find(Person obj) {
+  public Person find(String identifier) {
     return null;
   }
 

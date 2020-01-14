@@ -1,7 +1,6 @@
 package bi.services;
 
 import bi.controllers.DatabaseController;
-import bi.interfaces.repositories.AccountRepository;
 import bi.interfaces.repositories.BillCollectionRepository;
 import bi.models.BillCollection;
 import bi.utils.RepositoryUtil;

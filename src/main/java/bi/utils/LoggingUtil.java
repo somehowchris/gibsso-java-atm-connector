@@ -4,9 +4,13 @@ package bi.utils;
 import java.util.logging.Logger;
 
 
-public class LoggingUtil {
+public class LoggingUtil<T> extends TypeT<T> {
 
-  public static Logger newLogger(Class clazz){
-    return Logger.getLogger(clazz.getName());
+  public LoggingUtil(Class<T> tClass) {
+    this.setTypeOfT(tClass);
+  }
+
+  public Logger getLogger(){
+    return Logger.getLogger(getTypeOfT().getName());
   }
 }

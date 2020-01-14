@@ -1,10 +1,8 @@
 package bi.services;
 
 import bi.controllers.DatabaseController;
-import bi.interfaces.repositories.BancomatRepository;
 import bi.interfaces.repositories.PersonRepository;
 import bi.models.Person;
-import bi.models.Transaction;
 import bi.utils.HashUtil;
 import bi.utils.RepositoryUtil;
 
@@ -19,7 +17,7 @@ public class PeopleService {
   public Person updatePersonalDetails(Person person){
     org.hibernate.Transaction transaction = DatabaseController.session.beginTransaction();
     try{
-      Person tempPerson = personRepository.findById(person.getId());
+      Person tempPerson = personRepository.find(person.getId());
 
       if(person.getEmail() != null)tempPerson.setEmail(person.getEmail());
       if(person.getLastName() != null)tempPerson.setLastName(person.getLastName());
@@ -48,6 +46,6 @@ public class PeopleService {
   }
 
   public Person getPerson(String id){
-    return this.personRepository.findById(id);
+    return this.personRepository.find(id);
   }
 }

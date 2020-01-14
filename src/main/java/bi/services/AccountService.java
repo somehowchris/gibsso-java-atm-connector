@@ -9,20 +9,18 @@ import bi.models.Person;
 import bi.models.Transaction;
 import bi.utils.RepositoryUtil;
 import com.google.common.collect.Lists;
-import rest.PeopleRestAPI;
 
-import java.util.List;
 import java.util.logging.Logger;
 
 public class AccountService {
 
   AccountRepository accountRepository = RepositoryUtil.getRepository(AccountRepository.class, DatabaseController.type);
   PersonRepository personRepository = RepositoryUtil.getRepository(PersonRepository.class, DatabaseController.type);
-  Logger logger = LoggingUtil.newLogger(AccountService.class);
+  Logger logger = new LoggingUtil<AccountService>(AccountService.class).getLogger();
 
   public Account getAccountByIBAN(String iban){
     logger.info("Getting account of "+iban);
-    return accountRepository.findByIban(iban);
+    return accountRepository.find(iban);
   }
 
   public Transaction transfer(String fromIban, Transaction transaction){

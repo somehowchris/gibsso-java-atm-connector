@@ -3,7 +3,7 @@ package bi.interfaces.repositories;
 import org.hibernate.Transaction;
 
 public interface Repository<T> {
-  T find(T obj);
+  T find(String identifier);
   T save(T obj);
   T save(T obj, Transaction transaction);
   void update(T obj);

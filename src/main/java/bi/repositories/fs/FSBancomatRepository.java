@@ -7,7 +7,7 @@ import org.hibernate.Transaction;
 public class FSBancomatRepository implements BancomatRepository {
 
   @Override
-  public Bancomat find(Bancomat obj) {
+  public Bancomat find(String identifier) {
     return null;
   }
 

@@ -4,8 +4,9 @@ import bi.interfaces.repositories.TransactionRepository;
 import bi.models.Transaction;
 
 public class FSTransactionRepository implements TransactionRepository {
+
   @Override
-  public Transaction find(Transaction obj) {
+  public Transaction find(String identifier) {
     return null;
   }
 

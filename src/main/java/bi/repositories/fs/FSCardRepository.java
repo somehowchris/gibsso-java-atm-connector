@@ -6,7 +6,7 @@ import org.hibernate.Transaction;
 
 public class FSCardRepository implements CardRepository {
   @Override
-  public Card find(Card obj) {
+  public Card find(String identifier) {
     return null;
   }
 
