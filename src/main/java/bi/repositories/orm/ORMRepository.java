@@ -6,7 +6,6 @@ import bi.utils.TypeT;
 import org.hibernate.Transaction;
 import org.hibernate.resource.transaction.spi.TransactionStatus;
 
-import java.lang.reflect.ParameterizedType;
 import java.util.logging.Logger;
 
 public class ORMRepository<T> extends TypeT<T> implements bi.interfaces.repositories.Repository<T> {

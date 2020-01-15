@@ -1,9 +1,12 @@
 package bi.repositories.fs;
 
+import bi.decorators.DatabaseType;
 import bi.interfaces.repositories.AccountRepository;
 import bi.models.Account;
+import bi.models.enums.DatabaseInterpreters;
 import org.hibernate.Transaction;
 
+@DatabaseType(type=DatabaseInterpreters.FS)
 public class FSAccountRepository implements AccountRepository {
 
   @Override

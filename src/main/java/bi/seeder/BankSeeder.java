@@ -10,8 +10,6 @@ import org.hibernate.Transaction;
 
 public class BankSeeder implements Seeder {
 
-
-
   @Override
   public void run(Session session) {
     Account account = new Account();

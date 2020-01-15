@@ -20,7 +20,9 @@ https://www.testcontainers.org/
 - [ ] Readme
 - [ ] Uml
 - [ ] Logging
+- [ ] Swagger
 - [ ] .gitlab-ci.yaml file to test on push 
 https://docs.gitlab.com/ee/user/packages/maven_repository/
 - [ ] Reuse artifact
 - [ ] Docs & JavaDoc Gitlab Pages
+- [ ] God damn git ignore file

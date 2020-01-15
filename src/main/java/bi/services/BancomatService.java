@@ -1,16 +1,18 @@
 package bi.services;
 
 import bi.controllers.DatabaseController;
+import bi.decorators.Service;
 import bi.interfaces.repositories.BancomatRepository;
 import bi.models.Bancomat;
 import bi.models.BillCollection;
-import bi.utils.RepositoryUtil;
+import bi.utils.Container;
 
 import java.util.List;
 
+@Service()
 public class BancomatService {
 
-  BancomatRepository bancomatRepository = RepositoryUtil.getRepository(BancomatRepository.class, DatabaseController.type);
+  BancomatRepository bancomatRepository = Container.getRepository(BancomatRepository.class, DatabaseController.type);
 
   public Bancomat getBancomat(String id){
     return bancomatRepository.find(id);

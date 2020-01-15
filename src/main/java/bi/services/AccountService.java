@@ -1,22 +1,24 @@
 package bi.services;
 
 import bi.controllers.DatabaseController;
+import bi.decorators.Service;
 import bi.interfaces.repositories.PersonRepository;
+import bi.utils.Container;
 import bi.utils.LoggingUtil;
 import bi.interfaces.repositories.AccountRepository;
 import bi.models.Account;
 import bi.models.Person;
 import bi.models.Transaction;
-import bi.utils.RepositoryUtil;
 import com.google.common.collect.Lists;
 
 import java.util.logging.Logger;
 
+@Service()
 public class AccountService {
 
-  AccountRepository accountRepository = RepositoryUtil.getRepository(AccountRepository.class, DatabaseController.type);
-  PersonRepository personRepository = RepositoryUtil.getRepository(PersonRepository.class, DatabaseController.type);
-  Logger logger = new LoggingUtil<AccountService>(AccountService.class).getLogger();
+  AccountRepository accountRepository = Container.getRepository(AccountRepository.class, DatabaseController.type);
+  PersonRepository personRepository = Container.getRepository(PersonRepository.class, DatabaseController.type);
+  Logger logger = new LoggingUtil(AccountService.class).getLogger();
 
   public Account getAccountByIBAN(String iban){
     logger.info("Getting account of "+iban);

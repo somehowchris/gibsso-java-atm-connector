@@ -1,9 +1,12 @@
 package bi.repositories.fs;
 
+import bi.decorators.DatabaseType;
 import bi.interfaces.repositories.WithdrawRepository;
 import bi.models.Withdraw;
+import bi.models.enums.DatabaseInterpreters;
 import org.hibernate.Transaction;
 
+@DatabaseType(type= DatabaseInterpreters.FS)
 public class FSWithdrawRepository implements WithdrawRepository {
 
   @Override

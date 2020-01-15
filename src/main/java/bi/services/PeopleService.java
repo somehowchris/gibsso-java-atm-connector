@@ -1,14 +1,16 @@
 package bi.services;
 
 import bi.controllers.DatabaseController;
+import bi.decorators.Service;
 import bi.interfaces.repositories.PersonRepository;
 import bi.models.Person;
+import bi.utils.Container;
 import bi.utils.HashUtil;
-import bi.utils.RepositoryUtil;
 
+@Service()
 public class PeopleService {
 
-  PersonRepository personRepository = RepositoryUtil.getRepository(PersonRepository.class, DatabaseController.type);
+  PersonRepository personRepository = Container.getRepository(PersonRepository.class, DatabaseController.type);
 
   public Person authenticate(String email, String password){
     return null;
@@ -47,5 +49,9 @@ public class PeopleService {
 
   public Person getPerson(String id){
     return this.personRepository.find(id);
+  }
+
+  public Person getPersonByMail(String email){
+    return this.personRepository.findPerson(email);
   }
 }

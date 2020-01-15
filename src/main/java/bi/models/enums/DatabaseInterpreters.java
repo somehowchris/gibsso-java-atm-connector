@@ -1,11 +1,11 @@
 package bi.models.enums;
 
-public enum DatabaseType {
+public enum DatabaseInterpreters {
   OGM("OGM"), ORM("ORM"), FS("FS");
 
   String prefix;
 
-  DatabaseType(String prefix){
+  DatabaseInterpreters(String prefix){
     this.prefix = prefix;
   }
 

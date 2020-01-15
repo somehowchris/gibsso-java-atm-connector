@@ -45,7 +45,6 @@
     <orderEntry type="library" name="Maven: mysql:mysql-connector-java:8.0.18" level="project" />
     <orderEntry type="library" name="Maven: com.google.protobuf:protobuf-java:3.6.1" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: com.h2database:h2:1.4.200" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: com.microsoft.sqlserver:mssql-jdbc:8.1.1.jre8" level="project" />
     <orderEntry type="library" name="Maven: javax.ws.rs:jsr311-api:1.1.1" level="project" />
     <orderEntry type="library" name="Maven: org.postgresql:postgresql:42.2.9" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.testcontainers:testcontainers:1.12.3" level="project" />

@@ -1,8 +1,11 @@
 package bi.repositories.fs;
 
+import bi.decorators.DatabaseType;
 import bi.interfaces.repositories.TransactionRepository;
 import bi.models.Transaction;
+import bi.models.enums.DatabaseInterpreters;
 
+@DatabaseType(type= DatabaseInterpreters.FS)
 public class FSTransactionRepository implements TransactionRepository {
 
   @Override

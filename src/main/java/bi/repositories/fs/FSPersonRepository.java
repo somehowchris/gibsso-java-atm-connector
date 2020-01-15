@@ -1,9 +1,12 @@
 package bi.repositories.fs;
 
+import bi.decorators.DatabaseType;
 import bi.interfaces.repositories.PersonRepository;
 import bi.models.Person;
+import bi.models.enums.DatabaseInterpreters;
 import org.hibernate.Transaction;
 
+@DatabaseType(type= DatabaseInterpreters.FS)
 public class FSPersonRepository implements PersonRepository {
   @Override
   public Person find(String identifier) {
@@ -33,5 +36,10 @@ public class FSPersonRepository implements PersonRepository {
   @Override
   public void delete(Person obj) {
 
+  }
+
+  @Override
+  public Person findPerson(String email) {
+    return null;
   }
 }
