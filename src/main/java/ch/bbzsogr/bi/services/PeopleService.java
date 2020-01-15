@@ -4,7 +4,7 @@ import ch.bbzsogr.bi.controllers.DatabaseController;
 import ch.bbzsogr.bi.decorators.Service;
 import ch.bbzsogr.bi.exceptions.EntitySaveException;
 import ch.bbzsogr.bi.exceptions.PersonUserDetailsUpdateException;
-import ch.bbzsogr.bi.interfaces.repositories.PersonRepository;
+import ch.bbzsogr.bi.interfaces.repositories.PeopleRepository;
 import ch.bbzsogr.bi.interfaces.services.PeopleServiceInterface;
 import ch.bbzsogr.bi.models.Person;
 import ch.bbzsogr.bi.models.enums.ApiType;
@@ -14,7 +14,7 @@ import ch.bbzsogr.bi.utils.HashUtil;
 @Service(api = ApiType.DIRECT)
 public class PeopleService implements PeopleServiceInterface {
 
-  private PersonRepository personRepository = Container.getRepository(PersonRepository.class, DatabaseController.type);
+  private PeopleRepository personRepository = Container.getRepository(PeopleRepository.class, DatabaseController.type);
 
   public Person authenticate(String email, String password) {
     return personRepository.checkIfPersonExists(email, HashUtil.hash(password));
@@ -47,7 +47,7 @@ public class PeopleService implements PeopleServiceInterface {
   }
 
   public void deletePerson(Person person) {
-
+    this.personRepository.delete(person);
   }
 
   public Person getPerson(String id) {

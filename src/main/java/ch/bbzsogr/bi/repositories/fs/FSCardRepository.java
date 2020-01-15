@@ -37,4 +37,9 @@ public class FSCardRepository implements CardRepository {
   public void delete(Card obj) {
 
   }
+
+  @Override
+  public Card find(String cardNr, String pin) {
+    return null;
+  }
 }

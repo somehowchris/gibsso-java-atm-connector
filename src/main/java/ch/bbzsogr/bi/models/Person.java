@@ -89,4 +89,9 @@ public class Person {
   public void setAccounts(List<Account> accounts) {
     this.accounts = accounts;
   }
+
+  @PostLoad()
+  public void afterLoad(){
+    this.setPassword(null);
+  }
 }

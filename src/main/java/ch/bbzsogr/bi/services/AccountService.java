@@ -4,7 +4,7 @@ import ch.bbzsogr.bi.controllers.DatabaseController;
 import ch.bbzsogr.bi.decorators.Service;
 import ch.bbzsogr.bi.exceptions.*;
 import ch.bbzsogr.bi.interfaces.repositories.AccountRepository;
-import ch.bbzsogr.bi.interfaces.repositories.PersonRepository;
+import ch.bbzsogr.bi.interfaces.repositories.PeopleRepository;
 import ch.bbzsogr.bi.interfaces.repositories.TransactionRepository;
 import ch.bbzsogr.bi.interfaces.services.AccountServiceInterface;
 import ch.bbzsogr.bi.models.Account;
@@ -22,7 +22,7 @@ import java.util.logging.Logger;
 public class AccountService implements AccountServiceInterface {
 
   private AccountRepository accountRepository = Container.getRepository(AccountRepository.class, DatabaseController.type);
-  private PersonRepository personRepository = Container.getRepository(PersonRepository.class, DatabaseController.type);
+  private PeopleRepository personRepository = Container.getRepository(PeopleRepository.class, DatabaseController.type);
   private TransactionRepository transactionRepository = Container.getRepository(TransactionRepository.class, DatabaseController.type);
 
   private Logger logger = new LoggingUtil(AccountService.class).getLogger();

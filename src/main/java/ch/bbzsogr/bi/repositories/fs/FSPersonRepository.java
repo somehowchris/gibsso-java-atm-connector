@@ -1,13 +1,14 @@
 package ch.bbzsogr.bi.repositories.fs;
 
 import ch.bbzsogr.bi.decorators.DatabaseType;
-import ch.bbzsogr.bi.interfaces.repositories.PersonRepository;
+import ch.bbzsogr.bi.interfaces.repositories.PeopleRepository;
 import ch.bbzsogr.bi.models.Person;
 import ch.bbzsogr.bi.models.enums.DatabaseInterpreters;
 import org.hibernate.Transaction;
 
 @DatabaseType(type = DatabaseInterpreters.FS)
-public class FSPersonRepository implements PersonRepository {
+public class FSPersonRepository implements PeopleRepository {
+
   @Override
   public Person find(String identifier) {
     return null;

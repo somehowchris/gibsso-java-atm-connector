@@ -18,7 +18,7 @@ public class Card {
   private String cardNumber = CreditCardUtil.generateCardNumber();
 
   @Column(name = "pin", nullable = false)
-  private String pin = HashUtil.hash(CreditCardUtil.generatePin());
+  private String pin = CreditCardUtil.generatePin();
 
   @Column(name = "expires_at")
   private Date expiresAt = Date.from(new Date().toInstant().plus(Duration.ofDays(365 * 4)));
@@ -127,5 +127,10 @@ public class Card {
 
   public void setAccount(Account account) {
     this.account = account;
+  }
+
+  @PostLoad()
+  public void afterLoad(){
+    this.setPin(null);
   }
 }

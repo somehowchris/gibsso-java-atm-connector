@@ -147,11 +147,16 @@ public class CardService implements CardServiceInterface {
   public Card createCard(Account account) throws CardCreationException {
     Card card = new Card();
 
+    String pin = card.getPin();
+    card.setPin(HashUtil.hash(pin));
+
     account.getCards().add(card);
     card.setAccount(account);
 
     try {
-      return cardRepository.save(card);
+      card = cardRepository.save(card);
+      card.setPin(pin);
+      return card;
     } catch (EntitySaveException e) {
       throw new CardCreationException(account);
     }
@@ -172,7 +177,7 @@ public class CardService implements CardServiceInterface {
 
   // TODO authenticate via card
   public Card authenticate(String cardNr, String pin) {
-    return null;
+    return cardRepository.find(cardNr, HashUtil.hash(pin));
   }
 
   // TODO unlock via mail

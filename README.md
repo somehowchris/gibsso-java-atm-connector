@@ -9,11 +9,11 @@ https://www.testcontainers.org/
 - [x] Models
 - [x] Seeder => Bank konto
 - [ ] Services
-- [ ] Repositories for databases
 - [ ] Detailed exceptions
 - [ ] OGM not supported exception
 - [ ] Validation
 - [ ] Restcalls
+- [ ] Repositories for FS
 - [ ] TestContainers Dockerfile 4 sqlite, redis
 - [ ] Tests
 - [ ] General dockerfile 2 test & build
