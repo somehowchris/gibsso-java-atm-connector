@@ -4,10 +4,7 @@ import ch.bbzsogr.bi.connectors.FSConnector;
 import ch.bbzsogr.bi.connectors.OGMConnector;
 import ch.bbzsogr.bi.connectors.ORMConnector;
 import ch.bbzsogr.bi.decorators.Seeder;
-import ch.bbzsogr.bi.exceptions.AccessNotGrantedException;
-import ch.bbzsogr.bi.exceptions.ConnectionRefusedException;
-import ch.bbzsogr.bi.exceptions.OGMDatabaseTypeNotFoundException;
-import ch.bbzsogr.bi.exceptions.UrlDialectNotSupportedException;
+import ch.bbzsogr.bi.exceptions.*;
 import ch.bbzsogr.bi.interfaces.Config;
 import ch.bbzsogr.bi.interfaces.Connector;
 import ch.bbzsogr.bi.interfaces.Seed;
@@ -35,7 +32,7 @@ public class DatabaseController {
   private Connector connector;
   private SessionFactory sessionFactory;
 
-  public DatabaseController() throws OGMDatabaseTypeNotFoundException, UrlDialectNotSupportedException, AccessNotGrantedException, IOException, ConnectionRefusedException {
+  public DatabaseController() throws OGMDatabaseTypeNotFoundException, UrlDialectNotSupportedException, AccessNotGrantedException, IOException, ConnectionRefusedException, OGMNotYetSupportedException {
     DotEnvUtil envUtil = new DotEnvUtil();
     if (envUtil.get("DATABASE_OGM_TYPE") != null && !envUtil.get("DATABASE_OGM_TYPE").isEmpty()) {
       config = new OGMConfig();

@@ -10,8 +10,8 @@ https://www.testcontainers.org/
 - [x] Seeder => Bank konto
 - [x] Services
 - [x] Detailed exceptions
-- [ ] OGM not supported exception
-- [ ] Validation
+- [x] OGM not supported exception
+- [x] Validation
 - [ ] Restcalls
 - [ ] Repositories for FS
 - [ ] TestContainers Dockerfile 4 sqlite, redis
@@ -20,15 +20,15 @@ https://www.testcontainers.org/
 - [ ] Readme
 - [ ] Uml
 - [ ] Logging
-- [ ] .gitlab-ci.yaml file to test on push
-https://docs.gitlab.com/ee/user/packages/maven_repository/
 - [ ] Reuse artifact 10m
-- [ ] Docs & JavaDoc Gitlab Pages
 - [x] God damn gitignore file
 
 
 # ADD ON
 
+- [ ] JavaDoc Gitlab Pages
+- [ ] .gitlab-ci.yaml file to test on push
+https://docs.gitlab.com/ee/user/packages/maven_repository/
 - [ ] Fix OGM
 - [ ] OGM Model decoration
 - [ ] OGM Repositories

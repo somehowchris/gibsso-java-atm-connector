@@ -2,6 +2,7 @@ package ch.bbzsogr.bi.connectors;
 
 import ch.bbzsogr.bi.exceptions.AccessNotGrantedException;
 import ch.bbzsogr.bi.exceptions.ConnectionRefusedException;
+import ch.bbzsogr.bi.exceptions.OGMNotYetSupportedException;
 import ch.bbzsogr.bi.interfaces.Connector;
 import ch.bbzsogr.bi.models.configs.OGMConfig;
 import org.hibernate.SessionFactory;
@@ -22,9 +23,10 @@ public class OGMConnector implements Connector {
    *
    * @param config the config
    */
-  public OGMConnector(OGMConfig config) {
-    this.config = config;
-    this.setUp();
+  public OGMConnector(OGMConfig config) throws OGMNotYetSupportedException {
+    /***this.config = config;
+    this.setUp();**/
+    throw new OGMNotYetSupportedException();
   }
 
   public SessionFactory connect() throws ConnectionRefusedException, AccessNotGrantedException {
