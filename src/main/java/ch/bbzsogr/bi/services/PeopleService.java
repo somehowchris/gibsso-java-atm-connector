@@ -1,7 +1,6 @@
 package ch.bbzsogr.bi.services;
 
 import ch.bbzsogr.bi.controllers.DatabaseController;
-import ch.bbzsogr.bi.decorators.Api;
 import ch.bbzsogr.bi.decorators.Service;
 import ch.bbzsogr.bi.interfaces.repositories.PersonRepository;
 import ch.bbzsogr.bi.interfaces.services.PeopleServiceInterface;
@@ -10,8 +9,7 @@ import ch.bbzsogr.bi.models.enums.ApiType;
 import ch.bbzsogr.bi.utils.Container;
 import ch.bbzsogr.bi.utils.HashUtil;
 
-@Service()
-@Api(type = ApiType.DIRECT)
+@Service(api = ApiType.DIRECT)
 public class PeopleService implements PeopleServiceInterface {
 
   PersonRepository personRepository = Container.getRepository(PersonRepository.class, DatabaseController.type);

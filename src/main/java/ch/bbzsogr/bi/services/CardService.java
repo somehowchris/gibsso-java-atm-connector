@@ -1,7 +1,6 @@
 package ch.bbzsogr.bi.services;
 
 import ch.bbzsogr.bi.controllers.DatabaseController;
-import ch.bbzsogr.bi.decorators.Api;
 import ch.bbzsogr.bi.decorators.Service;
 import ch.bbzsogr.bi.interfaces.repositories.CardRepository;
 import ch.bbzsogr.bi.interfaces.repositories.WithdrawRepository;
@@ -20,14 +19,13 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-@Service()
-@Api(type = ApiType.DIRECT)
+@Service(api = ApiType.DIRECT)
 public class CardService implements CardServiceInterface {
 
   private CardRepository cardRepository = Container.getRepository(CardRepository.class, DatabaseController.type);
-  private PeopleService peopleService = Container.getService(PeopleService.class);
-  private BancomatService bancomatService = Container.getService(BancomatService.class);
-  private AccountService accountService = Container.getService(AccountService.class);
+  private PeopleService peopleService = Container.getService(PeopleService.class, ApiType.DIRECT);
+  private BancomatService bancomatService = Container.getService(BancomatService.class, ApiType.DIRECT);
+  private AccountService accountService = Container.getService(AccountService.class, ApiType.DIRECT);
   private WithdrawRepository withdrawRepository = Container.getRepository(WithdrawRepository.class, DatabaseController.type);
 
   public void lockCard(String cardNumber) {

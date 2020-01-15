@@ -1,7 +1,6 @@
 package ch.bbzsogr.bi.services;
 
 import ch.bbzsogr.bi.controllers.DatabaseController;
-import ch.bbzsogr.bi.decorators.Api;
 import ch.bbzsogr.bi.decorators.Service;
 import ch.bbzsogr.bi.interfaces.repositories.BancomatRepository;
 import ch.bbzsogr.bi.interfaces.services.BancomatServiceInterface;
@@ -12,8 +11,7 @@ import ch.bbzsogr.bi.utils.Container;
 
 import java.util.List;
 
-@Service()
-@Api(type = ApiType.DIRECT)
+@Service(api = ApiType.DIRECT)
 public class BancomatService implements BancomatServiceInterface {
 
   BancomatRepository bancomatRepository = Container.getRepository(BancomatRepository.class, DatabaseController.type);

@@ -4,6 +4,7 @@ import ch.bbzsogr.bi.decorators.Seeder;
 import ch.bbzsogr.bi.interfaces.Seed;
 import ch.bbzsogr.bi.models.Account;
 import ch.bbzsogr.bi.models.Person;
+import ch.bbzsogr.bi.models.enums.ApiType;
 import ch.bbzsogr.bi.services.PeopleService;
 import ch.bbzsogr.bi.utils.Container;
 import ch.bbzsogr.bi.utils.DotEnvUtil;
@@ -20,7 +21,7 @@ public class BankSeeder implements Seed {
   public void run(Session session, DotEnvUtil dotEnv, Logger logger) {
 
 
-    PeopleService peopleService = Container.getService(PeopleService.class);
+    PeopleService peopleService = Container.getService(PeopleService.class, ApiType.DIRECT);
     try {
       Person person = peopleService.getPersonByMail(dotEnv.get("BANK_MAIL"));
 

@@ -1,7 +1,6 @@
 package ch.bbzsogr.bi.utils;
 
 import java.lang.reflect.ParameterizedType;
-import java.lang.reflect.Type;
 import java.util.logging.Logger;
 
 public class TypeT<T> {

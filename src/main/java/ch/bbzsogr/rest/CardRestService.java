@@ -1,9 +1,9 @@
 package ch.bbzsogr.rest;
 
-import ch.bbzsogr.bi.decorators.Api;
+import ch.bbzsogr.bi.decorators.Service;
 import ch.bbzsogr.bi.interfaces.services.CardServiceInterface;
 import ch.bbzsogr.bi.models.enums.ApiType;
 
-@Api(type = ApiType.REST)
-public class CardRestAPI implements CardServiceInterface {
+@Service(api = ApiType.REST)
+public class CardRestService implements CardServiceInterface {
 }

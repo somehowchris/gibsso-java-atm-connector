@@ -1,7 +1,6 @@
 package ch.bbzsogr.bi.services;
 
 import ch.bbzsogr.bi.controllers.DatabaseController;
-import ch.bbzsogr.bi.decorators.Api;
 import ch.bbzsogr.bi.decorators.Service;
 import ch.bbzsogr.bi.interfaces.repositories.AccountRepository;
 import ch.bbzsogr.bi.interfaces.repositories.PersonRepository;
@@ -16,8 +15,7 @@ import com.google.common.collect.Lists;
 
 import java.util.logging.Logger;
 
-@Service()
-@Api(type = ApiType.DIRECT)
+@Service(api = ApiType.DIRECT)
 public class AccountService implements AccountServiceInterface {
 
   AccountRepository accountRepository = Container.getRepository(AccountRepository.class, DatabaseController.type);

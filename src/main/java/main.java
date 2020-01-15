@@ -12,6 +12,7 @@ import java.io.IOException;
 public class main {
 
   public static void main(String[] args) throws AccessNotGrantedException, ConnectionRefusedException, UrlDialectNotSupported, OGMDatabaseTypeNotFoundException, IOException {
-    AccountServiceInterface accountService = Container.getApi(AccountServiceInterface.class, ApiType.REST);
+    DatabaseController databaseController = new DatabaseController();
+    AccountServiceInterface accountService = Container.getService(AccountServiceInterface.class, ApiType.DIRECT);
   }
 }
