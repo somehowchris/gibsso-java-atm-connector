@@ -135,11 +135,6 @@ public class CardService implements CardServiceInterface {
     }
   }
 
-  // TODO transfer like paying at the market
-  public Transaction transfer(Card card, double amount, Currency currency) {
-    return null;
-  }
-
   public Card getCard(String cardNr) {
     return cardRepository.find(cardNr);
   }
@@ -175,13 +170,8 @@ public class CardService implements CardServiceInterface {
     }
   }
 
-  // TODO authenticate via card
   public Card authenticate(String cardNr, String pin) {
     return cardRepository.find(cardNr, HashUtil.hash(pin));
   }
 
-  // TODO unlock via mail
-  public void unlockCard(String cardNr, String code) {
-
-  }
 }

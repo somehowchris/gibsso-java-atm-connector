@@ -8,8 +8,8 @@ https://www.testcontainers.org/
 - [x] Dotenv integration
 - [x] Models
 - [x] Seeder => Bank konto
-- [ ] Services
-- [ ] Detailed exceptions
+- [x] Services
+- [x] Detailed exceptions
 - [ ] OGM not supported exception
 - [ ] Validation
 - [ ] Restcalls
@@ -32,6 +32,9 @@ https://docs.gitlab.com/ee/user/packages/maven_repository/
 - [ ] Fix OGM
 - [ ] OGM Model decoration
 - [ ] OGM Repositories
+- [ ] Card unlock
+- [ ] Account unlock
+- [ ] Card payments at a terminal
 
   // TODO add to readme
   //  jdbc:sqlite::memory:

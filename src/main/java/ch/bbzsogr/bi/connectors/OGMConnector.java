@@ -41,7 +41,6 @@ public class OGMConnector implements Connector {
 
     reflections.getTypesAnnotatedWith(javax.persistence.Entity.class).forEach(clazz -> config.addAnnotatedClass(clazz));
     StandardServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder().applySettings(config.getProperties()).build();
-    // TODO fixt that shit
     return config.buildSessionFactory(serviceRegistry);
   }
 

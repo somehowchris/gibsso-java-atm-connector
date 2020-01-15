@@ -102,9 +102,4 @@ public class AccountService implements AccountServiceInterface {
   public void updateAccount(Account account) throws EntityUpdateException {
     accountRepository.update(account);
   }
-
-  // TODO unlock via email
-  public void unlockAccount(String iban, String code) {
-
-  }
 }
