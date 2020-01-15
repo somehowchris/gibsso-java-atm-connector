@@ -42,4 +42,9 @@ public class FSPersonRepository implements PersonRepository {
   public Person findPerson(String email) {
     return null;
   }
+
+  @Override
+  public Person checkIfPersonExists(String email, String password) {
+    return null;
+  }
 }
