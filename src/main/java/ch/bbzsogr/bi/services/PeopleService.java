@@ -2,6 +2,8 @@ package ch.bbzsogr.bi.services;
 
 import ch.bbzsogr.bi.controllers.DatabaseController;
 import ch.bbzsogr.bi.decorators.Service;
+import ch.bbzsogr.bi.exceptions.EntitySaveException;
+import ch.bbzsogr.bi.exceptions.PersonUserDetailsUpdateException;
 import ch.bbzsogr.bi.interfaces.repositories.PersonRepository;
 import ch.bbzsogr.bi.interfaces.services.PeopleServiceInterface;
 import ch.bbzsogr.bi.models.Person;
@@ -12,13 +14,13 @@ import ch.bbzsogr.bi.utils.HashUtil;
 @Service(api = ApiType.DIRECT)
 public class PeopleService implements PeopleServiceInterface {
 
-  PersonRepository personRepository = Container.getRepository(PersonRepository.class, DatabaseController.type);
+  private PersonRepository personRepository = Container.getRepository(PersonRepository.class, DatabaseController.type);
 
   public Person authenticate(String email, String password) {
     return personRepository.checkIfPersonExists(email, HashUtil.hash(password));
   }
 
-  public Person updatePersonalDetails(Person person) {
+  public Person updatePersonalDetails(Person person) throws PersonUserDetailsUpdateException {
     org.hibernate.Transaction transaction = DatabaseController.session.beginTransaction();
     try {
       Person tempPerson = personRepository.find(person.getId());
@@ -35,12 +37,11 @@ public class PeopleService implements PeopleServiceInterface {
 
       return tempPerson;
     } catch (Exception e) {
-      // TODO couldn't update exception
-      return null;
+      throw new PersonUserDetailsUpdateException(person);
     }
   }
 
-  public Person createPerson(Person person) {
+  public Person createPerson(Person person) throws EntitySaveException {
     person.setPassword(HashUtil.hash(person.getPassword()));
     return this.personRepository.save(person);
   }

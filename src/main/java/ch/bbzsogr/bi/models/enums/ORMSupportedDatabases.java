@@ -1,6 +1,6 @@
 package ch.bbzsogr.bi.models.enums;
 
-import ch.bbzsogr.bi.exceptions.UrlDialectNotSupported;
+import ch.bbzsogr.bi.exceptions.UrlDialectNotSupportedException;
 
 /**
  * The enum Orm supported databases.
@@ -44,9 +44,9 @@ public enum ORMSupportedDatabases {
    *
    * @param url the url
    * @return the orm supported databases
-   * @throws UrlDialectNotSupported the url dialect not supported
+   * @throws UrlDialectNotSupportedException the url dialect not supported
    */
-  public static ORMSupportedDatabases get(String url) throws UrlDialectNotSupported {
+  public static ORMSupportedDatabases get(String url) throws UrlDialectNotSupportedException {
     if (url.startsWith("jdbc:h2:")) {
       return H2;
     } else if (url.startsWith("jdbc:maria:")) {
@@ -60,7 +60,7 @@ public enum ORMSupportedDatabases {
     } else if (url.startsWith("jdbc:sqlite:")) {
       return SQLite;
     }
-    throw new UrlDialectNotSupported("null", "null");
+    throw new UrlDialectNotSupportedException("null", "null");
   }
 
   /**

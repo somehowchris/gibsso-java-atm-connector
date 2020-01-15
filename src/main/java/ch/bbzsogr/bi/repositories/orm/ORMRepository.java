@@ -1,6 +1,8 @@
 package ch.bbzsogr.bi.repositories.orm;
 
 import ch.bbzsogr.bi.controllers.DatabaseController;
+import ch.bbzsogr.bi.exceptions.EntitySaveException;
+import ch.bbzsogr.bi.exceptions.EntityUpdateException;
 import ch.bbzsogr.bi.utils.LoggingUtil;
 import ch.bbzsogr.bi.utils.TypeT;
 import org.hibernate.Session;
@@ -28,7 +30,7 @@ public class ORMRepository<T> extends TypeT<T> implements ch.bbzsogr.bi.interfac
   }
 
   @Override
-  public T save(T obj) {
+  public T save(T obj) throws EntitySaveException {
     Transaction transaction = DatabaseController.session.beginTransaction();
     try {
       T saved = this.save(obj, transaction);
@@ -37,9 +39,7 @@ public class ORMRepository<T> extends TypeT<T> implements ch.bbzsogr.bi.interfac
     } catch (Exception e) {
       logger.warning("Couldn't save " + obj.toString() + " of type " + getTypeOfT().getSimpleName());
       transaction.rollback();
-      e.printStackTrace();
-      // TODO couldn't save exception
-      return null;
+      throw new EntitySaveException(getTypeOfT());
     }
   }
 
@@ -53,7 +53,7 @@ public class ORMRepository<T> extends TypeT<T> implements ch.bbzsogr.bi.interfac
   }
 
   @Override
-  public void update(T obj) {
+  public void update(T obj) throws EntityUpdateException {
     Transaction transaction = DatabaseController.session.beginTransaction();
     try {
       this.update(obj, transaction);
@@ -61,7 +61,7 @@ public class ORMRepository<T> extends TypeT<T> implements ch.bbzsogr.bi.interfac
     } catch (Exception e) {
       transaction.rollback();
       logger.warning("Couldn't update " + obj.toString() + " of type " + getTypeOfT().getSimpleName());
-      // TODO couldn't update exception
+      throw new EntityUpdateException(getTypeOfT());
     }
   }
 

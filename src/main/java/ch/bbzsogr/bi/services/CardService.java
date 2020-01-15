@@ -2,6 +2,7 @@ package ch.bbzsogr.bi.services;
 
 import ch.bbzsogr.bi.controllers.DatabaseController;
 import ch.bbzsogr.bi.decorators.Service;
+import ch.bbzsogr.bi.exceptions.*;
 import ch.bbzsogr.bi.interfaces.repositories.CardRepository;
 import ch.bbzsogr.bi.interfaces.repositories.WithdrawRepository;
 import ch.bbzsogr.bi.interfaces.services.CardServiceInterface;
@@ -28,36 +29,34 @@ public class CardService implements CardServiceInterface {
   private AccountService accountService = Container.getService(AccountService.class, ApiType.DIRECT);
   private WithdrawRepository withdrawRepository = Container.getRepository(WithdrawRepository.class, DatabaseController.type);
 
-  public void lockCard(String cardNumber) {
-    Card card = this.cardRepository.find(cardNumber);
+  public void lockCard(String cardNr) throws CardLockException, CardNotFoundException {
+    Card card = this.cardRepository.find(cardNr);
 
     if (card == null) {
-      // TODO card not found exception
-      return;
+      throw new CardNotFoundException(cardNr);
     }
 
     card.setLocked(true);
 
-    this.cardRepository.update(card);
+    try {
+      this.cardRepository.update(card);
+    } catch (EntityUpdateException e) {
+      throw new CardLockException(cardNr);
+    }
   }
 
   public void removeCard(Card card) {
     this.cardRepository.delete(card);
   }
 
-  public Withdraw withdraw(String cardNr, double amount, Currency currency, String bancomatId) {
+  public Withdraw withdraw(String cardNr, double amount, Currency currency, String bancomatId) throws WithdrawException, CardNotFoundException, CardLockedException, BancomatNotFoundException, CouldNotMeetWithdrawAmountException, CreditAmountExceededException {
     Card card = cardRepository.find(cardNr);
     Bancomat bancomat = bancomatService.getBancomat(bancomatId);
-    if (card == null) {
-      // TODO card not found;
-      return null;
-    }
-    if (card.isLocked()) return null;
 
-    if (bancomat == null) {
-      // TODO bancomat not found;
-      return null;
-    }
+    if (card == null) throw new CardNotFoundException(cardNr);
+    if (card.isLocked()) throw new CardLockedException(cardNr);
+    if (bancomat == null) throw new BancomatNotFoundException(bancomatId);
+
     List<BillCollection> bills = bancomat.getBillCollections().stream().filter(o1 -> o1.getCurrency() == currency).sorted((o1, o2) -> (int) ((o1.getWorth() - o2.getWorth()))).collect(Collectors.toList());
     HashMap<Double, Integer> amountOfBills = new HashMap<>(); // Worth, Times
 
@@ -72,17 +71,17 @@ public class CardService implements CardServiceInterface {
 
         amountOfBills.put(nextBill.getWorth(), timesThatBill);
       } else {
-        // TODO couldn't meet need;
-        // TODO throw max
+        throw new CouldNotMeetWithdrawAmountException(amount, total);
       }
     }
 
     Withdraw withdraw = new Withdraw();
 
     List<BillCollection> billsToExpel = new ArrayList<>();
+    final Withdraw finalWithdraw = withdraw;
     amountOfBills.forEach((o1, o2) -> {
       BillCollection originalBill = bills.stream().filter(o3 -> o3.getWorth() == o1).findFirst().get();
-      BillCollection bill = new BillCollection(originalBill, withdraw);
+      BillCollection bill = new BillCollection(originalBill, finalWithdraw);
 
       bill.setAmount(o2);
       billsToExpel.add(bill);
@@ -102,8 +101,7 @@ public class CardService implements CardServiceInterface {
     withdraw.setAccount(cardAccount);
 
     if (card.getCredit() + cardAccount.getBalance() < amount) {
-      //TODO amount too high
-      return null;
+      throw new CreditAmountExceededException(card.getCredit(), cardAccount.getBalance(), amount);
     }
 
     Transaction transaction = new Transaction();
@@ -113,20 +111,28 @@ public class CardService implements CardServiceInterface {
     transaction.setCurrency(currency);
     transaction.setFrom(cardAccount);
 
-    transaction = accountService.transfer(cardAccount.getIban(), transaction);
+    org.hibernate.Transaction hibernateTransaction = DatabaseController.session.beginTransaction();
 
-    if (transaction == null) {
-      // TODO couldn't transfer
-      return null;
+    try {
+      transaction = accountService.transfer(cardAccount.getIban(), transaction, hibernateTransaction);
+
+      if (transaction == null) {
+        throw new WithdrawException();
+      }
+      withdraw.setTransaction(transaction);
+      transaction.setWithdraw(withdraw);
+
+      cardAccount.setBalance(cardAccount.getBalance() - amount);
+
+      if (card.getCredit() + cardAccount.getBalance() - amount == 0) card.setLocked(true);
+
+      withdraw = withdrawRepository.save(withdraw, hibernateTransaction);
+      hibernateTransaction.commit();
+      return withdraw;
+    } catch (Exception e) {
+      hibernateTransaction.rollback();
+      throw new WithdrawException();
     }
-    withdraw.setTransaction(transaction);
-    transaction.setWithdraw(withdraw);
-
-    cardAccount.setBalance(cardAccount.getBalance() - amount);
-
-    if (card.getCredit() + cardAccount.getBalance() - amount == 0) card.setLocked(true);
-
-    return withdrawRepository.save(withdraw);
   }
 
   // TODO transfer like paying at the market
@@ -138,23 +144,30 @@ public class CardService implements CardServiceInterface {
     return cardRepository.find(cardNr);
   }
 
-  public Card createCard(Account account) {
+  public Card createCard(Account account) throws CardCreationException {
     Card card = new Card();
 
     account.getCards().add(card);
     card.setAccount(account);
 
-    return cardRepository.save(card);
+    try {
+      return cardRepository.save(card);
+    } catch (EntitySaveException e) {
+      throw new CardCreationException(account);
+    }
   }
 
-  public void changePin(String cardNr, String pin) {
+  public void changePin(String cardNr, String pin) throws PinChangeException, CardNotFoundException {
     Card card = cardRepository.find(cardNr);
     if (card == null) {
-      // TODO not found
-      return;
+      throw new CardNotFoundException(cardNr);
     }
     card.setPin(HashUtil.hash(pin));
-    cardRepository.save(card);
+    try {
+      cardRepository.save(card);
+    } catch (EntitySaveException e) {
+      throw new PinChangeException();
+    }
   }
 
   // TODO authenticate via card

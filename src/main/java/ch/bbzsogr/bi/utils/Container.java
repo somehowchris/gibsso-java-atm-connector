@@ -22,7 +22,7 @@ public class Container {
     try {
       ClassPath.ClassInfo info = getTopLevelClasses(Container.class)
         .filter(classInfo ->
-            tClass.isAssignableFrom(classInfo.load())
+          tClass.isAssignableFrom(classInfo.load())
             && classInfo.load().getAnnotation(Service.class) != null && classInfo.load().getAnnotation(Service.class).api() == type
         )
         .findFirst().get();
@@ -52,7 +52,7 @@ public class Container {
     }
   }
 
-  private static <T> T getInstance(ClassPath.ClassInfo info) throws IllegalAccessException, InstantiationException {
+  public static <T> T getInstance(ClassPath.ClassInfo info) throws IllegalAccessException, InstantiationException {
     if (classInstances.containsKey(info.getSimpleName())) return (T) classInstances.get(info.getSimpleName());
     T instance = (T) info.load().newInstance();
     classInstances.put(info.getSimpleName(), instance);

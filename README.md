@@ -7,7 +7,7 @@ https://www.testcontainers.org/
 - [x] Connectors
 - [x] Dotenv integration
 - [x] Models
-- [ ] Seeder => Bank konto
+- [x] Seeder => Bank konto
 - [ ] Services
 - [ ] Repositories for databases
 - [ ] Detailed exceptions
@@ -32,3 +32,6 @@ https://docs.gitlab.com/ee/user/packages/maven_repository/
 - [ ] Fix OGM
 - [ ] OGM Model decoration
 - [ ] OGM Repositories
+
+  // TODO add to readme
+  //  jdbc:sqlite::memory:

@@ -1,6 +1,6 @@
 package ch.bbzsogr.bi.models.configs;
 
-import ch.bbzsogr.bi.exceptions.UrlDialectNotSupported;
+import ch.bbzsogr.bi.exceptions.UrlDialectNotSupportedException;
 import ch.bbzsogr.bi.interfaces.Config;
 import ch.bbzsogr.bi.models.enums.ORMSupportedDatabases;
 import ch.bbzsogr.bi.utils.DotEnvUtil;
@@ -21,16 +21,16 @@ public class ORMConfig implements Config {
    * @param url      the url
    * @param password the password
    * @param username the username
-   * @throws UrlDialectNotSupported the url dialect not supported
+   * @throws UrlDialectNotSupportedException the url dialect not supported
    */
-  public ORMConfig(String url, String password, String username) throws UrlDialectNotSupported {
+  public ORMConfig(String url, String password, String username) throws UrlDialectNotSupportedException {
     this.password = password;
     this.username = username;
     this.url = url;
     this.type = ORMSupportedDatabases.get(url);
   }
 
-  public ORMConfig() throws UrlDialectNotSupported {
+  public ORMConfig() throws UrlDialectNotSupportedException {
     DotEnvUtil envUtil = new DotEnvUtil();
     this.password = envUtil.get("DATABASE_PASSWORD");
     this.username = envUtil.get("DATABASE_USERNAME");
@@ -87,9 +87,9 @@ public class ORMConfig implements Config {
    * Sets url.
    *
    * @param url the url
-   * @throws UrlDialectNotSupported the url dialect not supported
+   * @throws UrlDialectNotSupportedException the url dialect not supported
    */
-  public void setUrl(String url) throws UrlDialectNotSupported {
+  public void setUrl(String url) throws UrlDialectNotSupportedException {
     this.url = url;
     this.type = ORMSupportedDatabases.get(url);
   }
@@ -102,7 +102,4 @@ public class ORMConfig implements Config {
   public ORMSupportedDatabases getType() {
     return type;
   }
-
-  // TODO add to readme
-  //  jdbc:sqlite::memory:
 }

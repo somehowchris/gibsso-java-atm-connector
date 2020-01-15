@@ -3,22 +3,29 @@ package ch.bbzsogr.bi.controllers;
 import ch.bbzsogr.bi.connectors.FSConnector;
 import ch.bbzsogr.bi.connectors.OGMConnector;
 import ch.bbzsogr.bi.connectors.ORMConnector;
+import ch.bbzsogr.bi.decorators.Seeder;
 import ch.bbzsogr.bi.exceptions.AccessNotGrantedException;
 import ch.bbzsogr.bi.exceptions.ConnectionRefusedException;
 import ch.bbzsogr.bi.exceptions.OGMDatabaseTypeNotFoundException;
-import ch.bbzsogr.bi.exceptions.UrlDialectNotSupported;
+import ch.bbzsogr.bi.exceptions.UrlDialectNotSupportedException;
 import ch.bbzsogr.bi.interfaces.Config;
 import ch.bbzsogr.bi.interfaces.Connector;
+import ch.bbzsogr.bi.interfaces.Seed;
 import ch.bbzsogr.bi.models.configs.FSConfig;
 import ch.bbzsogr.bi.models.configs.OGMConfig;
 import ch.bbzsogr.bi.models.configs.ORMConfig;
 import ch.bbzsogr.bi.models.enums.DatabaseInterpreters;
+import ch.bbzsogr.bi.utils.Container;
 import ch.bbzsogr.bi.utils.DotEnvUtil;
+import ch.bbzsogr.bi.utils.LoggingUtil;
 import ch.bbzsogr.bi.utils.SystemUtil;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
 import java.io.IOException;
+import java.util.List;
+import java.util.logging.Logger;
+import java.util.stream.Collectors;
 
 public class DatabaseController {
 
@@ -28,7 +35,7 @@ public class DatabaseController {
   private Connector connector;
   private SessionFactory sessionFactory;
 
-  public DatabaseController() throws OGMDatabaseTypeNotFoundException, UrlDialectNotSupported, AccessNotGrantedException, IOException, ConnectionRefusedException {
+  public DatabaseController() throws OGMDatabaseTypeNotFoundException, UrlDialectNotSupportedException, AccessNotGrantedException, IOException, ConnectionRefusedException {
     DotEnvUtil envUtil = new DotEnvUtil();
     if (envUtil.get("DATABASE_OGM_TYPE") != null && !envUtil.get("DATABASE_OGM_TYPE").isEmpty()) {
       config = new OGMConfig();
@@ -50,7 +57,29 @@ public class DatabaseController {
   }
 
   public void seed() throws IOException {
-    //List<Seed> seeds = Container.getTopLevelClasses(DatabaseController.class)
-    //  .filter(classInfo -> classInfo.load().getAnnotation(Service.class) != null && t.isAssignableFrom(classInfo.load()))
+    List<Seed> seeds = Container.getTopLevelClasses(DatabaseController.class)
+      .filter(classInfo -> classInfo.load().getAnnotation(Seeder.class) != null && Seed.class.isAssignableFrom(classInfo.load()))
+      .map(classInfo -> {
+        try {
+          return Container.getInstance(classInfo);
+        } catch (IllegalAccessException e) {
+          e.printStackTrace();
+        } catch (InstantiationException e) {
+          e.printStackTrace();
+
+        }
+        return (Seed) null;
+      }).filter(obj -> obj instanceof Seed).collect(Collectors.toList());
+
+    DotEnvUtil dotEnvUtil = new DotEnvUtil();
+    Logger logger = new LoggingUtil(DatabaseController.class).getLogger();
+
+    seeds.forEach(seed -> {
+      long start = System.currentTimeMillis();
+
+      logger.info("Running seed " + seed.getClass().getSimpleName());
+      seed.run(DatabaseController.session, dotEnvUtil, new LoggingUtil(seed.getClass()).getLogger());
+      logger.info("Finished running " + seed.getClass().getSimpleName() + " after " + (((System.currentTimeMillis() - start) / 1000F)) + " seconds");
+    });
   }
 }
