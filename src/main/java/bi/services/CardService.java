@@ -14,7 +14,7 @@ import bi.utils.DotEnvUtil;
 public class CardService {
 
   CardRepository cardRepository = Container.getRepository(CardRepository.class, DatabaseController.type);
-  PeopleService peopleService = Container.getService(PeopleService.class);
+
   DotEnvUtil envUtil = new DotEnvUtil();
 
   public void lockCard(String cardNumber) {

@@ -18,6 +18,7 @@ public class AccountService {
 
   AccountRepository accountRepository = Container.getRepository(AccountRepository.class, DatabaseController.type);
   PersonRepository personRepository = Container.getRepository(PersonRepository.class, DatabaseController.type);
+
   Logger logger = new LoggingUtil(AccountService.class).getLogger();
 
   public Account getAccountByIBAN(String iban) {

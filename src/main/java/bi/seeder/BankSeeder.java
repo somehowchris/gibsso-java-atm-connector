@@ -10,6 +10,8 @@ import org.hibernate.Transaction;
 
 public class BankSeeder implements Seeder {
 
+  // TODO add email from dotenv
+  // TODO check if already exists
   @Override
   public void run(Session session) {
     Account account = new Account();

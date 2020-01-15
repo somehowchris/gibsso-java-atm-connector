@@ -13,7 +13,7 @@ public class PeopleService {
   PersonRepository personRepository = Container.getRepository(PersonRepository.class, DatabaseController.type);
 
   public Person authenticate(String email, String password) {
-    return null;
+    return personRepository.checkIfPersonExists(email, HashUtil.hash(password));
   }
 
   public Person updatePersonalDetails(Person person) {
