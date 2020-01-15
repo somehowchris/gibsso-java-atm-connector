@@ -2,164 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7e7d5aa8-ede2-449a-bcb8-81f61201ba90" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/decorators/Api.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/decorators/Seeder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/interfaces/Seed.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/interfaces/ServiceInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/interfaces/services/AccountServiceInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/interfaces/services/BancomatServiceInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/interfaces/services/BillCollectionServiceInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/interfaces/services/CardServiceInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/interfaces/services/PeopleServiceInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/models/enums/ApiType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/models/enums/EnvKeys.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/seeder/BankSeeder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/services/CardService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/rest/AccountRestAPI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/rest/BancomatRestAPI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/rest/BillCollectionAPI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/rest/CardRestAPI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/rest/PeopleRestAPI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/connectors/FSConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/connectors/FSConnector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/connectors/OGMConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/connectors/OGMConnector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/connectors/ORMConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/connectors/ORMConnector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/controllers/DatabaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/controllers/DatabaseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/decorators/DatabaseType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/decorators/DatabaseType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/decorators/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/decorators/Service.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/exceptions/AccessNotGrantedException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/exceptions/AccessNotGrantedException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/exceptions/ConnectionRefusedException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/exceptions/ConnectionRefusedException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/exceptions/OGMDatabaseTypeNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/exceptions/OGMDatabaseTypeNotFoundException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/exceptions/UrlDialectNotSupported.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/exceptions/UrlDialectNotSupported.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/interfaces/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/interfaces/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/interfaces/Connector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/interfaces/Connector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/interfaces/Seeder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/interfaces/repositories/AccountRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/interfaces/repositories/AccountRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/interfaces/repositories/BancomatRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/interfaces/repositories/BancomatRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/interfaces/repositories/BillCollectionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/interfaces/repositories/BillCollectionRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/interfaces/repositories/CardRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/interfaces/repositories/CardRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/interfaces/repositories/PersonRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/interfaces/repositories/PersonRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/interfaces/repositories/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/interfaces/repositories/Repository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/interfaces/repositories/TransactionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/interfaces/repositories/TransactionRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/interfaces/repositories/WithdrawRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/interfaces/repositories/WithdrawRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/models/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/models/Account.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/models/Bancomat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/models/Bancomat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/models/BillCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/models/BillCollection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/models/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/models/Card.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/models/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/models/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/models/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/models/Transaction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/models/Withdraw.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/models/Withdraw.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/models/configs/FSConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/models/configs/FSConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/models/configs/OGMConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/models/configs/OGMConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/models/configs/ORMConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/models/configs/ORMConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/models/enums/Currency.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/models/enums/Currency.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/models/enums/DatabaseInterpreters.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/models/enums/DatabaseInterpreters.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/models/enums/OGMSupportedDatabases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/models/enums/OGMSupportedDatabases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/models/enums/ORMSupportedDatabases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/models/enums/ORMSupportedDatabases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/repositories/fs/FSAccountRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/repositories/fs/FSAccountRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/repositories/fs/FSBancomatRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/repositories/fs/FSBancomatRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/repositories/fs/FSBillCollectionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/repositories/fs/FSBillCollectionRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/repositories/fs/FSCardRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/repositories/fs/FSCardRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/repositories/fs/FSPersonRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/repositories/fs/FSPersonRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/repositories/fs/FSTransactionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/repositories/fs/FSTransactionRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/repositories/fs/FSWithdrawRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/repositories/fs/FSWithdrawRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/repositories/orm/ORMAccountRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/repositories/orm/ORMAccountRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/repositories/orm/ORMBancomatRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/repositories/orm/ORMBancomatRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/repositories/orm/ORMBillCollectionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/repositories/orm/ORMBillCollectionRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/repositories/orm/ORMCardRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/repositories/orm/ORMCardRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/repositories/orm/ORMPersonRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/repositories/orm/ORMPersonRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/repositories/orm/ORMRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/repositories/orm/ORMRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/repositories/orm/ORMTransactionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/repositories/orm/ORMTransactionRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/repositories/orm/ORMWithdrawRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/repositories/orm/ORMWithdrawRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/seeder/BankSeeder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/services/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/services/AccountService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/services/BancomatService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/services/BancomatService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/services/BillCollectionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/services/BillCollectionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/services/CardService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/services/PeopleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/services/PeopleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/utils/Container.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/utils/Container.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/utils/CreditCardUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/utils/CreditCardUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/utils/DotEnvUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/utils/DotEnvUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/utils/HashUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/utils/HashUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/utils/LoggingUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/utils/LoggingUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/utils/SystemUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/utils/SystemUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bi/utils/TypeT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/utils/TypeT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/rest/AccountRestAPI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/rest/ApiConfiguration.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/rest/CardRestAPI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/rest/PeopleRestAPI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/rest/RestAPIConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/connectors/FSConnector.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/connectors/OGMConnector.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/connectors/ORMConnector.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/controllers/DatabaseController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/decorators/DatabaseType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/decorators/Service.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/exceptions/AccessNotGrantedException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/exceptions/ConnectionRefusedException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/exceptions/OGMDatabaseTypeNotFoundException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/exceptions/UrlDialectNotSupported.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/interfaces/Config.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/interfaces/Connector.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/interfaces/Seeder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/interfaces/repositories/AccountRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/interfaces/repositories/BancomatRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/interfaces/repositories/BillCollectionRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/interfaces/repositories/CardRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/interfaces/repositories/PersonRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/interfaces/repositories/Repository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/interfaces/repositories/TransactionRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/interfaces/repositories/WithdrawRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/models/Account.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/models/Bancomat.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/models/BillCollection.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/models/Card.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/models/Person.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/models/Transaction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/models/Withdraw.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/models/configs/FSConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/models/configs/OGMConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/models/configs/ORMConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/models/enums/Currency.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/models/enums/DatabaseInterpreters.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/models/enums/OGMSupportedDatabases.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/models/enums/ORMSupportedDatabases.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/repositories/fs/FSAccountRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/repositories/fs/FSBancomatRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/repositories/fs/FSBillCollectionRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/repositories/fs/FSCardRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/repositories/fs/FSPersonRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/repositories/fs/FSTransactionRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/repositories/fs/FSWithdrawRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/repositories/orm/ORMAccountRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/repositories/orm/ORMBancomatRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/repositories/orm/ORMBillCollectionRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/repositories/orm/ORMCardRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/repositories/orm/ORMPersonRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/repositories/orm/ORMRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/repositories/orm/ORMTransactionRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/repositories/orm/ORMWithdrawRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/seeder/BankSeeder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/services/AccountService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/services/BancomatService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/services/BillCollectionService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/services/CardService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/services/PeopleService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/utils/Container.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/utils/CreditCardUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/utils/DotEnvUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/utils/HashUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/utils/LoggingUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/utils/SystemUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bi/utils/TypeT.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/rest/AccountRestAPI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/rest/ApiConfiguration.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/rest/CardRestAPI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/rest/PeopleRestAPI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/rest/RestAPIConfig.class" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -344,31 +187,31 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="412" y="127" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1579087217167" />
-    <state width="1638" height="496" key="GridCell.Tab.0.bottom" timestamp="1579099416378">
+    <state width="1638" height="496" key="GridCell.Tab.0.bottom" timestamp="1579099703372">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="496" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1579099416378" />
+    <state width="1638" height="496" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1579099703372" />
     <state width="1638" height="295" key="GridCell.Tab.0.bottom/0.23.1680.970@0.23.1680.970" timestamp="1578958461346" />
     <state width="1638" height="295" key="GridCell.Tab.0.bottom/0.23.1680.974@0.23.1680.974" timestamp="1578947067600" />
     <state width="1638" height="295" key="GridCell.Tab.0.bottom/0.23.1680.975@0.23.1680.975" timestamp="1578932761391" />
-    <state width="1638" height="496" key="GridCell.Tab.0.center" timestamp="1579099416377">
+    <state width="1638" height="496" key="GridCell.Tab.0.center" timestamp="1579099703370">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="496" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1579099416377" />
+    <state width="1638" height="496" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1579099703370" />
     <state width="1638" height="295" key="GridCell.Tab.0.center/0.23.1680.970@0.23.1680.970" timestamp="1578958461343" />
     <state width="1638" height="295" key="GridCell.Tab.0.center/0.23.1680.974@0.23.1680.974" timestamp="1578947067598" />
     <state width="1638" height="295" key="GridCell.Tab.0.center/0.23.1680.975@0.23.1680.975" timestamp="1578932761389" />
-    <state width="1638" height="496" key="GridCell.Tab.0.left" timestamp="1579099416376">
+    <state width="1638" height="496" key="GridCell.Tab.0.left" timestamp="1579099703370">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="496" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1579099416376" />
+    <state width="1638" height="496" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1579099703370" />
     <state width="1638" height="295" key="GridCell.Tab.0.left/0.23.1680.970@0.23.1680.970" timestamp="1578958461340" />
     <state width="1638" height="295" key="GridCell.Tab.0.left/0.23.1680.974@0.23.1680.974" timestamp="1578947067597" />
     <state width="1638" height="295" key="GridCell.Tab.0.left/0.23.1680.975@0.23.1680.975" timestamp="1578932761388" />
-    <state width="1638" height="496" key="GridCell.Tab.0.right" timestamp="1579099416378">
+    <state width="1638" height="496" key="GridCell.Tab.0.right" timestamp="1579099703371">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="496" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1579099416378" />
+    <state width="1638" height="496" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1579099703371" />
     <state width="1638" height="295" key="GridCell.Tab.0.right/0.23.1680.970@0.23.1680.970" timestamp="1578958461344" />
     <state width="1638" height="295" key="GridCell.Tab.0.right/0.23.1680.974@0.23.1680.974" timestamp="1578947067599" />
     <state width="1638" height="295" key="GridCell.Tab.0.right/0.23.1680.975@0.23.1680.975" timestamp="1578932761390" />
