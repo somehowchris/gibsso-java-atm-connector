@@ -11,18 +11,24 @@ https://www.testcontainers.org/
 - [ ] Services
 - [ ] Repositories for databases
 - [ ] Detailed exceptions
+- [ ] OGM not supported exception
 - [ ] Validation
 - [ ] Restcalls
-- [ ] Fix OGM
 - [ ] TestContainers Dockerfile 4 sqlite, redis
 - [ ] Tests
 - [ ] General dockerfile 2 test & build
 - [ ] Readme
 - [ ] Uml
 - [ ] Logging
-- [ ] Swagger
 - [ ] .gitlab-ci.yaml file to test on push 
 https://docs.gitlab.com/ee/user/packages/maven_repository/
 - [ ] Reuse artifact
 - [ ] Docs & JavaDoc Gitlab Pages
 - [ ] God damn git ignore file
+
+
+# ADD ON
+
+- [ ] Fix OGM
+- [ ] OGM Model decoration
+- [ ] OGM Repositories

@@ -10,7 +10,7 @@ public class LoggingUtil<T> extends TypeT<T> {
     this.setTypeOfT(tClass);
   }
 
-  public Logger getLogger(){
+  public Logger getLogger() {
     return Logger.getLogger(getTypeOfT().getName());
   }
 }

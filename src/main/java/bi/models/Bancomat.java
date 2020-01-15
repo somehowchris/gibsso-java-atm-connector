@@ -7,15 +7,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name="bancomat")
+@Table(name = "bancomat")
 public class Bancomat {
 
-  @Id @GeneratedValue(generator="system-uuid")
-  @GenericGenerator(name="system-uuid", strategy = "uuid")
-  @Column(name="id")
+  @Id
+  @GeneratedValue(generator = "system-uuid")
+  @GenericGenerator(name = "system-uuid", strategy = "uuid")
+  @Column(name = "id")
   private String id;
 
-  @Column(name="location", unique = true)
+  @Column(name = "location", unique = true)
   private String location;
 
   @OneToMany(mappedBy = "bancomat", cascade = CascadeType.ALL, fetch = FetchType.LAZY)

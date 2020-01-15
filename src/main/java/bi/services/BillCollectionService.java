@@ -11,12 +11,12 @@ public class BillCollectionService {
 
   BillCollectionRepository billCollectionRepository = Container.getRepository(BillCollectionRepository.class, DatabaseController.type);
 
-  public BillCollection updateBillCollection(BillCollection bills){
+  public BillCollection updateBillCollection(BillCollection bills) {
     this.billCollectionRepository.update(bills);
     return this.getBillCollection(bills.getId());
   }
 
-  public BillCollection getBillCollection(String id){
+  public BillCollection getBillCollection(String id) {
     return this.billCollectionRepository.find(id);
   }
 }

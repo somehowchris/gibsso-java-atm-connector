@@ -2,7 +2,6 @@ package bi.models.configs;
 
 import bi.interfaces.Config;
 import bi.utils.DotEnvUtil;
-import io.github.cdimascio.dotenv.Dotenv;
 
 /**
  * The type Fs config.
@@ -13,7 +12,6 @@ public class FSConfig implements Config {
 
   /**
    * Instantiates a new Fs config.
-   *
    */
   public FSConfig() {
     super();

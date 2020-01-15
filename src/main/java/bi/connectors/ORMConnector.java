@@ -5,10 +5,7 @@ import bi.exceptions.ConnectionRefusedException;
 import bi.interfaces.Connector;
 import bi.models.configs.ORMConfig;
 import bi.models.enums.ORMSupportedDatabases;
-import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.boot.registry.StandardServiceRegistry;
-import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.reflections.Reflections;
 
@@ -39,8 +36,10 @@ public class ORMConnector implements Connector {
     Configuration config = new Configuration();
     config.setProperty("hibernate.connection.driver_class", this.config.getType().getDialect());
     config.setProperty("hibernate.connection.url", this.config.getUrl());
-    if(this.config.getUsername() != null)config.setProperty("hibernate.connection.username", this.config.getUsername());
-    if(this.config.getPassword() != null)config.setProperty("hibernate.connection.password", this.config.getPassword());
+    if (this.config.getUsername() != null)
+      config.setProperty("hibernate.connection.username", this.config.getUsername());
+    if (this.config.getPassword() != null)
+      config.setProperty("hibernate.connection.password", this.config.getPassword());
     config.setProperty("hibernate.connection.pool_size", "10");
     config.setProperty("hibernate.current_session_context_class", "thread");
     config.setProperty("hibernate.hbm2ddl.auto", "update");
@@ -60,9 +59,9 @@ public class ORMConnector implements Connector {
   }
 
   public boolean setUp() throws IOException, AccessNotGrantedException, ConnectionRefusedException {
-    if(this.config.getType() == ORMSupportedDatabases.SQLite && !this.config.getUrl().equals("jdbc:sqlite::memory:")){
+    if (this.config.getType() == ORMSupportedDatabases.SQLite && !this.config.getUrl().equals("jdbc:sqlite::memory:")) {
       File file = new File(this.config.getUrl().replace("jdbc:sqlite://", "").replace("jdbc:sqlite:", ""));
-      if(!file.exists())file.createNewFile();
+      if (!file.exists()) file.createNewFile();
     }
     SessionFactory sf = connect();
     sf.openSession().close();

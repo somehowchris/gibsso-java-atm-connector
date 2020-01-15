@@ -8,18 +8,19 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-@Table(name="withdraw")
+@Table(name = "withdraw")
 public class Withdraw {
 
-  @Id @GeneratedValue(generator="system-uuid")
-  @GenericGenerator(name="system-uuid", strategy = "uuid")
-  @Column(name="id")
+  @Id
+  @GeneratedValue(generator = "system-uuid")
+  @GenericGenerator(name = "system-uuid", strategy = "uuid")
+  @Column(name = "id")
   private String id;
 
-  @Column(name="total_amount")
+  @Column(name = "total_amount")
   private double totalAmount = 0.0;
 
-  @Column(name="time")
+  @Column(name = "time")
   private Date time = new Date();
 
   @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, optional = false)

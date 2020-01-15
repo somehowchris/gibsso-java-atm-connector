@@ -34,7 +34,7 @@ public enum ORMSupportedDatabases {
   private String dialect;
   private String hibernateDialect;
 
-  ORMSupportedDatabases(String dialect, String hibernateDialect){
+  ORMSupportedDatabases(String dialect, String hibernateDialect) {
     this.dialect = dialect;
     this.hibernateDialect = hibernateDialect;
   }
@@ -47,20 +47,20 @@ public enum ORMSupportedDatabases {
    * @throws UrlDialectNotSupported the url dialect not supported
    */
   public static ORMSupportedDatabases get(String url) throws UrlDialectNotSupported {
-    if(url.startsWith("jdbc:h2:")){
+    if (url.startsWith("jdbc:h2:")) {
       return H2;
-    }else if(url.startsWith("jdbc:maria:")){
+    } else if (url.startsWith("jdbc:maria:")) {
       return Maria;
-    }else if(url.startsWith("jdbc:mysql:")){
+    } else if (url.startsWith("jdbc:mysql:")) {
       return MySQL;
-    }else if(url.startsWith("jdbc:mssql:")){
+    } else if (url.startsWith("jdbc:mssql:")) {
       return MSSQL;
-    }else if(url.startsWith("jdbc:postgresql:")){
+    } else if (url.startsWith("jdbc:postgresql:")) {
       return PostgreSQL;
-    }else if(url.startsWith("jdbc:sqlite:")){
+    } else if (url.startsWith("jdbc:sqlite:")) {
       return SQLite;
     }
-    throw new UrlDialectNotSupported("null","null");
+    throw new UrlDialectNotSupported("null", "null");
   }
 
   /**
@@ -68,11 +68,11 @@ public enum ORMSupportedDatabases {
    *
    * @return the string
    */
-  public String getDialect(){
+  public String getDialect() {
     return this.dialect;
   }
 
-  public String getHibernateDialect(){
+  public String getHibernateDialect() {
     return this.hibernateDialect;
   }
 }

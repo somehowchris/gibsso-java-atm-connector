@@ -6,7 +6,7 @@ import bi.models.Bancomat;
 import bi.models.enums.DatabaseInterpreters;
 import org.hibernate.Transaction;
 
-@DatabaseType(type= DatabaseInterpreters.FS)
+@DatabaseType(type = DatabaseInterpreters.FS)
 public class FSBancomatRepository implements BancomatRepository {
 
   @Override

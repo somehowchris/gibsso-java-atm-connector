@@ -14,20 +14,20 @@ public class BancomatService {
 
   BancomatRepository bancomatRepository = Container.getRepository(BancomatRepository.class, DatabaseController.type);
 
-  public Bancomat getBancomat(String id){
+  public Bancomat getBancomat(String id) {
     return bancomatRepository.find(id);
   }
 
-  public List<BillCollection> getAvailableBills(String bancomatId){
+  public List<BillCollection> getAvailableBills(String bancomatId) {
     return this.getBancomat(bancomatId).getBillCollections();
   }
 
-  public Bancomat updateBancomat(Bancomat bancomat){
+  public Bancomat updateBancomat(Bancomat bancomat) {
     this.bancomatRepository.update(bancomat);
     return this.getBancomat(bancomat.getId());
   }
 
-  public Bancomat registerBancomat(String location){
+  public Bancomat registerBancomat(String location) {
     Bancomat bancomat = new Bancomat(location, null);
     return this.bancomatRepository.save(bancomat);
   }

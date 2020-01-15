@@ -14,7 +14,7 @@ public class ORMRepository<T> extends TypeT<T> implements bi.interfaces.reposito
 
   @Override
   public T find(String identifier) {
-    logger.info("Finding "+identifier+" of type "+getTypeOfT().getSimpleName());
+    logger.info("Finding " + identifier + " of type " + getTypeOfT().getSimpleName());
     return DatabaseController.session.find(getTypeOfT(), identifier);
   }
 
@@ -25,8 +25,8 @@ public class ORMRepository<T> extends TypeT<T> implements bi.interfaces.reposito
       T saved = this.save(obj, transaction);
       transaction.commit();
       return saved;
-    } catch (Exception e){
-      logger.warning("Couldn't save "+obj.toString()+" of type "+getTypeOfT().getSimpleName());
+    } catch (Exception e) {
+      logger.warning("Couldn't save " + obj.toString() + " of type " + getTypeOfT().getSimpleName());
       transaction.rollback();
       // TODO couldn't save exception
       return null;
@@ -35,11 +35,11 @@ public class ORMRepository<T> extends TypeT<T> implements bi.interfaces.reposito
 
   @Override
   public T save(T obj, Transaction transaction) {
-    logger.info("Saving "+obj.toString()+" of type "+getTypeOfT().getSimpleName());
+    logger.info("Saving " + obj.toString() + " of type " + getTypeOfT().getSimpleName());
 
-    if(transaction.getStatus() == TransactionStatus.NOT_ACTIVE) transaction.begin();
+    if (transaction.getStatus() == TransactionStatus.NOT_ACTIVE) transaction.begin();
     String identifier = (String) DatabaseController.session.save(obj);
-    return (T) DatabaseController.session.find(getTypeOfT(), identifier);
+    return DatabaseController.session.find(getTypeOfT(), identifier);
   }
 
   @Override
@@ -48,23 +48,23 @@ public class ORMRepository<T> extends TypeT<T> implements bi.interfaces.reposito
     try {
       this.update(obj, transaction);
       transaction.commit();
-    } catch (Exception e){
+    } catch (Exception e) {
       transaction.rollback();
-      logger.warning("Couldn't update "+obj.toString()+" of type "+getTypeOfT().getSimpleName());
+      logger.warning("Couldn't update " + obj.toString() + " of type " + getTypeOfT().getSimpleName());
       // TODO couldn't update exception
     }
   }
 
   @Override
   public void update(T obj, Transaction transaction) {
-    logger.info("Updating "+obj.toString()+" of type "+getTypeOfT().getSimpleName());
-    if(transaction.getStatus() == TransactionStatus.NOT_ACTIVE) transaction.begin();
+    logger.info("Updating " + obj.toString() + " of type " + getTypeOfT().getSimpleName());
+    if (transaction.getStatus() == TransactionStatus.NOT_ACTIVE) transaction.begin();
     DatabaseController.session.update(obj);
   }
 
   @Override
   public void delete(T obj) {
-    logger.info("Deleting "+obj.toString()+" of type "+getTypeOfT().getSimpleName());
+    logger.info("Deleting " + obj.toString() + " of type " + getTypeOfT().getSimpleName());
     DatabaseController.session.remove(obj);
   }
 }

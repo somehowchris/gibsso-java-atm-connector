@@ -4,7 +4,6 @@ import bi.exceptions.OGMDatabaseTypeNotFoundException;
 import bi.interfaces.Config;
 import bi.models.enums.OGMSupportedDatabases;
 import bi.utils.DotEnvUtil;
-import io.github.cdimascio.dotenv.Dotenv;
 
 /**
  * The type Ogm config.

@@ -1,19 +1,19 @@
 package bi.models;
 
 import bi.models.enums.Currency;
-import org.apache.lucene.store.Lock;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name="transaction")
+@Table(name = "transaction")
 public class Transaction {
 
-  @Id @GeneratedValue(generator="system-uuid")
-  @GenericGenerator(name="system-uuid", strategy = "uuid")
-  @Column(name="id")
+  @Id
+  @GeneratedValue(generator = "system-uuid")
+  @GenericGenerator(name = "system-uuid", strategy = "uuid")
+  @Column(name = "id")
   private String id;
 
   @Column(name = "amount")
@@ -54,7 +54,7 @@ public class Transaction {
     this.card = card;
   }
 
-  public Transaction(double amount, Account to, Account from){
+  public Transaction(double amount, Account to, Account from) {
     this.amount = amount;
     this.to = to;
     this.from = from;

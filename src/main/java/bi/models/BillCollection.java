@@ -6,18 +6,19 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 
 @Entity
-@Table(name="bill_collection")
+@Table(name = "bill_collection")
 public class BillCollection {
 
-  @Id @GeneratedValue(generator="system-uuid")
-  @GenericGenerator(name="system-uuid", strategy = "uuid")
-  @Column(name="id")
+  @Id
+  @GeneratedValue(generator = "system-uuid")
+  @GenericGenerator(name = "system-uuid", strategy = "uuid")
+  @Column(name = "id")
   private String id;
 
-  @Column(name="worth")
+  @Column(name = "worth")
   private double worth = 0.0;
 
-  @Column(name="amount")
+  @Column(name = "amount")
   private int amount = 0;
 
   @Enumerated(EnumType.STRING)

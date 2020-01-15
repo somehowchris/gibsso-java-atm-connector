@@ -13,7 +13,7 @@ public class HashUtil {
   private static final int KEY_LENGTH = 512;
   private static final String ALGORITHM = "PBKDF2WithHmacSHA512";
 
-  public static String hash(String password){
+  public static String hash(String password) {
 
     char[] chars = password.toCharArray();
     byte[] bytes = "salt".getBytes();

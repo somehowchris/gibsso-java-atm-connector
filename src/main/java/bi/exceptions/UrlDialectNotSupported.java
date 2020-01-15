@@ -11,6 +11,6 @@ public class UrlDialectNotSupported extends Exception {
    * @param databaseType the database type
    */
   public UrlDialectNotSupported(String dialect, String databaseType) {
-    super("The dialect "+dialect+" is not supported for "+databaseType);
+    super("The dialect " + dialect + " is not supported for " + databaseType);
   }
 }

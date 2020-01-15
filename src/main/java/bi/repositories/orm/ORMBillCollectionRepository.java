@@ -5,6 +5,6 @@ import bi.interfaces.repositories.BillCollectionRepository;
 import bi.models.BillCollection;
 import bi.models.enums.DatabaseInterpreters;
 
-@DatabaseType(type= DatabaseInterpreters.ORM)
+@DatabaseType(type = DatabaseInterpreters.ORM)
 public class ORMBillCollectionRepository extends ORMRepository<BillCollection> implements BillCollectionRepository {
 }

@@ -5,7 +5,7 @@ import bi.interfaces.repositories.TransactionRepository;
 import bi.models.Transaction;
 import bi.models.enums.DatabaseInterpreters;
 
-@DatabaseType(type= DatabaseInterpreters.FS)
+@DatabaseType(type = DatabaseInterpreters.FS)
 public class FSTransactionRepository implements TransactionRepository {
 
   @Override

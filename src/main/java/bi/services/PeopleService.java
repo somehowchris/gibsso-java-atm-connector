@@ -12,19 +12,19 @@ public class PeopleService {
 
   PersonRepository personRepository = Container.getRepository(PersonRepository.class, DatabaseController.type);
 
-  public Person authenticate(String email, String password){
+  public Person authenticate(String email, String password) {
     return null;
   }
 
-  public Person updatePersonalDetails(Person person){
+  public Person updatePersonalDetails(Person person) {
     org.hibernate.Transaction transaction = DatabaseController.session.beginTransaction();
-    try{
+    try {
       Person tempPerson = personRepository.find(person.getId());
 
-      if(person.getEmail() != null)tempPerson.setEmail(person.getEmail());
-      if(person.getLastName() != null)tempPerson.setLastName(person.getLastName());
-      if(person.getFirstName() != null)tempPerson.setFirstName(person.getFirstName());
-      if(person.getPassword() != null)tempPerson.setPassword(HashUtil.hash(person.getPassword()));
+      if (person.getEmail() != null) tempPerson.setEmail(person.getEmail());
+      if (person.getLastName() != null) tempPerson.setLastName(person.getLastName());
+      if (person.getFirstName() != null) tempPerson.setFirstName(person.getFirstName());
+      if (person.getPassword() != null) tempPerson.setPassword(HashUtil.hash(person.getPassword()));
 
       DatabaseController.session.update(tempPerson);
       transaction.commit();
@@ -32,26 +32,26 @@ public class PeopleService {
       tempPerson.setPassword(null);
 
       return tempPerson;
-    }catch(Exception e){
+    } catch (Exception e) {
       // TODO couldn't update exception
       return null;
     }
   }
 
-  public Person createPerson(Person person){
+  public Person createPerson(Person person) {
     person.setPassword(HashUtil.hash(person.getPassword()));
     return this.personRepository.save(person);
   }
 
-  public void deletePerson(Person person){
+  public void deletePerson(Person person) {
 
   }
 
-  public Person getPerson(String id){
+  public Person getPerson(String id) {
     return this.personRepository.find(id);
   }
 
-  public Person getPersonByMail(String email){
+  public Person getPersonByMail(String email) {
     return this.personRepository.findPerson(email);
   }
 }

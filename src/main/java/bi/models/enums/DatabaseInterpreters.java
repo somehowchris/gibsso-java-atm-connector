@@ -5,11 +5,11 @@ public enum DatabaseInterpreters {
 
   String prefix;
 
-  DatabaseInterpreters(String prefix){
+  DatabaseInterpreters(String prefix) {
     this.prefix = prefix;
   }
 
-  public String getPrefix(){
+  public String getPrefix() {
     return this.prefix;
   }
 }

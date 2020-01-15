@@ -11,10 +11,10 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
-@DatabaseType(type= DatabaseInterpreters.ORM)
+@DatabaseType(type = DatabaseInterpreters.ORM)
 public class ORMPersonRepository extends ORMRepository<Person> implements PersonRepository {
 
-  public Person findPerson(String email){
+  public Person findPerson(String email) {
     CriteriaBuilder criteriaBuilder = DatabaseController.session.getCriteriaBuilder();
     CriteriaQuery<Person> accountCriteriaQuery = criteriaBuilder.createQuery(Person.class);
 

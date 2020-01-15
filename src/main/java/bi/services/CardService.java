@@ -17,10 +17,10 @@ public class CardService {
   PeopleService peopleService = Container.getService(PeopleService.class);
   DotEnvUtil envUtil = new DotEnvUtil();
 
-  public void lockCard(String cardNumber){
+  public void lockCard(String cardNumber) {
     Card card = this.cardRepository.find(cardNumber);
 
-    if(card == null){
+    if (card == null) {
       // TODO card not found exception
       return;
     }
@@ -30,28 +30,28 @@ public class CardService {
     this.cardRepository.update(card);
   }
 
-  public void removeCard(Card card){
+  public void removeCard(Card card) {
     this.cardRepository.delete(card);
   }
 
-  public Withdraw withdraw(Card card){
+  public Withdraw withdraw(Card card) {
     String email = envUtil.get("BANK_EMAIL");
     return null;
   }
 
-  public Transaction transfer(Card card){
+  public Transaction transfer(Card card) {
     return null;
   }
 
-  public Card getCard(String cardNr){
+  public Card getCard(String cardNr) {
     return null;
   }
 
-  public Card createCard(Account account){
+  public Card createCard(Account account) {
     return null;
   }
 
-  public Card authenticate(String cardNr, String pin){
+  public Card authenticate(String cardNr, String pin) {
     return null;
   }
 }

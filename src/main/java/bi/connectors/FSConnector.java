@@ -40,34 +40,34 @@ public class FSConnector implements Connector {
 
   public File connect() throws ConnectionRefusedException {
 
-      if(!getFile().canWrite()){
-        throw new ConnectionRefusedException("Can't read "+config.getPath());
-      }
+    if (!getFile().canWrite()) {
+      throw new ConnectionRefusedException("Can't read " + config.getPath());
+    }
 
-      if(!getFile().canRead()){
-        throw new ConnectionRefusedException("Can't read "+config.getPath());
-      }
+    if (!getFile().canRead()) {
+      throw new ConnectionRefusedException("Can't read " + config.getPath());
+    }
 
-      if(!getFile().exists()){
-        try {
-          this.setUp();
-        }catch (Exception e){
-          throw new ConnectionRefusedException("Could not create setup the database");
-        }
+    if (!getFile().exists()) {
+      try {
+        this.setUp();
+      } catch (Exception e) {
+        throw new ConnectionRefusedException("Could not create setup the database");
       }
+    }
 
-      if(!getFile().isDirectory()){
-        throw new ConnectionRefusedException(config.getPath()+" doesn't seem to be a directory");
-      }
+    if (!getFile().isDirectory()) {
+      throw new ConnectionRefusedException(config.getPath() + " doesn't seem to be a directory");
+    }
 
-      return getFile();
+    return getFile();
   }
 
   public boolean setUp() throws IOException, ConnectionRefusedException {
     getFile().mkdirs();
     final ClassLoader loader = Thread.currentThread().getContextClassLoader();
 
-    ImmutableSet<ClassPath.ClassInfo> classes =  ClassPath.from(loader).getTopLevelClasses();
+    ImmutableSet<ClassPath.ClassInfo> classes = ClassPath.from(loader).getTopLevelClasses();
 
     List<String> classNames = classes.stream().filter(classInfo -> classInfo.getPackageName().equals("bi.models")).map(classInfo -> classInfo.getSimpleName()).collect(Collectors.toList());
     for (String name : classNames) {

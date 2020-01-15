@@ -1,6 +1,5 @@
 package bi.models;
 
-import bi.utils.HashUtil;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -8,24 +7,25 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name="person")
+@Table(name = "person")
 public class Person {
 
-  @Id @GeneratedValue(generator="system-uuid")
-  @GenericGenerator(name="system-uuid", strategy = "uuid")
-  @Column(name="id")
+  @Id
+  @GeneratedValue(generator = "system-uuid")
+  @GenericGenerator(name = "system-uuid", strategy = "uuid")
+  @Column(name = "id")
   private String id;
 
-  @Column(name="email", unique = true)
+  @Column(name = "email", unique = true)
   private String email;
 
-  @Column(name="first_name")
+  @Column(name = "first_name")
   private String firstName;
 
-  @Column(name="last_name")
+  @Column(name = "last_name")
   private String lastName;
 
-  @Column(name="password")
+  @Column(name = "password")
   private String password;
 
   @OneToMany(mappedBy = "person", cascade = CascadeType.ALL, fetch = FetchType.LAZY)

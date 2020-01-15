@@ -1,7 +1,5 @@
 package bi.utils;
 
-import bi.models.Account;
-
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.logging.Logger;
@@ -14,14 +12,14 @@ public class TypeT<T> {
   public TypeT() {
     Class tClass = getClass();
     try {
-      for(Type name : ((ParameterizedType) tClass.getGenericSuperclass()).getActualTypeArguments()){
+      for (Type name : ((ParameterizedType) tClass.getGenericSuperclass()).getActualTypeArguments()) {
         System.out.println(name.getTypeName());
       }
       this.typeOfT = (Class)
         ((ParameterizedType) tClass
           .getGenericSuperclass())
           .getActualTypeArguments()[0];
-    }catch(Exception e){
+    } catch (Exception e) {
       Logger.getLogger("TypeT").warning("Couldn't find T");
     }
   }
@@ -30,7 +28,7 @@ public class TypeT<T> {
     return typeOfT;
   }
 
-  public Object setTypeOfT(Class<T> tClass){
+  public Object setTypeOfT(Class<T> tClass) {
     this.typeOfT = tClass;
     return tClass;
   }

@@ -6,7 +6,7 @@ import bi.models.Person;
 import bi.models.enums.DatabaseInterpreters;
 import org.hibernate.Transaction;
 
-@DatabaseType(type= DatabaseInterpreters.FS)
+@DatabaseType(type = DatabaseInterpreters.FS)
 public class FSPersonRepository implements PersonRepository {
   @Override
   public Person find(String identifier) {

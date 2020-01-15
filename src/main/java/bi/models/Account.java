@@ -1,22 +1,23 @@
 package bi.models;
 
-import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 import org.iban4j.CountryCode;
 import org.iban4j.Iban;
 
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
-@Table(name="account")
+@Table(name = "account")
 public class Account {
 
   @Id
   private String iban = Iban.random(CountryCode.CH).toFormattedString();
 
-  @Column(name="balance")
+  @Column(name = "balance")
   private double balance = 100.0;
 
-  @Column(name="locked", columnDefinition = "tinyint default false")
+  @Column(name = "locked", columnDefinition = "tinyint default false")
   private boolean locked = false;
 
   @OneToMany(mappedBy = "account", cascade = CascadeType.ALL, fetch = FetchType.LAZY)

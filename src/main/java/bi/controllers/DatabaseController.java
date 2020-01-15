@@ -22,11 +22,11 @@ import java.io.IOException;
 
 public class DatabaseController {
 
+  public static Session session;
+  public static DatabaseInterpreters type;
   private Config config;
   private Connector connector;
   private SessionFactory sessionFactory;
-  public static Session session;
-  public static DatabaseInterpreters type;
 
   public DatabaseController() throws OGMDatabaseTypeNotFoundException, UrlDialectNotSupported, AccessNotGrantedException, IOException, ConnectionRefusedException {
     DotEnvUtil envUtil = new DotEnvUtil();

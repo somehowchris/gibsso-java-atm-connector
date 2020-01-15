@@ -18,8 +18,7 @@ public class CreditCardUtil {
    * <a href="http://codytaylor.org/2009/11/this-is-how-credit-card-numbers-are-generated.html"
    * >This is How Credit Card Numbers Are Generated</a>
    *
-   * @return
-   *            A randomly generated, valid, credit card number.
+   * @return A randomly generated, valid, credit card number.
    */
   public static String generateCardNumber() {
 
@@ -45,10 +44,9 @@ public class CreditCardUtil {
    * Generates the check digit required to make the given credit card number
    * valid (i.e. pass the Luhn check)
    *
-   * @param number
-   *            The credit card number for which to generate the check digit.
+   * @param number The credit card number for which to generate the check digit.
    * @return The check digit required to make the given credit card number
-   *         valid.
+   * valid.
    */
   public static int getCheckDigit(String number) {
 
@@ -85,15 +83,15 @@ public class CreditCardUtil {
     return ((mod == 0) ? 0 : 10 - mod);
   }
 
-  public static String generatePin(){
+  public static String generatePin() {
     StringBuilder pin = new StringBuilder();
-    for (int i = 0; i < pinLength; i++){
+    for (int i = 0; i < pinLength; i++) {
       pin.append(generateRandomIntIntRange(0, 9));
     }
     return pin.toString();
   }
 
-  private static  int generateRandomIntIntRange(int min, int max) {
+  private static int generateRandomIntIntRange(int min, int max) {
     return new Random().nextInt((max - min) + 1) + min;
   }
 }

@@ -4,29 +4,28 @@ import bi.utils.CreditCardUtil;
 
 import javax.persistence.*;
 import java.time.Duration;
-import java.time.temporal.TemporalUnit;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 @Entity
-@Table(name="card")
+@Table(name = "card")
 public class Card {
 
   @Id
-  @Column(name="card_number")
+  @Column(name = "card_number")
   private String cardNumber = CreditCardUtil.generateCardNumber();
 
   @Column(name = "pin", nullable = false)
   private String pin = CreditCardUtil.generatePin();
 
-  @Column(name="expires_at")
-  private Date expiresAt = Date.from(new Date().toInstant().plus(Duration.ofDays(365*4)));
+  @Column(name = "expires_at")
+  private Date expiresAt = Date.from(new Date().toInstant().plus(Duration.ofDays(365 * 4)));
 
   @Column(name = "locked", columnDefinition = "tinyint default false")
   private boolean locked = false;
 
-  @Column(name ="credit")
+  @Column(name = "credit")
   private double credit = 2000.0;
 
   @Column(name = "max_withdraw")
