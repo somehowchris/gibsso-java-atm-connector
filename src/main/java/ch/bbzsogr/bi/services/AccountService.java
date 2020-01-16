@@ -13,7 +13,6 @@ import ch.bbzsogr.bi.models.Transaction;
 import ch.bbzsogr.bi.models.enums.ApiType;
 import ch.bbzsogr.bi.utils.Container;
 import ch.bbzsogr.bi.utils.LoggingUtil;
-import com.google.common.collect.Lists;
 
 import javax.security.auth.login.AccountLockedException;
 import java.util.logging.Logger;
@@ -27,9 +26,13 @@ public class AccountService implements AccountServiceInterface {
 
   private Logger logger = new LoggingUtil(AccountService.class).getLogger();
 
-  public Account getAccountByIBAN(String iban) {
+  public Account getAccountByIBAN(String iban) throws AccountNotFoundException {
     logger.info("Getting account of " + iban);
-    return accountRepository.find(iban);
+    try {
+      return accountRepository.find(iban);
+    } catch (Exception e) {
+      throw new AccountNotFoundException(iban);
+    }
   }
 
   public Transaction transfer(String fromIban, Transaction transaction, org.hibernate.Transaction dbTransaction) throws TransferException, AccountLockedException, AccountNotFoundException, TooLowCreditBalanceException, NoAccountSpecifiedException, NoCurrencySpecifiedException, SubZeroTransactionAmountException {
@@ -58,35 +61,45 @@ public class AccountService implements AccountServiceInterface {
     try {
       accountRepository.update(fromAccount, dbTransaction);
       accountRepository.update(toAccount, dbTransaction);
-
       Transaction transaction1 = transactionRepository.save(transaction, dbTransaction);
       return transaction1;
     } catch (Exception e) {
+      logger.warning("Could not save transaction");
       throw new TransferException();
     }
   }
 
-  public Account createAccount(Person person) throws AccountReactionException {
+  public Transaction transfer(String fromIban, Transaction transaction) throws TransferException, AccountNotFoundException, NoCurrencySpecifiedException, TooLowCreditBalanceException, AccountLockedException, NoAccountSpecifiedException, SubZeroTransactionAmountException {
+    org.hibernate.Transaction dbTransaction = DatabaseController.session.beginTransaction();
+    try {
+      transaction = this.transfer(fromIban, transaction, dbTransaction);
+      dbTransaction.commit();
+      return transaction;
+    } catch (Exception e) {
+      logger.info("Rolling back that failed transaction");
+      dbTransaction.rollback();
+      throw e;
+    }
+
+  }
+
+  public Account createAccount(Person person) throws AccountCreationException {
     logger.info("Creating an account for " + person.getFirstName() + " " + person.getLastName());
     Account account = new Account();
     account.setPerson(person);
 
-    if (person.getAccounts() == null) {
-      person.setAccounts(Lists.newArrayList(account));
-    } else {
-      person.getAccounts().add(account);
-    }
+    person.getAccounts().add(account);
 
     try {
       personRepository.update(person);
+      return account;
     } catch (EntityUpdateException couldNotUpdateEntity) {
-      throw new AccountReactionException(person);
+      logger.warning("Could not create an account for "+person.getFirstName());
+      throw new AccountCreationException(person);
     }
-
-    return account;
   }
 
-  public void lockAccount(String iban) throws AccountLockException {
+  public void lockAccount(String iban) throws AccountLockException, AccountNotFoundException {
     logger.info("Locking " + iban);
 
     Account account = getAccountByIBAN(iban);
@@ -95,11 +108,14 @@ public class AccountService implements AccountServiceInterface {
     try {
       accountRepository.update(account);
     } catch (EntityUpdateException couldNotUpdateEntity) {
+      logger.warning("Could not lock the account "+iban);
       throw new AccountLockException(iban);
     }
   }
 
   public void updateAccount(Account account) throws EntityUpdateException {
+    logger.info("Updating account informations for "+account);
     accountRepository.update(account);
   }
+
 }

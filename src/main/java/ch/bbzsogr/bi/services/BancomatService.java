@@ -10,19 +10,25 @@ import ch.bbzsogr.bi.models.Bancomat;
 import ch.bbzsogr.bi.models.BillCollection;
 import ch.bbzsogr.bi.models.enums.ApiType;
 import ch.bbzsogr.bi.utils.Container;
+import ch.bbzsogr.bi.utils.LoggingUtil;
 
 import java.util.List;
+import java.util.logging.Logger;
 
 @Service(api = ApiType.DIRECT)
 public class BancomatService implements BancomatServiceInterface {
 
   private BancomatRepository bancomatRepository = Container.getRepository(BancomatRepository.class, DatabaseController.type);
 
+  private Logger logger = new LoggingUtil(BancomatService.class).getLogger();
+
   public Bancomat getBancomat(String id) {
+    logger.info("Getting bancomat "+id);
     return bancomatRepository.find(id);
   }
 
   public List<BillCollection> getAvailableBills(String bancomatId) {
+    logger.info("Getting all the available bills of "+bancomatId);
     return this.getBancomat(bancomatId).getBillCollections();
   }
 

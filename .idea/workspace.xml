@@ -2,12 +2,60 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7e7d5aa8-ede2-449a-bcb8-81f61201ba90" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/exceptions/OGMNotYetSupportedException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_microsoft_sqlserver_mssql_jdbc_7_4_1_jre8.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_squareup_moshi_moshi_1_9_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_squareup_okhttp3_okhttp_4_3_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_squareup_okio_okio_2_4_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__de_greenrobot_java_common_2_3_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_9.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node/yarn-error.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node/yarn.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/exceptions/PinDoesNotMeetRequirementsException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/rest/abstracts/RestService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/rest/exceptions/DBTransactionsViaRestNotSupported.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/rest/models/RestAPIConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/rest/models/enums/ResponseState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/rest/services/AccountRestService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/rest/services/BancomatRestService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/rest/services/BillCollectionService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/rest/services/CardRestService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/rest/services/PeopleRestService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bancomat-Connector.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Bancomat-Connector.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/connectors/FSConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/connectors/FSConnector.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/connectors/OGMConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/connectors/OGMConnector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/connectors/ORMConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/connectors/ORMConnector.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/controllers/DatabaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/controllers/DatabaseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/exceptions/AccountReactionException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/exceptions/AccountCreationException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/exceptions/OGMNotYetSupportedException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/exceptions/OGMNotYetSupportedException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/interfaces/Connector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/interfaces/Connector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/interfaces/Seed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/interfaces/Seed.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/interfaces/repositories/CardRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/interfaces/repositories/CardRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/interfaces/repositories/PeopleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/interfaces/repositories/PeopleRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/interfaces/repositories/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/interfaces/repositories/Repository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/interfaces/services/AccountServiceInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/interfaces/services/AccountServiceInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/interfaces/services/BancomatServiceInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/interfaces/services/BancomatServiceInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/interfaces/services/BillCollectionServiceInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/interfaces/services/BillCollectionServiceInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/interfaces/services/CardServiceInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/interfaces/services/CardServiceInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/interfaces/services/PeopleServiceInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/interfaces/services/PeopleServiceInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/models/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/models/Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/models/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/models/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/repositories/orm/ORMCardRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/repositories/orm/ORMCardRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/services/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/services/AccountService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/services/BancomatService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/services/BancomatService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/services/BillCollectionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/services/BillCollectionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/services/CardService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/services/CardService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/services/PeopleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/services/PeopleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/rest/AccountRestService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/rest/BancomatRestService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/rest/BillCollectionService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/rest/CardRestService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/rest/PeopleRestService.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,8 +111,8 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.settings.project.statistic.project.settings" />
   </component>
   <component name="RecentsManager">
@@ -75,7 +123,7 @@
       <recent name="$PROJECT_DIR$/src/main/java/bi/repositories/orm" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.main">
+  <component name="RunManager" selected="Application.main (1)">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -91,6 +139,20 @@
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ch.bbzsogr.rest.main" />
+      <module name="Bancomat-Connector" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ch.bbzsogr.rest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -144,6 +206,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.main (1)" />
         <item itemvalue="Application.main" />
         <item itemvalue="Application.main (1)" />
       </list>
@@ -186,14 +249,14 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="440" y="190" key="#Project_Structure" timestamp="1579113675205">
+    <state x="440" y="190" key="#Project_Structure" timestamp="1579128983383">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="440" y="190" key="#Project_Structure/0.0.1680.1050@0.0.1680.1050" timestamp="1579113675205" />
-    <state x="653" y="248" key="#com.intellij.ide.util.MemberChooser" timestamp="1579113336995">
+    <state x="440" y="190" key="#Project_Structure/0.0.1680.1050@0.0.1680.1050" timestamp="1579128983383" />
+    <state x="653" y="248" key="#com.intellij.ide.util.MemberChooser" timestamp="1579215497365">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="653" y="248" key="#com.intellij.ide.util.MemberChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1579113336995" />
+    <state x="653" y="248" key="#com.intellij.ide.util.MemberChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1579215497365" />
     <state x="490" y="457" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1579095280715">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -210,31 +273,31 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="412" y="127" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1579087217167" />
-    <state width="1638" height="496" key="GridCell.Tab.0.bottom" timestamp="1579115104150">
+    <state width="1638" height="327" key="GridCell.Tab.0.bottom" timestamp="1579215984398">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="496" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1579115104150" />
+    <state width="1638" height="327" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1579215984398" />
     <state width="1638" height="295" key="GridCell.Tab.0.bottom/0.23.1680.970@0.23.1680.970" timestamp="1578958461346" />
     <state width="1638" height="295" key="GridCell.Tab.0.bottom/0.23.1680.974@0.23.1680.974" timestamp="1578947067600" />
     <state width="1638" height="295" key="GridCell.Tab.0.bottom/0.23.1680.975@0.23.1680.975" timestamp="1578932761391" />
-    <state width="1638" height="496" key="GridCell.Tab.0.center" timestamp="1579115104149">
+    <state width="1638" height="327" key="GridCell.Tab.0.center" timestamp="1579215984397">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="496" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1579115104149" />
+    <state width="1638" height="327" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1579215984397" />
     <state width="1638" height="295" key="GridCell.Tab.0.center/0.23.1680.970@0.23.1680.970" timestamp="1578958461343" />
     <state width="1638" height="295" key="GridCell.Tab.0.center/0.23.1680.974@0.23.1680.974" timestamp="1578947067598" />
     <state width="1638" height="295" key="GridCell.Tab.0.center/0.23.1680.975@0.23.1680.975" timestamp="1578932761389" />
-    <state width="1638" height="496" key="GridCell.Tab.0.left" timestamp="1579115104147">
+    <state width="1638" height="327" key="GridCell.Tab.0.left" timestamp="1579215984396">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="496" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1579115104147" />
+    <state width="1638" height="327" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1579215984396" />
     <state width="1638" height="295" key="GridCell.Tab.0.left/0.23.1680.970@0.23.1680.970" timestamp="1578958461340" />
     <state width="1638" height="295" key="GridCell.Tab.0.left/0.23.1680.974@0.23.1680.974" timestamp="1578947067597" />
     <state width="1638" height="295" key="GridCell.Tab.0.left/0.23.1680.975@0.23.1680.975" timestamp="1578932761388" />
-    <state width="1638" height="496" key="GridCell.Tab.0.right" timestamp="1579115104149">
+    <state width="1638" height="327" key="GridCell.Tab.0.right" timestamp="1579215984397">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="496" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1579115104149" />
+    <state width="1638" height="327" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1579215984397" />
     <state width="1638" height="295" key="GridCell.Tab.0.right/0.23.1680.970@0.23.1680.970" timestamp="1578958461344" />
     <state width="1638" height="295" key="GridCell.Tab.0.right/0.23.1680.974@0.23.1680.974" timestamp="1578947067599" />
     <state width="1638" height="295" key="GridCell.Tab.0.right/0.23.1680.975@0.23.1680.975" timestamp="1578932761390" />

@@ -5,12 +5,14 @@ import ch.bbzsogr.bi.exceptions.ConnectionRefusedException;
 import ch.bbzsogr.bi.interfaces.Connector;
 import ch.bbzsogr.bi.models.configs.ORMConfig;
 import ch.bbzsogr.bi.models.enums.ORMSupportedDatabases;
+import ch.bbzsogr.bi.utils.LoggingUtil;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import org.reflections.Reflections;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.logging.Logger;
 
 /**
  * The type Orm connector.
@@ -19,6 +21,8 @@ public class ORMConnector implements Connector {
 
   private ORMConfig config;
   private SessionFactory sessionFactory;
+
+  private Logger logger = new LoggingUtil(FSConnector.class).getLogger();
 
   /**
    * Instantiates a new Orm connector.
@@ -31,6 +35,8 @@ public class ORMConnector implements Connector {
   }
 
   public SessionFactory connect() throws ConnectionRefusedException, AccessNotGrantedException {
+    logger.info("Preparing to connect to the database");
+
     Reflections reflections = new Reflections("ch.bbzsogr.bi.models");
 
     Configuration config = new Configuration();
@@ -55,16 +61,24 @@ public class ORMConnector implements Connector {
 
     reflections.getTypesAnnotatedWith(javax.persistence.Entity.class).forEach(clazz -> config.addAnnotatedClass(clazz));
 
+    logger.info("About to connect to the database");
+
     return config.buildSessionFactory();
   }
 
   public boolean setUp() throws IOException, AccessNotGrantedException, ConnectionRefusedException {
+    logger.info("Setting the database up");
+
     if (this.config.getType() == ORMSupportedDatabases.SQLite && !this.config.getUrl().equals("jdbc:sqlite::memory:")) {
       File file = new File(this.config.getUrl().replace("jdbc:sqlite://", "").replace("jdbc:sqlite:", ""));
       if (!file.exists()) file.createNewFile();
     }
+
     SessionFactory sf = connect();
     sf.openSession().close();
+
+    logger.info("Database successfully setup");
+
     return true;
   }
 }

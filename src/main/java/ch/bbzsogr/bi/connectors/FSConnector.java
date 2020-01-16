@@ -3,6 +3,8 @@ package ch.bbzsogr.bi.connectors;
 import ch.bbzsogr.bi.exceptions.ConnectionRefusedException;
 import ch.bbzsogr.bi.interfaces.Connector;
 import ch.bbzsogr.bi.models.configs.FSConfig;
+import ch.bbzsogr.bi.services.BancomatService;
+import ch.bbzsogr.bi.utils.LoggingUtil;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.reflect.ClassPath;
 
@@ -10,6 +12,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Paths;
 import java.util.List;
+import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 /**
@@ -18,6 +21,8 @@ import java.util.stream.Collectors;
 public class FSConnector implements Connector {
 
   private FSConfig config;
+
+  private Logger logger = new LoggingUtil(FSConnector.class).getLogger();
 
   /**
    * Instantiates a new Fs connector.
@@ -39,7 +44,7 @@ public class FSConnector implements Connector {
   }
 
   public File connect() throws ConnectionRefusedException {
-
+    logger.info("Checking filesystem permissions");
     if (!getFile().canWrite()) {
       throw new ConnectionRefusedException("Can't read " + config.getPath());
     }
@@ -60,10 +65,14 @@ public class FSConnector implements Connector {
       throw new ConnectionRefusedException(config.getPath() + " doesn't seem to be a directory");
     }
 
+    logger.info("Successfully checked and setup");
+
     return getFile();
   }
 
   public boolean setUp() throws IOException, ConnectionRefusedException {
+    logger.info("Setting up the filesystem");
+
     getFile().mkdirs();
     final ClassLoader loader = Thread.currentThread().getContextClassLoader();
 
@@ -80,6 +89,8 @@ public class FSConnector implements Connector {
         }
       }
     }
+
+    logger.info("Filesystem setup");
 
     return getFile().exists();
   }

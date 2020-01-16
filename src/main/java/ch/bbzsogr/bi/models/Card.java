@@ -1,7 +1,6 @@
 package ch.bbzsogr.bi.models;
 
 import ch.bbzsogr.bi.utils.CreditCardUtil;
-import ch.bbzsogr.bi.utils.HashUtil;
 
 import javax.persistence.*;
 import java.time.Duration;
@@ -130,7 +129,7 @@ public class Card {
   }
 
   @PostLoad()
-  public void afterLoad(){
+  public void afterLoad() {
     this.setPin(null);
   }
 }

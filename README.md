@@ -1,9 +1,5 @@
-
-
-Use testcontainers instead of simulated ones
-https://www.testcontainers.org/
-
 # TODO
+- [x] God damn gitignore file
 - [x] Connectors
 - [x] Dotenv integration
 - [x] Models
@@ -12,20 +8,25 @@ https://www.testcontainers.org/
 - [x] Detailed exceptions
 - [x] OGM not supported exception
 - [x] Validation
-- [ ] Restcalls
+- [x] Restcalls
+- [x] Basic logging
+- [x] Pin length validation
+- [x] MS SQL driver
+- [ ] Password constraints
+- [ ] Extend exceptions
 - [ ] Repositories for FS
 - [ ] TestContainers Dockerfile 4 sqlite, redis
 - [ ] Tests
 - [ ] General dockerfile 2 test & build
-- [ ] Readme
 - [ ] Uml
-- [ ] Logging
-- [ ] Reuse artifact 10m
-- [x] God damn gitignore file
+- [ ] Readme
+- [ ] JavaDoc
+- [ ] More specific logging for longer functions
 
 
 # ADD ON
 
+- [ ] Receipt as PDF
 - [ ] JavaDoc Gitlab Pages
 - [ ] .gitlab-ci.yaml file to test on push
 https://docs.gitlab.com/ee/user/packages/maven_repository/
@@ -36,5 +37,9 @@ https://docs.gitlab.com/ee/user/packages/maven_repository/
 - [ ] Account unlock
 - [ ] Card payments at a terminal
 
-  // TODO add to readme
-  //  jdbc:sqlite::memory:
+TODO add to readme
+jdbc:sqlite::memory:
+  
+  
+Use testcontainers instead of simulated ones
+https://www.testcontainers.org/

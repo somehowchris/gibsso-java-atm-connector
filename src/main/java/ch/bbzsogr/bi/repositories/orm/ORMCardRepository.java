@@ -3,7 +3,6 @@ package ch.bbzsogr.bi.repositories.orm;
 import ch.bbzsogr.bi.decorators.DatabaseType;
 import ch.bbzsogr.bi.interfaces.repositories.CardRepository;
 import ch.bbzsogr.bi.models.Card;
-import ch.bbzsogr.bi.models.Person;
 import ch.bbzsogr.bi.models.enums.DatabaseInterpreters;
 import org.hibernate.Session;
 

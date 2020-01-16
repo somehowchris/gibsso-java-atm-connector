@@ -13,11 +13,15 @@ import ch.bbzsogr.bi.models.enums.EnvKeys;
 import ch.bbzsogr.bi.utils.Container;
 import ch.bbzsogr.bi.utils.DotEnvUtil;
 import ch.bbzsogr.bi.utils.HashUtil;
+import ch.bbzsogr.bi.utils.LoggingUtil;
+import org.apache.commons.lang3.math.NumberUtils;
+import org.apache.lucene.util.NumericUtils;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
+import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 @Service(api = ApiType.DIRECT)
@@ -29,27 +33,31 @@ public class CardService implements CardServiceInterface {
   private AccountService accountService = Container.getService(AccountService.class, ApiType.DIRECT);
   private WithdrawRepository withdrawRepository = Container.getRepository(WithdrawRepository.class, DatabaseController.type);
 
+  private Logger logger = new LoggingUtil(CardService.class).getLogger();
+
   public void lockCard(String cardNr) throws CardLockException, CardNotFoundException {
+    logger.info("Locking the card "+cardNr);
     Card card = this.cardRepository.find(cardNr);
 
-    if (card == null) {
-      throw new CardNotFoundException(cardNr);
-    }
+    if (card == null) throw new CardNotFoundException(cardNr);
 
     card.setLocked(true);
 
     try {
       this.cardRepository.update(card);
     } catch (EntityUpdateException e) {
+      logger.info("Could not save the lock update of the card "+cardNr);
       throw new CardLockException(cardNr);
     }
   }
 
   public void removeCard(Card card) {
+    logger.info("Removing the card "+card.getCardNumber());
     this.cardRepository.delete(card);
   }
 
   public Withdraw withdraw(String cardNr, double amount, Currency currency, String bancomatId) throws WithdrawException, CardNotFoundException, CardLockedException, BancomatNotFoundException, CouldNotMeetWithdrawAmountException, CreditAmountExceededException {
+    logger.info("Withdrawing "+amount+" "+currency.name()+" with the card "+cardNr+" from the bancomat "+bancomatId);
     Card card = cardRepository.find(cardNr);
     Bancomat bancomat = bancomatService.getBancomat(bancomatId);
 
@@ -130,16 +138,19 @@ public class CardService implements CardServiceInterface {
       hibernateTransaction.commit();
       return withdraw;
     } catch (Exception e) {
+      logger.warning("Could transfer nor withdraw");
       hibernateTransaction.rollback();
       throw new WithdrawException();
     }
   }
 
   public Card getCard(String cardNr) {
+    logger.info("Getting the card "+cardNr);
     return cardRepository.find(cardNr);
   }
 
   public Card createCard(Account account) throws CardCreationException {
+    logger.info("Creating a card for "+account.getIban());
     Card card = new Card();
 
     String pin = card.getPin();
@@ -153,24 +164,29 @@ public class CardService implements CardServiceInterface {
       card.setPin(pin);
       return card;
     } catch (EntitySaveException e) {
+      logger.warning("Could not save the new account for "+account.getIban());
       throw new CardCreationException(account);
     }
   }
 
-  public void changePin(String cardNr, String pin) throws PinChangeException, CardNotFoundException {
+  public void changePin(String cardNr, String pin) throws PinChangeException, CardNotFoundException, PinDoesNotMeetRequirementsException {
+    logger.info("Updating the pin for "+cardNr);
     Card card = cardRepository.find(cardNr);
-    if (card == null) {
-      throw new CardNotFoundException(cardNr);
-    }
+    if (card == null) throw new CardNotFoundException(cardNr);
+    if(card.getPin().length() != 6 && NumberUtils.isCreatable(pin)) throw new PinDoesNotMeetRequirementsException();
+
     card.setPin(HashUtil.hash(pin));
+
     try {
       cardRepository.save(card);
     } catch (EntitySaveException e) {
+      logger.warning("Could not save pin update");
       throw new PinChangeException();
     }
   }
 
   public Card authenticate(String cardNr, String pin) {
+    logger.info("Authenticating "+cardNr);
     return cardRepository.find(cardNr, HashUtil.hash(pin));
   }
 

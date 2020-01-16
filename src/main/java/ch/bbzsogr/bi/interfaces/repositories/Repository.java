@@ -5,6 +5,7 @@ import ch.bbzsogr.bi.exceptions.EntityUpdateException;
 import org.hibernate.Transaction;
 
 public interface Repository<T> {
+
   T find(String identifier);
 
   T save(T obj) throws EntitySaveException;
@@ -16,4 +17,5 @@ public interface Repository<T> {
   void update(T obj, Transaction transaction);
 
   void delete(T obj);
+
 }

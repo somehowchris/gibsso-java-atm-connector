@@ -91,7 +91,7 @@ public class Person {
   }
 
   @PostLoad()
-  public void afterLoad(){
+  public void afterLoad() {
     this.setPassword(null);
   }
 }

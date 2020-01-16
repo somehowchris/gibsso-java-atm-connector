@@ -31,8 +31,14 @@ public class DatabaseController {
   private Config config;
   private Connector connector;
   private SessionFactory sessionFactory;
+  private Logger logger;
 
   public DatabaseController() throws OGMDatabaseTypeNotFoundException, UrlDialectNotSupportedException, AccessNotGrantedException, IOException, ConnectionRefusedException, OGMNotYetSupportedException {
+    logger = new LoggingUtil(DatabaseController.class).getLogger();
+
+    logger.info("Initialized logger");
+    logger.info("Initializing database configuration");
+
     DotEnvUtil envUtil = new DotEnvUtil();
     if (envUtil.get("DATABASE_OGM_TYPE") != null && !envUtil.get("DATABASE_OGM_TYPE").isEmpty()) {
       config = new OGMConfig();
@@ -51,6 +57,8 @@ public class DatabaseController {
       connector = new FSConnector((FSConfig) config);
       type = DatabaseInterpreters.FS;
     }
+
+    logger.info("Connected and using "+type.getPrefix()+" repositories");
   }
 
   public void seed() throws IOException {
@@ -69,11 +77,9 @@ public class DatabaseController {
       }).filter(obj -> obj instanceof Seed).collect(Collectors.toList());
 
     DotEnvUtil dotEnvUtil = new DotEnvUtil();
-    Logger logger = new LoggingUtil(DatabaseController.class).getLogger();
 
     seeds.forEach(seed -> {
       long start = System.currentTimeMillis();
-
       logger.info("Running seed " + seed.getClass().getSimpleName());
       seed.run(DatabaseController.session, dotEnvUtil, new LoggingUtil(seed.getClass()).getLogger());
       logger.info("Finished running " + seed.getClass().getSimpleName() + " after " + (((System.currentTimeMillis() - start) / 1000F)) + " seconds");
