@@ -93,10 +93,6 @@ public class AccountService implements AccountServiceInterface {
     Account account = new Account();
     account.setPerson(person);
 
-
-    if(person.getAccounts() == null) person.setAccounts(new ArrayList<>());
-    person.getAccounts().add(account);
-
     try {
       personRepository.update(person);
       return account;
