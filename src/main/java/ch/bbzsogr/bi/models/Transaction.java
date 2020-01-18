@@ -1,6 +1,7 @@
 package ch.bbzsogr.bi.models;
 
 import ch.bbzsogr.bi.models.enums.Currency;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -25,18 +26,22 @@ public class Transaction {
   @Enumerated(EnumType.STRING)
   private Currency currency = Currency.CHF;
 
+  @JsonIgnore
   @OneToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "withdraw_id", referencedColumnName = "id")
   private Withdraw withdraw;
 
+  @JsonIgnore
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "account_to_iban", referencedColumnName = "iban", nullable = false)
   private Account to;
 
+  @JsonIgnore
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "account_from_iban", referencedColumnName = "iban")
   private Account from;
 
+  @JsonIgnore
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "card_number", referencedColumnName = "card_number")
   private Card card;

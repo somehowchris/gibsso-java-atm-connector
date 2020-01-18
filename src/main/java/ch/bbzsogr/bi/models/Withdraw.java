@@ -1,5 +1,6 @@
 package ch.bbzsogr.bi.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -29,14 +30,17 @@ public class Withdraw {
   @OneToMany(mappedBy = "withdraw", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
   private List<BillCollection> bills = new ArrayList<>();
 
+  @JsonIgnore
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "account_iban", referencedColumnName = "iban")
   private Account account;
 
+  @JsonIgnore
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "card_number", referencedColumnName = "card_number")
   private Card card;
 
+  @JsonIgnore
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "bancomat_at", referencedColumnName = "id")
   private Bancomat bancomat;

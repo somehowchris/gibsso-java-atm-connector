@@ -1,5 +1,6 @@
 package ch.bbzsogr.bi.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.iban4j.CountryCode;
 import org.iban4j.Iban;
 
@@ -32,6 +33,7 @@ public class Account {
   @OneToMany(mappedBy = "account", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
   private List<Withdraw> withdraws = new ArrayList<>();
 
+  @JsonIgnore
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "person_id", referencedColumnName = "id", nullable = false)
   private Person person;

@@ -1,6 +1,7 @@
 package ch.bbzsogr.bi.models;
 
 import ch.bbzsogr.bi.utils.CreditCardUtil;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.time.Duration;
@@ -37,6 +38,7 @@ public class Card {
   @OneToMany(mappedBy = "card", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
   private List<Transaction> transactions = new ArrayList<>();
 
+  @JsonIgnore
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "account_iban", referencedColumnName = "iban", nullable = false)
   private Account account;
