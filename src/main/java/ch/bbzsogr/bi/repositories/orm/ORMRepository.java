@@ -31,7 +31,9 @@ public class ORMRepository<T> extends TypeT<T> implements ch.bbzsogr.bi.interfac
 
   @Override
   public T save(T obj) throws EntitySaveException {
-    Transaction transaction = DatabaseController.session.beginTransaction();
+    Session session = getSession();
+    Transaction transaction = session.beginTransaction();
+
     try {
       T saved = this.save(obj, transaction);
       transaction.commit();
@@ -41,6 +43,8 @@ public class ORMRepository<T> extends TypeT<T> implements ch.bbzsogr.bi.interfac
       logger.warning("Couldn't save " + obj.toString() + " of type " + getTypeOfT().getSimpleName());
       transaction.rollback();
       throw new EntitySaveException(getTypeOfT());
+    }finally {
+      session.close();
     }
   }
 
@@ -49,13 +53,20 @@ public class ORMRepository<T> extends TypeT<T> implements ch.bbzsogr.bi.interfac
     logger.info("Saving " + obj.toString() + " of type " + getTypeOfT().getSimpleName());
 
     if (transaction.getStatus() == TransactionStatus.NOT_ACTIVE) transaction.begin();
-    String identifier = (String) DatabaseController.session.save(obj);
-    return DatabaseController.session.find(getTypeOfT(), identifier);
+    Session session = getSession();
+
+    String identifier = (String) session.save(obj);
+    T object = session.find(getTypeOfT(), identifier);
+    session.close();
+
+    return object;
   }
 
   @Override
   public void update(T obj) throws EntityUpdateException {
-    Transaction transaction = DatabaseController.session.beginTransaction();
+    Session session = getSession();
+    Transaction transaction = session.beginTransaction();
+
     try {
       this.update(obj, transaction);
       transaction.commit();
@@ -64,6 +75,8 @@ public class ORMRepository<T> extends TypeT<T> implements ch.bbzsogr.bi.interfac
       transaction.rollback();
       logger.warning("Couldn't update " + obj.toString() + " of type " + getTypeOfT().getSimpleName());
       throw new EntityUpdateException(getTypeOfT());
+    } finally {
+      session.close();
     }
   }
 
@@ -71,13 +84,17 @@ public class ORMRepository<T> extends TypeT<T> implements ch.bbzsogr.bi.interfac
   public void update(T obj, Transaction transaction) {
     logger.info("Updating " + obj.toString() + " of type " + getTypeOfT().getSimpleName());
     if (transaction.getStatus() == TransactionStatus.NOT_ACTIVE) transaction.begin();
-    DatabaseController.session.update(obj);
+    Session session = getSession();
+    session.update(obj);
+    session.close();
   }
 
   @Override
   public void delete(T obj) {
     logger.info("Deleting " + obj.toString() + " of type " + getTypeOfT().getSimpleName());
-    DatabaseController.session.remove(obj);
+    Session session = getSession();
+    session.remove(obj);
+    session.close();
   }
 
   public Session getSession() {
