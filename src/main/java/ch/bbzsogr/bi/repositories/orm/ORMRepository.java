@@ -26,10 +26,7 @@ public class ORMRepository<T> extends TypeT<T> implements ch.bbzsogr.bi.interfac
   @Override
   public T find(String identifier) {
     logger.info("Finding " + identifier + " of type " + getTypeOfT().getSimpleName());
-    Session session = getSession();
-    T object = session.find(getTypeOfT(), identifier);
-    session.close();
-    return object;
+    return session.find(getTypeOfT(), identifier);
   }
 
   @Override
