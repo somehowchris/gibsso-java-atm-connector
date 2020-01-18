@@ -103,6 +103,7 @@ public class AccountService implements AccountServiceInterface {
     logger.info("Locking " + iban);
 
     Account account = getAccountByIBAN(iban);
+    account.setCards(null);
     account.setLocked(true);
 
     try {
