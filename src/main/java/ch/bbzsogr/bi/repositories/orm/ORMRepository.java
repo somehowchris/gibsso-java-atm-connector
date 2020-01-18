@@ -37,6 +37,7 @@ public class ORMRepository<T> extends TypeT<T> implements ch.bbzsogr.bi.interfac
       transaction.commit();
       return saved;
     } catch (Exception e) {
+      e.printStackTrace();
       logger.warning("Couldn't save " + obj.toString() + " of type " + getTypeOfT().getSimpleName());
       transaction.rollback();
       throw new EntitySaveException(getTypeOfT());
@@ -59,6 +60,7 @@ public class ORMRepository<T> extends TypeT<T> implements ch.bbzsogr.bi.interfac
       this.update(obj, transaction);
       transaction.commit();
     } catch (Exception e) {
+      e.printStackTrace();
       transaction.rollback();
       logger.warning("Couldn't update " + obj.toString() + " of type " + getTypeOfT().getSimpleName());
       throw new EntityUpdateException(getTypeOfT());
