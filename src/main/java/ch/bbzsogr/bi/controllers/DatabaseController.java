@@ -82,7 +82,11 @@ public class DatabaseController {
       long start = System.currentTimeMillis();
       logger.info("Running seed " + seed.getClass().getSimpleName());
       Session session = DatabaseController.getSession();
-      seed.run(session, dotEnvUtil, new LoggingUtil(seed.getClass()).getLogger());
+      try {
+        seed.run(session, dotEnvUtil, new LoggingUtil(seed.getClass()).getLogger());
+      } catch (Exception e) {
+        e.printStackTrace();
+      }
       session.close();
       logger.info("Finished running " + seed.getClass().getSimpleName() + " after " + (((System.currentTimeMillis() - start) / 1000F)) + " seconds");
     });

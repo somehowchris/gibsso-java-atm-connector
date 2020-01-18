@@ -38,7 +38,7 @@ public class AccountService implements AccountServiceInterface {
   }
 
   public Transaction transfer(String fromIban, Transaction transaction, org.hibernate.Transaction dbTransaction) throws TransferException, AccountLockedException, AccountNotFoundException, TooLowCreditBalanceException, NoAccountSpecifiedException, NoCurrencySpecifiedException, SubZeroTransactionAmountException {
-    logger.info("Transacting " + transaction.getAmount() + " " + transaction.getCurrency().name() + " from " + fromIban + " to " + transaction.getTo().getIban());
+    logger.info("Transacting " + transaction.getAmount() + " " + transaction.getCurrency() + " from " + fromIban + " to " + transaction.getTo().getIban());
     Account fromAccount = getAccountByIBAN(fromIban);
 
     if (fromAccount == null) throw new AccountNotFoundException(fromIban);

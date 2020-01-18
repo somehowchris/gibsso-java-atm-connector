@@ -17,7 +17,7 @@ public class Card {
   @Column(name = "card_number")
   private String cardNumber = CreditCardUtil.generateCardNumber();
 
-  @Column(name = "pin", nullable = false)
+  @Column(name = "pin")
   private String pin = CreditCardUtil.generatePin();
 
   @Column(name = "expires_at")

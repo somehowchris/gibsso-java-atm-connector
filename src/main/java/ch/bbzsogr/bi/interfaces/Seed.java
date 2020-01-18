@@ -1,5 +1,6 @@
 package ch.bbzsogr.bi.interfaces;
 
+import ch.bbzsogr.bi.exceptions.EntitySaveException;
 import ch.bbzsogr.bi.utils.DotEnvUtil;
 import org.hibernate.Session;
 
@@ -7,6 +8,6 @@ import java.util.logging.Logger;
 
 public interface Seed {
 
-  void run(Session session, DotEnvUtil dotEnv, Logger logger);
+  void run(Session session, DotEnvUtil dotEnv, Logger logger) throws EntitySaveException;
 
 }
