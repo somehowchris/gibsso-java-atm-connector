@@ -26,7 +26,10 @@ public class ORMRepository<T> extends TypeT<T> implements ch.bbzsogr.bi.interfac
   @Override
   public T find(String identifier) {
     logger.info("Finding " + identifier + " of type " + getTypeOfT().getSimpleName());
-    return DatabaseController.session.find(getTypeOfT(), identifier);
+    Session session = getSession();
+    T object = session.find(getTypeOfT(), identifier);
+    session.close();
+    return object;
   }
 
   @Override
@@ -98,6 +101,6 @@ public class ORMRepository<T> extends TypeT<T> implements ch.bbzsogr.bi.interfac
   }
 
   public Session getSession() {
-    return session != null ? session : DatabaseController.getSession();
+    return DatabaseController.getSession();
   }
 }
