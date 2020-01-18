@@ -101,6 +101,7 @@ public class AccountService implements AccountServiceInterface {
       personRepository.update(person);
       return account;
     } catch (EntityUpdateException couldNotUpdateEntity) {
+      couldNotUpdateEntity.printStackTrace();
       logger.warning("Could not create an account for "+person.getFirstName());
       throw new AccountCreationException(person);
     }
