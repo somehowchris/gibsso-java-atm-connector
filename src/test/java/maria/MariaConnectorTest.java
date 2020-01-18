@@ -19,8 +19,4 @@ public class MariaConnectorTest {
     Integer port = maria.getFirstMappedPort();
   }
 
-  @Test
-  public void testingTest(){
-
-  }
 }

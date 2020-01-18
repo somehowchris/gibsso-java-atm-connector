@@ -18,9 +18,4 @@ public class RedisConnectorTest {
     Integer port = redis.getFirstMappedPort();
   }
 
-  @Test
-  public void testingTest(){
-
-  }
-
 }

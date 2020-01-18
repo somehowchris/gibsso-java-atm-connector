@@ -20,9 +20,4 @@ public class MongoDBConnectorTest {
     Integer port = mongodb.getFirstMappedPort();
   }
 
-  @Test
-  public void testingTest(){
-
-  }
-
 }

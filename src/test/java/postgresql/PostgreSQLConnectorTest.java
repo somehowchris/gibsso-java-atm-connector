@@ -19,9 +19,4 @@ public class PostgreSQLConnectorTest {
     String username = postgres.getUsername();
   }
 
-  @Test
-  public void testingTest(){
-
-  }
-
 }

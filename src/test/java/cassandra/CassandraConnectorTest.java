@@ -18,9 +18,4 @@ public class CassandraConnectorTest {
     Integer port = cassandra.getFirstMappedPort();
   }
 
-  @Test
-  public void testingTest(){
-
-  }
-
 }

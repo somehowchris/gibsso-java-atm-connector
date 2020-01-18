@@ -20,9 +20,4 @@ public class MySQLConnectorTest {
     String username = mysql.getUsername();
   }
 
-  @Test
-  public void testingTest(){
-
-  }
-
 }

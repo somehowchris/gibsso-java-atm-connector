@@ -18,9 +18,4 @@ public class CouchbaseConnectorTest {
     String address = couchbase.getContainerIpAddress();
     Integer port = couchbase.getFirstMappedPort();
   }
-
-  @Test
-  public void testingTest(){
-
-  }
 }

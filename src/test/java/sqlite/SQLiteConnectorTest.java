@@ -18,9 +18,4 @@ public class SQLiteConnectorTest {
     Integer port = redis.getFirstMappedPort();
   }
 
-  @Test
-  public void testingTest(){
-
-  }
-
 }
