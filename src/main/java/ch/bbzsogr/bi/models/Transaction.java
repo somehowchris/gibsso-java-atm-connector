@@ -27,25 +27,21 @@ public class Transaction {
   @Enumerated(EnumType.STRING)
   private Currency currency = Currency.CHF;
 
-  @JsonIgnore
   @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
   @OneToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "withdraw_id", referencedColumnName = "id")
   private Withdraw withdraw;
 
-  @JsonIgnore
   @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "account_to_iban", referencedColumnName = "iban", nullable = false)
   private Account to;
 
-  @JsonIgnore
   @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "account_from_iban", referencedColumnName = "iban")
   private Account from;
 
-  @JsonIgnore
   @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "card_number", referencedColumnName = "card_number")
@@ -102,6 +98,7 @@ public class Transaction {
     this.currency = currency;
   }
 
+  @JsonIgnore
   public Withdraw getWithdraw() {
     return withdraw;
   }
@@ -110,6 +107,7 @@ public class Transaction {
     this.withdraw = withdraw;
   }
 
+  @JsonIgnore
   public Account getTo() {
     return to;
   }
@@ -118,6 +116,7 @@ public class Transaction {
     this.to = to;
   }
 
+  @JsonIgnore
   public Account getFrom() {
     return from;
   }
@@ -126,6 +125,7 @@ public class Transaction {
     this.from = from;
   }
 
+  @JsonIgnore
   public Card getCard() {
     return card;
   }

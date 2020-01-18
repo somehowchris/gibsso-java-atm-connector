@@ -39,7 +39,6 @@ public class Card {
   @OneToMany(mappedBy = "card", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
   private List<Transaction> transactions = new ArrayList<>();
 
-  @JsonIgnore
   @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "account_iban", referencedColumnName = "iban", nullable = false)
@@ -124,6 +123,7 @@ public class Card {
     this.transactions = transactions;
   }
 
+  @JsonIgnore
   public Account getAccount() {
     return account;
   }

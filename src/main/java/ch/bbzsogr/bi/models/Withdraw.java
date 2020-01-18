@@ -31,19 +31,16 @@ public class Withdraw {
   @OneToMany(mappedBy = "withdraw", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
   private List<BillCollection> bills = new ArrayList<>();
 
-  @JsonIgnore
   @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "account_iban", referencedColumnName = "iban")
   private Account account;
 
-  @JsonIgnore
   @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "card_number", referencedColumnName = "card_number")
   private Card card;
 
-  @JsonIgnore
   @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "bancomat_at", referencedColumnName = "id")
@@ -62,6 +59,7 @@ public class Withdraw {
     this.bancomat = bancomat;
   }
 
+  @JsonIgnore
   public Bancomat getBancomat() {
     return bancomat;
   }
@@ -110,6 +108,7 @@ public class Withdraw {
     this.bills = bills;
   }
 
+  @JsonIgnore
   public Account getAccount() {
     return account;
   }
@@ -118,6 +117,7 @@ public class Withdraw {
     this.account = account;
   }
 
+  @JsonIgnore
   public Card getCard() {
     return card;
   }

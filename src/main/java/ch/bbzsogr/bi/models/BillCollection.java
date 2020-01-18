@@ -26,13 +26,11 @@ public class BillCollection {
   @Enumerated(EnumType.STRING)
   private Currency currency = Currency.CHF;
 
-  @JsonIgnore
   @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "bancomat_id", referencedColumnName = "id")
   private Bancomat bancomat;
 
-  @JsonIgnore
   @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "withdraw_id", referencedColumnName = "id")
@@ -88,6 +86,7 @@ public class BillCollection {
     this.currency = currency;
   }
 
+  @JsonIgnore
   public Bancomat getBancomat() {
     return bancomat;
   }
@@ -96,6 +95,7 @@ public class BillCollection {
     this.bancomat = bancomat;
   }
 
+  @JsonIgnore
   public Withdraw getWithdraw() {
     return withdraw;
   }

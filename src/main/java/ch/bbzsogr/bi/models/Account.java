@@ -34,7 +34,6 @@ public class Account {
   @OneToMany(mappedBy = "account", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
   private List<Withdraw> withdraws = new ArrayList<>();
 
-  @JsonIgnore
   @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "person_id", referencedColumnName = "id", nullable = false)
@@ -110,6 +109,7 @@ public class Account {
     this.withdraws = withdraws;
   }
 
+  @JsonIgnore
   public Person getPerson() {
     return person;
   }
