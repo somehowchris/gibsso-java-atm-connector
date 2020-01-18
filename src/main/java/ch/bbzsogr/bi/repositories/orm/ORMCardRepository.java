@@ -32,14 +32,12 @@ public class ORMCardRepository extends ORMRepository<Card> implements CardReposi
     personCriteriaQuery
       .where(getCriteriaBuilder().equal(cardRoot.get("cardNumber"), cardNr));
 
-    Session session = getSession();
-    Query personQuery = session.createQuery(personCriteriaQuery);
-    session.close();
+    Query personQuery = getLocalSession().createQuery(personCriteriaQuery);
 
     return (Card) personQuery.getSingleResult();
   }
 
   private CriteriaBuilder getCriteriaBuilder() {
-    return getSession().getCriteriaBuilder();
+    return getLocalSession().getCriteriaBuilder();
   }
 }

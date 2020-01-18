@@ -16,6 +16,7 @@ import ch.bbzsogr.bi.utils.HashUtil;
 import ch.bbzsogr.bi.utils.LoggingUtil;
 import org.apache.commons.lang3.math.NumberUtils;
 import org.apache.lucene.util.NumericUtils;
+import org.hibernate.Session;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -119,7 +120,8 @@ public class CardService implements CardServiceInterface {
     transaction.setCurrency(currency);
     transaction.setFrom(cardAccount);
 
-    org.hibernate.Transaction hibernateTransaction = DatabaseController.session.beginTransaction();
+    Session session = DatabaseController.getSession();
+    org.hibernate.Transaction hibernateTransaction = session.beginTransaction();
 
     try {
       transaction = accountService.transfer(cardAccount.getIban(), transaction, hibernateTransaction);
@@ -141,6 +143,8 @@ public class CardService implements CardServiceInterface {
       logger.warning("Could transfer nor withdraw");
       hibernateTransaction.rollback();
       throw new WithdrawException();
+    } finally {
+      session.close();
     }
   }
 

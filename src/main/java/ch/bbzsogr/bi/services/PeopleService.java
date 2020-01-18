@@ -11,6 +11,7 @@ import ch.bbzsogr.bi.models.enums.ApiType;
 import ch.bbzsogr.bi.utils.Container;
 import ch.bbzsogr.bi.utils.HashUtil;
 import ch.bbzsogr.bi.utils.LoggingUtil;
+import org.hibernate.Session;
 
 import java.util.logging.Logger;
 
@@ -29,7 +30,8 @@ public class PeopleService implements PeopleServiceInterface {
 
   public Person updatePersonalDetails(Person person) throws PersonUserDetailsUpdateException {
     logger.info("Updating personal information for "+person.getId());
-    org.hibernate.Transaction transaction = DatabaseController.session.beginTransaction();
+    Session session = DatabaseController.getSession();
+    org.hibernate.Transaction transaction = session.beginTransaction();
     try {
       Person tempPerson = personRepository.find(person.getId());
 
@@ -39,7 +41,7 @@ public class PeopleService implements PeopleServiceInterface {
       if (person.getFirstName() != null) tempPerson.setFirstName(person.getFirstName());
       if (person.getPassword() != null) tempPerson.setPassword(HashUtil.hash(person.getPassword()));
 
-      DatabaseController.session.update(tempPerson);
+      session.update(tempPerson);
       transaction.commit();
 
       tempPerson.setPassword(null);
@@ -48,6 +50,8 @@ public class PeopleService implements PeopleServiceInterface {
     } catch (Exception e) {
       logger.warning("Could not save personal details for "+person.getId());
       throw new PersonUserDetailsUpdateException(person);
+    } finally {
+      session.close();
     }
   }
 

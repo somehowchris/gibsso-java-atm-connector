@@ -29,7 +29,7 @@ public class ORMPeopleRepository extends ORMRepository<Person> implements People
     personCriteriaQuery.select(personRoot);
     personCriteriaQuery.where(getCriteriaBuilder().equal(personRoot.get("email"), email));
 
-    Query personQuery = getSession().createQuery(personCriteriaQuery);
+    Query personQuery = getLocalSession().createQuery(personCriteriaQuery);
     return (Person) personQuery.getSingleResult();
   }
 
@@ -43,16 +43,13 @@ public class ORMPeopleRepository extends ORMRepository<Person> implements People
       .where(getCriteriaBuilder().equal(personRoot.get("email"), email))
       .where(getCriteriaBuilder().equal(personRoot.get("password"), password));
 
-
-    Session session = getSession();
-    Query personQuery = session.createQuery(personCriteriaQuery);
-    session.close();
+    Query personQuery = getLocalSession().createQuery(personCriteriaQuery);
 
     return (Person) personQuery.getSingleResult();
   }
 
   private CriteriaBuilder getCriteriaBuilder() {
-    return getSession().getCriteriaBuilder();
+    return getLocalSession().getCriteriaBuilder();
   }
 
 }

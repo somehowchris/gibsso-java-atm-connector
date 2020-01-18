@@ -13,6 +13,7 @@ import ch.bbzsogr.bi.models.Transaction;
 import ch.bbzsogr.bi.models.enums.ApiType;
 import ch.bbzsogr.bi.utils.Container;
 import ch.bbzsogr.bi.utils.LoggingUtil;
+import org.hibernate.Session;
 
 import javax.security.auth.login.AccountLockedException;
 import java.util.ArrayList;
@@ -71,7 +72,8 @@ public class AccountService implements AccountServiceInterface {
   }
 
   public Transaction transfer(String fromIban, Transaction transaction) throws TransferException, AccountNotFoundException, NoCurrencySpecifiedException, TooLowCreditBalanceException, AccountLockedException, NoAccountSpecifiedException, SubZeroTransactionAmountException {
-    org.hibernate.Transaction dbTransaction = DatabaseController.session.beginTransaction();
+    Session session = DatabaseController.getSession();
+    org.hibernate.Transaction dbTransaction = session.beginTransaction();
     try {
       transaction = this.transfer(fromIban, transaction, dbTransaction);
       dbTransaction.commit();
@@ -80,6 +82,8 @@ public class AccountService implements AccountServiceInterface {
       logger.info("Rolling back that failed transaction");
       dbTransaction.rollback();
       throw e;
+    } finally {
+      session.close();
     }
 
   }
