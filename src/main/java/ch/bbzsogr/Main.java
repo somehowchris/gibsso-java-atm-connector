@@ -26,6 +26,7 @@ public class Main {
 
     Person person = peopleService.getPerson("402882f66fb9f9de016fb9f9ed900000");//peopleService.createPerson(new Person("chweicki@icloud.com","meins","zwei","IamStrong", null));
     Account account = accountService.createAccount(person);
+    System.out.println(account.getCards().size());
     Card card = cardService.createCard(account);
   }
 }

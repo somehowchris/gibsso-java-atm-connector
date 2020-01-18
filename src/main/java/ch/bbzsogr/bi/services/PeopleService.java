@@ -50,8 +50,6 @@ public class PeopleService implements PeopleServiceInterface {
     } catch (Exception e) {
       logger.warning("Could not save personal details for "+person.getId());
       throw new PersonUserDetailsUpdateException(person);
-    } finally {
-      session.close();
     }
   }
 

@@ -82,8 +82,6 @@ public class AccountService implements AccountServiceInterface {
       logger.info("Rolling back that failed transaction");
       dbTransaction.rollback();
       throw e;
-    } finally {
-      session.close();
     }
 
   }
@@ -91,12 +89,13 @@ public class AccountService implements AccountServiceInterface {
   public Account createAccount(Person person) throws AccountCreationException {
     logger.info("Creating an account for " + person.getFirstName() + " " + person.getLastName());
     Account account = new Account();
+
     account.setPerson(person);
 
     try {
-      personRepository.update(person);
+      accountRepository.save(account);
       return account;
-    } catch (EntityUpdateException couldNotUpdateEntity) {
+    } catch (EntitySaveException couldNotUpdateEntity) {
       couldNotUpdateEntity.printStackTrace();
       logger.warning("Could not create an account for "+person.getFirstName());
       throw new AccountCreationException(person);

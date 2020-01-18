@@ -160,6 +160,7 @@ public class CardService implements CardServiceInterface {
     String pin = card.getPin();
     card.setPin(HashUtil.hash(pin));
 
+    account.getCards().add(card);
     card.setAccount(account);
 
     try {
