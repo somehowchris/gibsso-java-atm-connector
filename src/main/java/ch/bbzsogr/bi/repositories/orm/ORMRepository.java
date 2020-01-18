@@ -81,6 +81,6 @@ public class ORMRepository<T> extends TypeT<T> implements ch.bbzsogr.bi.interfac
   }
 
   public Session getSession() {
-    return session;
+    return session != null ? session : DatabaseController.getSession();
   }
 }

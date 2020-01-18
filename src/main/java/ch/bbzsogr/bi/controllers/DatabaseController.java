@@ -30,7 +30,7 @@ public class DatabaseController {
   public static DatabaseInterpreters type;
   private Config config;
   private Connector connector;
-  private SessionFactory sessionFactory;
+  private static SessionFactory sessionFactory;
   private Logger logger;
 
   public DatabaseController() throws OGMDatabaseTypeNotFoundException, UrlDialectNotSupportedException, AccessNotGrantedException, IOException, ConnectionRefusedException, OGMNotYetSupportedException {
@@ -81,8 +81,14 @@ public class DatabaseController {
     seeds.forEach(seed -> {
       long start = System.currentTimeMillis();
       logger.info("Running seed " + seed.getClass().getSimpleName());
-      seed.run(DatabaseController.session, dotEnvUtil, new LoggingUtil(seed.getClass()).getLogger());
+      Session session = DatabaseController.getSession();
+      seed.run(session, dotEnvUtil, new LoggingUtil(seed.getClass()).getLogger());
+      session.close();
       logger.info("Finished running " + seed.getClass().getSimpleName() + " after " + (((System.currentTimeMillis() - start) / 1000F)) + " seconds");
     });
+  }
+
+  public static Session getSession() {
+    return DatabaseController.sessionFactory.openSession();
   }
 }
