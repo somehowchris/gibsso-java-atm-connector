@@ -2,6 +2,7 @@ package ch.bbzsogr.bi.models;
 
 import ch.bbzsogr.bi.utils.CreditCardUtil;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.*;
 import java.time.Duration;
@@ -39,6 +40,7 @@ public class Card {
   private List<Transaction> transactions = new ArrayList<>();
 
   @JsonIgnore
+  @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "account_iban", referencedColumnName = "iban", nullable = false)
   private Account account;

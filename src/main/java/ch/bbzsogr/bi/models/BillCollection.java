@@ -2,6 +2,7 @@ package ch.bbzsogr.bi.models;
 
 import ch.bbzsogr.bi.models.enums.Currency;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -26,11 +27,13 @@ public class BillCollection {
   private Currency currency = Currency.CHF;
 
   @JsonIgnore
+  @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "bancomat_id", referencedColumnName = "id")
   private Bancomat bancomat;
 
   @JsonIgnore
+  @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "withdraw_id", referencedColumnName = "id")
   private Withdraw withdraw;

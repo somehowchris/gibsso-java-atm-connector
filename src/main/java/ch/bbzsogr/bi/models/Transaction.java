@@ -2,6 +2,7 @@ package ch.bbzsogr.bi.models;
 
 import ch.bbzsogr.bi.models.enums.Currency;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -27,21 +28,25 @@ public class Transaction {
   private Currency currency = Currency.CHF;
 
   @JsonIgnore
+  @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
   @OneToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "withdraw_id", referencedColumnName = "id")
   private Withdraw withdraw;
 
   @JsonIgnore
+  @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "account_to_iban", referencedColumnName = "iban", nullable = false)
   private Account to;
 
   @JsonIgnore
+  @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "account_from_iban", referencedColumnName = "iban")
   private Account from;
 
   @JsonIgnore
+  @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "card_number", referencedColumnName = "card_number")
   private Card card;

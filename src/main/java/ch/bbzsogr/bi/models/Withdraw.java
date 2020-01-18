@@ -1,6 +1,7 @@
 package ch.bbzsogr.bi.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -31,16 +32,19 @@ public class Withdraw {
   private List<BillCollection> bills = new ArrayList<>();
 
   @JsonIgnore
+  @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "account_iban", referencedColumnName = "iban")
   private Account account;
 
   @JsonIgnore
+  @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "card_number", referencedColumnName = "card_number")
   private Card card;
 
   @JsonIgnore
+  @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "bancomat_at", referencedColumnName = "id")
   private Bancomat bancomat;

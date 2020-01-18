@@ -1,6 +1,7 @@
 package ch.bbzsogr.bi.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.iban4j.CountryCode;
 import org.iban4j.Iban;
 
@@ -34,6 +35,7 @@ public class Account {
   private List<Withdraw> withdraws = new ArrayList<>();
 
   @JsonIgnore
+  @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "person_id", referencedColumnName = "id", nullable = false)
   private Person person;
