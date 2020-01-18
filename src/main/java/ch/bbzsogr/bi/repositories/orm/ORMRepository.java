@@ -25,6 +25,7 @@ public class ORMRepository<T> extends TypeT<T> implements ch.bbzsogr.bi.interfac
 
   @Override
   public T find(String identifier) {
+    session.flush();
     logger.info("Finding " + identifier + " of type " + getTypeOfT().getSimpleName());
     return getLocalSession().find(getTypeOfT(), identifier);
   }
@@ -45,6 +46,7 @@ public class ORMRepository<T> extends TypeT<T> implements ch.bbzsogr.bi.interfac
       transaction.rollback();
       throw new EntitySaveException(getTypeOfT());
     }finally {
+      session.flush();
       session.close();
     }
   }
@@ -58,6 +60,7 @@ public class ORMRepository<T> extends TypeT<T> implements ch.bbzsogr.bi.interfac
 
     String identifier = (String) session.save(obj);
     T object = session.find(getTypeOfT(), identifier);
+    session.flush();
     session.close();
 
     return object;
@@ -78,6 +81,7 @@ public class ORMRepository<T> extends TypeT<T> implements ch.bbzsogr.bi.interfac
       logger.warning("Couldn't update " + obj.toString() + " of type " + getTypeOfT().getSimpleName());
       throw new EntityUpdateException(getTypeOfT());
     } finally {
+      session.flush();
       session.close();
     }
   }
@@ -88,6 +92,7 @@ public class ORMRepository<T> extends TypeT<T> implements ch.bbzsogr.bi.interfac
     if (transaction.getStatus() == TransactionStatus.NOT_ACTIVE) transaction.begin();
     Session session = getSession();
     session.update(obj);
+    session.flush();
     session.close();
   }
 
@@ -96,6 +101,7 @@ public class ORMRepository<T> extends TypeT<T> implements ch.bbzsogr.bi.interfac
     logger.info("Deleting " + obj.toString() + " of type " + getTypeOfT().getSimpleName());
     Session session = getSession();
     session.remove(obj);
+    session.flush();
     session.close();
   }
 
