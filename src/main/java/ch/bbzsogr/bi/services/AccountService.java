@@ -15,6 +15,7 @@ import ch.bbzsogr.bi.utils.Container;
 import ch.bbzsogr.bi.utils.LoggingUtil;
 
 import javax.security.auth.login.AccountLockedException;
+import java.util.ArrayList;
 import java.util.logging.Logger;
 
 @Service(api = ApiType.DIRECT)
@@ -88,6 +89,8 @@ public class AccountService implements AccountServiceInterface {
     Account account = new Account();
     account.setPerson(person);
 
+
+    if(person.getAccounts() == null) person.setAccounts(new ArrayList<>());
     person.getAccounts().add(account);
 
     try {
@@ -103,6 +106,9 @@ public class AccountService implements AccountServiceInterface {
     logger.info("Locking " + iban);
 
     Account account = getAccountByIBAN(iban);
+
+    if(account == null) throw new AccountNotFoundException(iban);
+
     account.setCards(null);
     account.setLocked(true);
 
