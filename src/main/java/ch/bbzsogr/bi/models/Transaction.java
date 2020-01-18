@@ -27,22 +27,18 @@ public class Transaction {
   @Enumerated(EnumType.STRING)
   private Currency currency = Currency.CHF;
 
-  @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
   @OneToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "withdraw_id", referencedColumnName = "id")
   private Withdraw withdraw;
 
-  @JsonProperty(access = JsonProperty.Access.READ_ONLY)
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "account_to_iban", referencedColumnName = "iban", nullable = false)
   private Account to;
 
-  @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "account_from_iban", referencedColumnName = "iban")
   private Account from;
 
-  @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "card_number", referencedColumnName = "card_number")
   private Card card;

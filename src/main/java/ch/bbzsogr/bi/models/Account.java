@@ -34,7 +34,6 @@ public class Account {
   @OneToMany(mappedBy = "account", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
   private List<Withdraw> withdraws = new ArrayList<>();
 
-  @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "person_id", referencedColumnName = "id", nullable = false)
   private Person person;

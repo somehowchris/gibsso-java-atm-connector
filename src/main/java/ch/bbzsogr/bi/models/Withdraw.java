@@ -31,17 +31,14 @@ public class Withdraw {
   @OneToMany(mappedBy = "withdraw", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
   private List<BillCollection> bills = new ArrayList<>();
 
-  @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "account_iban", referencedColumnName = "iban")
   private Account account;
 
-  @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "card_number", referencedColumnName = "card_number")
   private Card card;
 
-  @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "bancomat_at", referencedColumnName = "id")
   private Bancomat bancomat;

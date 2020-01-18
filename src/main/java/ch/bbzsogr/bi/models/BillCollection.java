@@ -26,12 +26,10 @@ public class BillCollection {
   @Enumerated(EnumType.STRING)
   private Currency currency = Currency.CHF;
 
-  @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "bancomat_id", referencedColumnName = "id")
   private Bancomat bancomat;
 
-  @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "withdraw_id", referencedColumnName = "id")
   private Withdraw withdraw;

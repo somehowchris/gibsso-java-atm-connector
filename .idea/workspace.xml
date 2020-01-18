@@ -4,7 +4,11 @@
     <list default="true" id="7e7d5aa8-ede2-449a-bcb8-81f61201ba90" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/models/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/models/Account.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/models/BillCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/models/BillCollection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/models/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/models/Card.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/models/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/models/Transaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/models/Withdraw.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/models/Withdraw.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
