@@ -2,60 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7e7d5aa8-ede2-449a-bcb8-81f61201ba90" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_microsoft_sqlserver_mssql_jdbc_7_4_1_jre8.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_squareup_moshi_moshi_1_9_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_squareup_okhttp3_okhttp_4_3_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_squareup_okio_okio_2_4_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__de_greenrobot_java_common_2_3_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_9.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node/yarn-error.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node/yarn.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/exceptions/PinDoesNotMeetRequirementsException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/rest/abstracts/RestService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/rest/exceptions/DBTransactionsViaRestNotSupported.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/rest/models/RestAPIConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/rest/models/enums/ResponseState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/rest/services/AccountRestService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/rest/services/BancomatRestService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/rest/services/BillCollectionService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/rest/services/CardRestService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/rest/services/PeopleRestService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_4_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_params_5_4_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_4_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/cassandra/CassandraConnectorTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/couchdb/CouchbaseConnectorTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/maria/MariaConnectorTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/mongodb/MongoDBConnectorTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/mysql/MySQLConnectorTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/postgresql/PostgreSQLConnectorTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/redis/RedisConnectorTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/sqlite/SQLiteConnectorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_0_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_5_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_4_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_5_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_4_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_1_1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Bancomat-Connector.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Bancomat-Connector.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/connectors/FSConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/connectors/FSConnector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/connectors/OGMConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/connectors/OGMConnector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/connectors/ORMConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/connectors/ORMConnector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/controllers/DatabaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/controllers/DatabaseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/exceptions/AccountReactionException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/exceptions/AccountCreationException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/exceptions/OGMNotYetSupportedException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/exceptions/OGMNotYetSupportedException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/interfaces/Connector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/interfaces/Connector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/interfaces/Seed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/interfaces/Seed.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/interfaces/repositories/CardRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/interfaces/repositories/CardRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/interfaces/repositories/PeopleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/interfaces/repositories/PeopleRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/interfaces/repositories/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/interfaces/repositories/Repository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/interfaces/services/AccountServiceInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/interfaces/services/AccountServiceInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/interfaces/services/BancomatServiceInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/interfaces/services/BancomatServiceInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/interfaces/services/BillCollectionServiceInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/interfaces/services/BillCollectionServiceInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/interfaces/services/CardServiceInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/interfaces/services/CardServiceInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/interfaces/services/PeopleServiceInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/interfaces/services/PeopleServiceInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/models/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/models/Card.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/models/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/models/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/repositories/orm/ORMCardRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/repositories/orm/ORMCardRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/services/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/services/AccountService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/services/BancomatService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/services/BancomatService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/services/BillCollectionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/services/BillCollectionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/services/CardService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/services/CardService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/services/PeopleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/bi/services/PeopleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/rest/AccountRestService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/rest/BancomatRestService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/rest/BillCollectionService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/rest/CardRestService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/bbzsogr/rest/PeopleRestService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/cassandra/Connector.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/couchdb/Connector.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/h2/Connector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/h2/ConnectorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/maria/Connector.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/mongodb/Connector.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/mysql/Connector.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/postgresql/Connector.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/redis/Connector.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sqlite/Connector.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +97,7 @@
       <recent name="$PROJECT_DIR$/src/main/java/bi/repositories/orm" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.main (1)">
+  <component name="RunManager" selected="JUnit.redis in Bancomat-Connector">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -186,6 +160,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="redis in Bancomat-Connector" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Bancomat-Connector" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="redis.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="redis" />
+      <option name="TEST_OBJECT" value="package" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="TestNG">
       <option name="TEST_OBJECT" value="CLASS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
@@ -206,6 +195,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.redis in Bancomat-Connector" />
         <item itemvalue="Application.main (1)" />
         <item itemvalue="Application.main" />
         <item itemvalue="Application.main (1)" />
@@ -261,10 +251,10 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="490" y="457" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1579095280715" />
-    <state x="239" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1579102837768">
+    <state x="239" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1579263049676">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="239" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1579102837768" />
+    <state x="239" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1579263049676" />
     <state x="583" y="255" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1579107613246">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -273,38 +263,42 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="412" y="127" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1579087217167" />
-    <state width="1638" height="327" key="GridCell.Tab.0.bottom" timestamp="1579215984398">
+    <state width="1638" height="327" key="GridCell.Tab.0.bottom" timestamp="1579259982033">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="327" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1579215984398" />
+    <state width="1638" height="327" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1579259982033" />
     <state width="1638" height="295" key="GridCell.Tab.0.bottom/0.23.1680.970@0.23.1680.970" timestamp="1578958461346" />
     <state width="1638" height="295" key="GridCell.Tab.0.bottom/0.23.1680.974@0.23.1680.974" timestamp="1578947067600" />
     <state width="1638" height="295" key="GridCell.Tab.0.bottom/0.23.1680.975@0.23.1680.975" timestamp="1578932761391" />
-    <state width="1638" height="327" key="GridCell.Tab.0.center" timestamp="1579215984397">
+    <state width="1638" height="327" key="GridCell.Tab.0.bottom/0.23.1680.976@0.23.1680.976" timestamp="1579258717475" />
+    <state width="1638" height="327" key="GridCell.Tab.0.center" timestamp="1579259982031">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="327" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1579215984397" />
+    <state width="1638" height="327" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1579259982031" />
     <state width="1638" height="295" key="GridCell.Tab.0.center/0.23.1680.970@0.23.1680.970" timestamp="1578958461343" />
     <state width="1638" height="295" key="GridCell.Tab.0.center/0.23.1680.974@0.23.1680.974" timestamp="1578947067598" />
     <state width="1638" height="295" key="GridCell.Tab.0.center/0.23.1680.975@0.23.1680.975" timestamp="1578932761389" />
-    <state width="1638" height="327" key="GridCell.Tab.0.left" timestamp="1579215984396">
+    <state width="1638" height="327" key="GridCell.Tab.0.center/0.23.1680.976@0.23.1680.976" timestamp="1579258717473" />
+    <state width="1638" height="327" key="GridCell.Tab.0.left" timestamp="1579259982030">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="327" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1579215984396" />
+    <state width="1638" height="327" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1579259982030" />
     <state width="1638" height="295" key="GridCell.Tab.0.left/0.23.1680.970@0.23.1680.970" timestamp="1578958461340" />
     <state width="1638" height="295" key="GridCell.Tab.0.left/0.23.1680.974@0.23.1680.974" timestamp="1578947067597" />
     <state width="1638" height="295" key="GridCell.Tab.0.left/0.23.1680.975@0.23.1680.975" timestamp="1578932761388" />
-    <state width="1638" height="327" key="GridCell.Tab.0.right" timestamp="1579215984397">
+    <state width="1638" height="327" key="GridCell.Tab.0.left/0.23.1680.976@0.23.1680.976" timestamp="1579258717465" />
+    <state width="1638" height="327" key="GridCell.Tab.0.right" timestamp="1579259982032">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="327" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1579215984397" />
+    <state width="1638" height="327" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1579259982032" />
     <state width="1638" height="295" key="GridCell.Tab.0.right/0.23.1680.970@0.23.1680.970" timestamp="1578958461344" />
     <state width="1638" height="295" key="GridCell.Tab.0.right/0.23.1680.974@0.23.1680.974" timestamp="1578947067599" />
     <state width="1638" height="295" key="GridCell.Tab.0.right/0.23.1680.975@0.23.1680.975" timestamp="1578932761390" />
-    <state x="378" y="187" key="Maven.ArtifactSearchDialog" timestamp="1578936414493">
+    <state width="1638" height="327" key="GridCell.Tab.0.right/0.23.1680.976@0.23.1680.976" timestamp="1579258717474" />
+    <state x="378" y="187" key="Maven.ArtifactSearchDialog" timestamp="1579216368607">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="378" y="187" key="Maven.ArtifactSearchDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1578936414493" />
+    <state x="378" y="187" key="Maven.ArtifactSearchDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1579216368607" />
     <state x="341" y="164" key="SettingsEditor" timestamp="1578948415458">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>

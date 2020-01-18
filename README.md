@@ -12,24 +12,24 @@
 - [x] Basic logging
 - [x] Pin length validation
 - [x] MS SQL driver
-- [ ] Password constraints
 - [ ] Extend exceptions
 - [ ] Repositories for FS
-- [ ] TestContainers Dockerfile 4 sqlite, redis
+- [ ] TestContainers Dockerfile 4 sqlite
 - [ ] Tests
-- [ ] General dockerfile 2 test & build
 - [ ] Uml
 - [ ] Readme
 - [ ] JavaDoc
+- [ ] .gitlab-ci.yaml file to test on push
+https://docs.gitlab.com/ee/user/packages/maven_repository/
 - [ ] More specific logging for longer functions
+- [ ] Password constraints
 
 
 # ADD ON
 
+- [ ] Run tests in parallel
 - [ ] Receipt as PDF
 - [ ] JavaDoc Gitlab Pages
-- [ ] .gitlab-ci.yaml file to test on push
-https://docs.gitlab.com/ee/user/packages/maven_repository/
 - [ ] Fix OGM
 - [ ] OGM Model decoration
 - [ ] OGM Repositories
