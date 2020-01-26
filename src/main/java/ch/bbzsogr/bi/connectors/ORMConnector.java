@@ -34,6 +34,13 @@ public class ORMConnector implements Connector {
     this.setUp();
   }
 
+  /**
+   * Connects to database
+   *
+   * @return
+   * @throws ConnectionRefusedException
+   * @throws AccessNotGrantedException
+   */
   public SessionFactory connect() throws ConnectionRefusedException, AccessNotGrantedException {
     logger.info("Preparing to connect to the database");
 
@@ -66,6 +73,14 @@ public class ORMConnector implements Connector {
     return config.buildSessionFactory();
   }
 
+  /**
+   * Sets up the database
+   *
+   * @return
+   * @throws IOException
+   * @throws AccessNotGrantedException
+   * @throws ConnectionRefusedException
+   */
   public boolean setUp() throws IOException, AccessNotGrantedException, ConnectionRefusedException {
     logger.info("Setting the database up");
 

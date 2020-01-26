@@ -24,6 +24,9 @@ import java.util.List;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
+/**
+ * Is the Controller of the database
+ */
 public class DatabaseController {
 
   public static Session session;
@@ -33,6 +36,16 @@ public class DatabaseController {
   private static SessionFactory sessionFactory;
   private Logger logger;
 
+  /**
+   * Connects to database
+   *
+   * @throws OGMDatabaseTypeNotFoundException
+   * @throws UrlDialectNotSupportedException
+   * @throws AccessNotGrantedException
+   * @throws IOException
+   * @throws ConnectionRefusedException
+   * @throws OGMNotYetSupportedException
+   */
   public DatabaseController() throws OGMDatabaseTypeNotFoundException, UrlDialectNotSupportedException, AccessNotGrantedException, IOException, ConnectionRefusedException, OGMNotYetSupportedException {
     logger = new LoggingUtil(DatabaseController.class).getLogger();
 
@@ -61,6 +74,11 @@ public class DatabaseController {
     logger.info("Connected and using "+type.getPrefix()+" repositories");
   }
 
+  /**
+   * Runs the seeds
+   *
+   * @throws IOException
+   */
   public void seed() throws IOException {
     List<Seed> seeds = Container.getTopLevelClasses(DatabaseController.class)
       .filter(classInfo -> classInfo.load().getAnnotation(Seeder.class) != null && Seed.class.isAssignableFrom(classInfo.load()))
@@ -92,6 +110,11 @@ public class DatabaseController {
     });
   }
 
+  /**
+   * Gets the session
+   *
+   * @return
+   */
   public static Session getSession() {
     return DatabaseController.sessionFactory.openSession();
   }
