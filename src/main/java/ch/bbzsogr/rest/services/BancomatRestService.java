@@ -26,6 +26,7 @@ public class BancomatRestService extends RestService implements BancomatServiceI
           .url(
             createUrl()
               .addPathSegment("bancomats")
+              .addPathSegment("bills")
               .addPathSegment(bancomatId)
               .build()
           ).build()
@@ -48,10 +49,14 @@ public class BancomatRestService extends RestService implements BancomatServiceI
           .url(
             createUrl()
               .addPathSegment("bancomats")
-              .addPathSegment(location)
               .build()
           )
-          .post(null)
+          .post(
+            RequestBody.create(
+              location,
+              JSON
+            )
+          )
           .build()
       ).execute();
 
