@@ -177,7 +177,7 @@ public class CardService implements CardServiceInterface {
     logger.info("Updating the pin for "+cardNr);
     Card card = cardRepository.find(cardNr);
     if (card == null) throw new CardNotFoundException(cardNr);
-    if(card.getPin().length() != 6 && NumberUtils.isCreatable(pin)) throw new PinDoesNotMeetRequirementsException();
+    if(pin.length() != 6 && NumberUtils.isCreatable(pin)) throw new PinDoesNotMeetRequirementsException();
 
     card.setPin(HashUtil.hash(pin));
 
