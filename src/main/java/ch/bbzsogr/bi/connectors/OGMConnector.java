@@ -34,6 +34,13 @@ public class OGMConnector implements Connector {
     throw new OGMNotYetSupportedException();
   }
 
+  /**
+   * Connects to datasource
+   *
+   * @return
+   * @throws ConnectionRefusedException
+   * @throws AccessNotGrantedException
+   */
   public SessionFactory connect() throws ConnectionRefusedException, AccessNotGrantedException {
     logger.info("Preparing to connect to the datasource");
     Reflections reflections = new Reflections("ch.bbzsogr.bi.models");
@@ -55,6 +62,13 @@ public class OGMConnector implements Connector {
     return config.buildSessionFactory(serviceRegistry);
   }
 
+  /**
+   * Sets up datasource
+   *
+   * @return
+   * @throws AccessNotGrantedException
+   * @throws ConnectionRefusedException
+   */
   public boolean setUp() throws AccessNotGrantedException, ConnectionRefusedException {
     logger.info("Setting the datasource up");
 

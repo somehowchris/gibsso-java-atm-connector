@@ -70,6 +70,13 @@ public class FSConnector implements Connector {
     return getFile();
   }
 
+  /**
+   * Sets up the filesystem
+   *
+   * @return
+   * @throws IOException
+   * @throws ConnectionRefusedException
+   */
   public boolean setUp() throws IOException, ConnectionRefusedException {
     logger.info("Setting up the filesystem");
 
