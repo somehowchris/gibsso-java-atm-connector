@@ -104,6 +104,7 @@ public class CardService implements CardServiceInterface {
     Account bankAccount = peopleService.getPersonByMail(new DotEnvUtil().get(EnvKeys.BANK_MAIL.getKey())).getAccounts().get(0);
     Account cardAccount = card.getAccount();
 
+    // TODO exception
     if (cardAccount.isLocked()) return null;
     if (bankAccount.isLocked()) return null;
 
@@ -137,9 +138,11 @@ public class CardService implements CardServiceInterface {
       if (card.getCredit() + cardAccount.getBalance() - amount == 0) card.setLocked(true);
 
       withdraw = withdrawRepository.save(withdraw, hibernateTransaction);
+
       hibernateTransaction.commit();
       return withdraw;
     } catch (Exception e) {
+      e.printStackTrace();
       logger.warning("Could transfer nor withdraw");
       hibernateTransaction.rollback();
       throw new WithdrawException();
