@@ -2,6 +2,9 @@ package ch.bbzsogr.bi.utils;
 
 import java.util.Random;
 
+/**
+ * The type Credit card util.
+ */
 public class CreditCardUtil {
   private static Random random = new Random(System.currentTimeMillis());
   private static int cardNumberLength = 8;
@@ -45,8 +48,7 @@ public class CreditCardUtil {
    * valid (i.e. pass the Luhn check)
    *
    * @param number The credit card number for which to generate the check digit.
-   * @return The check digit required to make the given credit card number
-   * valid.
+   * @return The check digit required to make the given credit card number valid.
    */
   public static int getCheckDigit(String number) {
 
@@ -83,6 +85,11 @@ public class CreditCardUtil {
     return ((mod == 0) ? 0 : 10 - mod);
   }
 
+  /**
+   * Generate pin string.
+   *
+   * @return the string
+   */
   public static String generatePin() {
     StringBuilder pin = new StringBuilder();
     for (int i = 0; i < pinLength; i++) {

@@ -11,8 +11,8 @@ public class CouldNotMeetWithdrawAmountException extends Exception {
   /**
    * Initiates a new Could not meet withdraw amount Exception
    *
-   * @param requestedAmount
-   * @param metAmount
+   * @param requestedAmount the requested amount
+   * @param metAmount       the met amount
    */
   public CouldNotMeetWithdrawAmountException(double requestedAmount, double metAmount) {
     super("Could not meet current wanted " + requestedAmount + " with the current lowest met amount" + metAmount);
@@ -23,7 +23,7 @@ public class CouldNotMeetWithdrawAmountException extends Exception {
   /**
    * Gets the requested withdraw amount
    *
-   * @return
+   * @return requested
    */
   public double getRequested() {
     return requested;
@@ -32,7 +32,7 @@ public class CouldNotMeetWithdrawAmountException extends Exception {
   /**
    * Gets the available withdraw amount
    *
-   * @return
+   * @return available
    */
   public double getAvailable() {
     return available;

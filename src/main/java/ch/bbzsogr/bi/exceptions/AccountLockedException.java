@@ -10,7 +10,7 @@ public class AccountLockedException extends Exception {
   /**
    * Instantiates a new Account locked Exception
    *
-   * @param iban
+   * @param iban the iban
    */
   public AccountLockedException(String iban) {
     super("The account " + iban + " seems locked");
@@ -20,7 +20,7 @@ public class AccountLockedException extends Exception {
   /**
    * Gets the Iban
    *
-   * @return
+   * @return iban
    */
   public String getIban() {
     return iban;

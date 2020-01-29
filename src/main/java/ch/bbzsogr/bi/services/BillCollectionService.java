@@ -12,6 +12,9 @@ import ch.bbzsogr.bi.utils.LoggingUtil;
 
 import java.util.logging.Logger;
 
+/**
+ * The type Bill collection service.
+ */
 @Service(api = ApiType.DIRECT)
 public class BillCollectionService implements BillCollectionServiceInterface {
 

@@ -11,12 +11,23 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
+/**
+ * The type Orm people repository.
+ */
 @DatabaseType(type = DatabaseInterpreters.ORM)
 public class ORMPeopleRepository extends ORMRepository<Person> implements PeopleRepository {
 
+  /**
+   * Instantiates a new Orm people repository.
+   */
   public ORMPeopleRepository() {
   }
 
+  /**
+   * Instantiates a new Orm people repository.
+   *
+   * @param session the session
+   */
   public ORMPeopleRepository(Session session) {
     super(session);
   }

@@ -5,12 +5,12 @@ package ch.bbzsogr.bi.exceptions;
  */
 public class OGMDatabaseTypeNotFoundException extends Exception {
 
-  /**
-   * Initiates a new OGM database type not found Exception
-   *
-   * @param type
-   */
-  public OGMDatabaseTypeNotFoundException(String type) {
+    /**
+     * Initiates a new OGM database type not found Exception
+     *
+     * @param type the type
+     */
+    public OGMDatabaseTypeNotFoundException(String type) {
     super("Couldn't find the ogm supported database type " + type);
   }
 }

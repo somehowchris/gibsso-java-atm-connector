@@ -17,7 +17,12 @@ public class OGMConfig implements Config {
   private int port;
   private OGMSupportedDatabases type;
 
-  public OGMConfig() throws OGMDatabaseTypeNotFoundException {
+    /**
+     * Instantiates a new Ogm config.
+     *
+     * @throws OGMDatabaseTypeNotFoundException the ogm database type not found exception
+     */
+    public OGMConfig() throws OGMDatabaseTypeNotFoundException {
     DotEnvUtil envUtil = new DotEnvUtil();
     this.password = envUtil.get("DATABASE_PASSWORD");
     this.username = envUtil.get("DATABASE_USERNAME");
@@ -27,7 +32,17 @@ public class OGMConfig implements Config {
     this.type = OGMSupportedDatabases.getTypeByName(envUtil.get("DATABASE_OGM_TYPE"));
   }
 
-  public OGMConfig(String password, String username, String database, String host, int port, OGMSupportedDatabases type) {
+    /**
+     * Instantiates a new Ogm config.
+     *
+     * @param password the password
+     * @param username the username
+     * @param database the database
+     * @param host     the host
+     * @param port     the port
+     * @param type     the type
+     */
+    public OGMConfig(String password, String username, String database, String host, int port, OGMSupportedDatabases type) {
     this.password = password;
     this.username = username;
     this.database = database;
@@ -36,101 +51,111 @@ public class OGMConfig implements Config {
     this.type = type;
   }
 
-  public OGMSupportedDatabases getType() {
+    /**
+     * Gets type.
+     *
+     * @return the type
+     */
+    public OGMSupportedDatabases getType() {
     return type;
   }
 
-  public void setType(OGMSupportedDatabases type) {
+    /**
+     * Sets type.
+     *
+     * @param type the type
+     */
+    public void setType(OGMSupportedDatabases type) {
     this.type = type;
   }
 
-  /**
-   * Gets host.
-   *
-   * @return the host
-   */
-  public String getHost() {
+    /**
+     * Gets host.
+     *
+     * @return the host
+     */
+    public String getHost() {
     return host;
   }
 
-  /**
-   * Sets host.
-   *
-   * @param host the host
-   */
-  public void setHost(String host) {
+    /**
+     * Sets host.
+     *
+     * @param host the host
+     */
+    public void setHost(String host) {
     this.host = host;
   }
 
-  /**
-   * Gets database.
-   *
-   * @return the database
-   */
-  public String getDatabase() {
+    /**
+     * Gets database.
+     *
+     * @return the database
+     */
+    public String getDatabase() {
     return database;
   }
 
-  /**
-   * Sets database.
-   *
-   * @param database the database
-   */
-  public void setDatabase(String database) {
+    /**
+     * Sets database.
+     *
+     * @param database the database
+     */
+    public void setDatabase(String database) {
     this.database = database;
   }
 
-  /**
-   * Gets password.
-   *
-   * @return the password
-   */
-  public String getPassword() {
+    /**
+     * Gets password.
+     *
+     * @return the password
+     */
+    public String getPassword() {
     return password;
   }
 
-  /**
-   * Sets password.
-   *
-   * @param password the password
-   */
-  public void setPassword(String password) {
+    /**
+     * Sets password.
+     *
+     * @param password the password
+     */
+    public void setPassword(String password) {
     this.password = password;
   }
 
-  /**
-   * Gets username.
-   *
-   * @return the username
-   */
-  public String getUsername() {
+    /**
+     * Gets username.
+     *
+     * @return the username
+     */
+    public String getUsername() {
     return username;
   }
 
-  /**
-   * Sets username.
-   *
-   * @param username the username
-   */
-  public void setUsername(String username) {
+    /**
+     * Sets username.
+     *
+     * @param username the username
+     */
+    public void setUsername(String username) {
     this.username = username;
   }
 
-  /**
-   * Gets port.
-   *
-   * @return the port
-   */
-  public int getPort() {
+    /**
+     * Gets port.
+     *
+     * @return the port
+     */
+    public int getPort() {
     return port;
   }
 
-  /**
-   * Sets port.
-   *
-   * @param port the port
-   */
-  public void setPort(int port) {
+    /**
+     * Sets port.
+     *
+     * @param port the port
+     */
+    public void setPort(int port) {
     this.port = port;
   }
 

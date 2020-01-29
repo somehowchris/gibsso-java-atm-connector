@@ -29,6 +29,13 @@ public enum OGMSupportedDatabases {
     this.name = name;
   }
 
+  /**
+   * Gets type by name.
+   *
+   * @param name the name
+   * @return the type by name
+   * @throws OGMDatabaseTypeNotFoundException the ogm database type not found exception
+   */
   public static OGMSupportedDatabases getTypeByName(String name) throws OGMDatabaseTypeNotFoundException {
     if (name.equals(MongoDB.getName())) {
       return MongoDB;
@@ -42,6 +49,11 @@ public enum OGMSupportedDatabases {
     throw new OGMDatabaseTypeNotFoundException(name);
   }
 
+  /**
+   * Gets name.
+   *
+   * @return the name
+   */
   public String getName() {
     return name;
   }

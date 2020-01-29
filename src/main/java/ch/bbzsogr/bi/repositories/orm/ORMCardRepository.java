@@ -11,12 +11,23 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
+/**
+ * The type Orm card repository.
+ */
 @DatabaseType(type = DatabaseInterpreters.ORM)
 public class ORMCardRepository extends ORMRepository<Card> implements CardRepository {
 
+  /**
+   * Instantiates a new Orm card repository.
+   */
   public ORMCardRepository() {
   }
 
+  /**
+   * Instantiates a new Orm card repository.
+   *
+   * @param session the session
+   */
   public ORMCardRepository(Session session) {
     super(session);
   }

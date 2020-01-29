@@ -13,5 +13,10 @@ import java.lang.annotation.Target;
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Service {
+  /**
+   * Api api type.
+   *
+   * @return the api type
+   */
   ApiType api();
 }

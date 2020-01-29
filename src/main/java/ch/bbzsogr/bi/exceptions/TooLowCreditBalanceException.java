@@ -14,9 +14,9 @@ public class TooLowCreditBalanceException extends Exception {
   /**
    * Initiates a new Too low credit balance Exception
    *
-   * @param balance
-   * @param amount
-   * @param currency
+   * @param balance  the balance
+   * @param amount   the amount
+   * @param currency the currency
    */
   public TooLowCreditBalanceException(double balance, double amount, Currency currency) {
     super("Could not transfer " + amount + " " + currency.name() + " from an account with a balance of" + balance);
@@ -28,7 +28,7 @@ public class TooLowCreditBalanceException extends Exception {
   /**
    * Gets the balance
    *
-   * @return
+   * @return balance
    */
   public double getBalance() {
     return balance;
@@ -37,7 +37,7 @@ public class TooLowCreditBalanceException extends Exception {
   /**
    * Gets the amount
    *
-   * @return
+   * @return amount
    */
   public double getAmount() {
     return amount;
@@ -46,7 +46,7 @@ public class TooLowCreditBalanceException extends Exception {
   /**
    * Gets the currency
    *
-   * @return
+   * @return currency
    */
   public Currency getCurrency() {
     return currency;

@@ -15,8 +15,27 @@ import ch.bbzsogr.rest.models.RestAPIConfig;
 
 import java.io.IOException;
 
+/**
+ * The type Main.
+ */
 public class Main {
 
+  /**
+   * The entry point of application.
+   *
+   * @param args the input arguments
+   * @throws OGMNotYetSupportedException      the ogm not yet supported exception
+   * @throws OGMDatabaseTypeNotFoundException the ogm database type not found exception
+   * @throws ConnectionRefusedException       the connection refused exception
+   * @throws IOException                      the io exception
+   * @throws AccessNotGrantedException        the access not granted exception
+   * @throws UrlDialectNotSupportedException  the url dialect not supported exception
+   * @throws AccountLockException             the account lock exception
+   * @throws AccountNotFoundException         the account not found exception
+   * @throws EntitySaveException              the entity save exception
+   * @throws AccountCreationException         the account creation exception
+   * @throws CardCreationException            the card creation exception
+   */
   public static void main(String[] args) throws OGMNotYetSupportedException, OGMDatabaseTypeNotFoundException, ConnectionRefusedException, IOException, AccessNotGrantedException, UrlDialectNotSupportedException, AccountLockException, AccountNotFoundException, EntitySaveException, AccountCreationException, CardCreationException {
     RestAPIConfig config = new RestAPIConfig();
     DatabaseController db = new DatabaseController();

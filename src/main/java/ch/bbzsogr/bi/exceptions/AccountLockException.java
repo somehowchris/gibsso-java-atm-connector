@@ -7,7 +7,7 @@ public class AccountLockException extends Exception {
   /**
    * Instantiates a new Account lock Exception
    *
-   * @param account
+   * @param account the account
    */
   public AccountLockException(String account) {
     super("We were not able to lock the account " + account);

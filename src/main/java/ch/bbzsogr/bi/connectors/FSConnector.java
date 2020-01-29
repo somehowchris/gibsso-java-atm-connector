@@ -28,6 +28,8 @@ public class FSConnector implements Connector {
    * Instantiates a new Fs connector.
    *
    * @param config the config
+   * @throws IOException                the io exception
+   * @throws ConnectionRefusedException the connection refused exception
    */
   public FSConnector(FSConfig config) throws IOException, ConnectionRefusedException {
     this.config = config;

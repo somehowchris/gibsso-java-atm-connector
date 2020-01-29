@@ -6,6 +6,9 @@ import ch.bbzsogr.bi.models.BillCollection;
 import ch.bbzsogr.bi.models.enums.DatabaseInterpreters;
 import org.hibernate.Transaction;
 
+/**
+ * The type Fs bill collection repository.
+ */
 @DatabaseType(type = DatabaseInterpreters.FS)
 public class FSBillCollectionRepository implements BillCollectionRepository {
 

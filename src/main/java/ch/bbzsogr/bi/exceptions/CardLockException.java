@@ -10,7 +10,7 @@ public class CardLockException extends Exception {
   /**
    * Initiates a new Card lock Exception
    *
-   * @param nr
+   * @param nr the nr
    */
   public CardLockException(String nr) {
     super("Could not lock card Nr. " + nr);

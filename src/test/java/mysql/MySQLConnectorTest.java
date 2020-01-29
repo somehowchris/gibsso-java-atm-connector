@@ -7,13 +7,22 @@ import org.testcontainers.containers.MySQLContainer;
 import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
 
+/**
+ * The type My sql connector test.
+ */
 @Testcontainers
 public class MySQLConnectorTest {
 
-  @Container
+    /**
+     * The Mysql.
+     */
+    @Container
   public MySQLContainer mysql = new MySQLContainer();
 
-  @BeforeEach
+    /**
+     * Sets up.
+     */
+    @BeforeEach
   public void setUp() {
     String url = mysql.getJdbcUrl();
     String password = mysql.getPassword();

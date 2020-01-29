@@ -6,13 +6,22 @@ import org.testcontainers.containers.PostgreSQLContainer;
 import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
 
+/**
+ * The type Postgre sql connector test.
+ */
 @Testcontainers
 public class PostgreSQLConnectorTest {
 
-  @Container
+    /**
+     * The Postgres.
+     */
+    @Container
   public PostgreSQLContainer postgres = new PostgreSQLContainer();
 
-  @BeforeEach
+    /**
+     * Sets up.
+     */
+    @BeforeEach
   public void setUp() {
     String url = postgres.getJdbcUrl();
     String password = postgres.getPassword();

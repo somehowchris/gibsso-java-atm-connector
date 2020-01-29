@@ -25,6 +25,9 @@ import java.util.Optional;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
+/**
+ * The type Card service.
+ */
 @Service(api = ApiType.DIRECT)
 public class CardService implements CardServiceInterface {
 

@@ -5,9 +5,15 @@ import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 
 
+/**
+ * The type People service test.
+ */
 public class PeopleServiceTest {
 
-    @Test
+  /**
+   * Create person person not null.
+   */
+  @Test
     public void createPerson_PersonNotNull(){
         Person person = new Person();
         person.setFirstName("Hans");
@@ -20,7 +26,10 @@ public class PeopleServiceTest {
         Assert.assertNotNull(person.getEmail());
     }
 
-    @Test
+  /**
+   * Create person person is null.
+   */
+  @Test
     public void createPerson_PersonIsNull(){
         Person person = new Person();
 

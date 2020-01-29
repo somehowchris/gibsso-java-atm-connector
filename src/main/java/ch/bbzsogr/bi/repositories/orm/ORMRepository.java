@@ -12,15 +12,28 @@ import org.hibernate.resource.transaction.spi.TransactionStatus;
 
 import java.util.logging.Logger;
 
+/**
+ * The type Orm repository.
+ *
+ * @param <T> the type parameter
+ */
 public class ORMRepository<T> extends TypeT<T> implements ch.bbzsogr.bi.interfaces.repositories.Repository<T> {
 
   private Logger logger = new LoggingUtil<ORMRepository>(ORMRepository.class).getLogger();
   private Session session = DatabaseController.session;
 
+  /**
+   * Instantiates a new Orm repository.
+   */
   public ORMRepository() {
     this.session.setCacheMode(CacheMode.IGNORE);
   }
 
+  /**
+   * Instantiates a new Orm repository.
+   *
+   * @param session the session
+   */
   public ORMRepository(Session session) {
     this.session = session;
     this.session.setCacheMode(CacheMode.IGNORE);
@@ -93,10 +106,20 @@ public class ORMRepository<T> extends TypeT<T> implements ch.bbzsogr.bi.interfac
     session.remove(obj);
   }
 
+  /**
+   * Gets session.
+   *
+   * @return the session
+   */
   public Session getSession() {
     return session;
   }
 
+  /**
+   * Get local session session.
+   *
+   * @return the session
+   */
   public Session getLocalSession(){
     return this.session;
   }

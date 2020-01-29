@@ -29,7 +29,13 @@ import java.util.stream.Collectors;
  */
 public class DatabaseController {
 
+  /**
+   * The constant session.
+   */
   public static Session session;
+  /**
+   * The constant type.
+   */
   public static DatabaseInterpreters type;
   private Config config;
   private Connector connector;
@@ -39,12 +45,12 @@ public class DatabaseController {
   /**
    * Connects to database
    *
-   * @throws OGMDatabaseTypeNotFoundException
-   * @throws UrlDialectNotSupportedException
-   * @throws AccessNotGrantedException
-   * @throws IOException
-   * @throws ConnectionRefusedException
-   * @throws OGMNotYetSupportedException
+   * @throws OGMDatabaseTypeNotFoundException the ogm database type not found exception
+   * @throws UrlDialectNotSupportedException  the url dialect not supported exception
+   * @throws AccessNotGrantedException        the access not granted exception
+   * @throws IOException                      the io exception
+   * @throws ConnectionRefusedException       the connection refused exception
+   * @throws OGMNotYetSupportedException      the ogm not yet supported exception
    */
   public DatabaseController() throws OGMDatabaseTypeNotFoundException, UrlDialectNotSupportedException, AccessNotGrantedException, IOException, ConnectionRefusedException, OGMNotYetSupportedException {
     logger = new LoggingUtil(DatabaseController.class).getLogger();
@@ -77,7 +83,7 @@ public class DatabaseController {
   /**
    * Runs the seeds
    *
-   * @throws IOException
+   * @throws IOException the io exception
    */
   public void seed() throws IOException {
     List<Seed> seeds = Container.getTopLevelClasses(DatabaseController.class)
@@ -113,7 +119,7 @@ public class DatabaseController {
   /**
    * Gets the session
    *
-   * @return
+   * @return session
    */
   public static Session getSession() {
     return DatabaseController.sessionFactory.openSession();

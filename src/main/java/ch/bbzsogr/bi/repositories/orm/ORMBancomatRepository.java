@@ -6,14 +6,25 @@ import ch.bbzsogr.bi.models.Bancomat;
 import ch.bbzsogr.bi.models.enums.DatabaseInterpreters;
 import org.hibernate.Session;
 
+/**
+ * The type Orm bancomat repository.
+ */
 @DatabaseType(type = DatabaseInterpreters.ORM)
 public class ORMBancomatRepository extends ORMRepository<Bancomat> implements BancomatRepository {
 
-  public ORMBancomatRepository() {
+    /**
+     * Instantiates a new Orm bancomat repository.
+     */
+    public ORMBancomatRepository() {
     super();
   }
 
-  public ORMBancomatRepository(Session session) {
+    /**
+     * Instantiates a new Orm bancomat repository.
+     *
+     * @param session the session
+     */
+    public ORMBancomatRepository(Session session) {
     super(session);
   }
 

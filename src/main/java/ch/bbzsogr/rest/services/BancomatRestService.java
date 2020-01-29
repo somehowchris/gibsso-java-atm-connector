@@ -15,6 +15,9 @@ import okhttp3.Response;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * The type Bancomat rest service.
+ */
 @Service(api = ApiType.REST)
 public class BancomatRestService extends RestService implements BancomatServiceInterface {
 

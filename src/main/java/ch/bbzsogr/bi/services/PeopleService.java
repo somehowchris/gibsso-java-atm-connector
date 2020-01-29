@@ -15,6 +15,9 @@ import org.hibernate.Session;
 
 import java.util.logging.Logger;
 
+/**
+ * The type People service.
+ */
 @Service(api = ApiType.DIRECT)
 public class PeopleService implements PeopleServiceInterface {
 

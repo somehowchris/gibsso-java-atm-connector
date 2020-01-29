@@ -6,9 +6,15 @@ import ch.bbzsogr.bi.models.Person;
 import org.junit.jupiter.api.Test;
 import org.junit.Assert;
 
+/**
+ * The type Account service test.
+ */
 public class AccountServiceTest {
 
-    @Test
+  /**
+   * Create account account is not null.
+   */
+  @Test
     public void createAccount_AccountIsNotNull(){
         Account account = new Account();
         Person person = new Person();
@@ -25,14 +31,20 @@ public class AccountServiceTest {
         Assert.assertEquals(account.getBalance(), 321564564, 321564564);
     }
 
-    @Test
+  /**
+   * Create account account is null.
+   */
+  @Test
     public void createAccount_AccountIsNull(){
         Account account = new Account();
         Assert.assertNull(account.getPerson());
         Assert.assertEquals(account.getBalance(), 100, 100);
     }
 
-    @Test
+  /**
+   * Lock account account is locked.
+   */
+  @Test
     public void lockAccount_AccountIsLocked(){
         Account account = new Account();
 
@@ -42,7 +54,10 @@ public class AccountServiceTest {
         Assert.assertTrue(account.isLocked());
     }
 
-    @Test
+  /**
+   * Lock account account is not locked.
+   */
+  @Test
     public void lockAccount_AccountIsNotLocked(){
         Account account = new Account();
 

@@ -1,16 +1,34 @@
 package ch.bbzsogr.bi.utils;
 
+/**
+ * The type System util.
+ */
 public class SystemUtil {
 
-  public static String getUsername() {
+    /**
+     * Gets username.
+     *
+     * @return the username
+     */
+    public static String getUsername() {
     return System.getProperty("user.name");
   }
 
-  public static String getHomeDirectory() {
+    /**
+     * Gets home directory.
+     *
+     * @return the home directory
+     */
+    public static String getHomeDirectory() {
     return System.getProperty("user.home");
   }
 
-  public static String getWorkingDirectory() {
+    /**
+     * Gets working directory.
+     *
+     * @return the working directory
+     */
+    public static String getWorkingDirectory() {
     return System.getProperty("user.dir");
   }
 }

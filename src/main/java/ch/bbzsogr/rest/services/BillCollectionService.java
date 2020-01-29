@@ -11,6 +11,9 @@ import okhttp3.Response;
 
 import java.io.IOException;
 
+/**
+ * The type Bill collection service.
+ */
 @Service(api = ApiType.REST)
 public class BillCollectionService extends RestService implements BillCollectionServiceInterface {
 

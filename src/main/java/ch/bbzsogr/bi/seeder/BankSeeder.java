@@ -16,6 +16,9 @@ import org.hibernate.Session;
 import javax.persistence.NoResultException;
 import java.util.logging.Logger;
 
+/**
+ * The type Bank seeder.
+ */
 @Seeder
 public class BankSeeder implements Seed {
 

@@ -12,11 +12,22 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.stream.Stream;
 
+/**
+ * The type Container.
+ */
 public class Container {
 
   private static final ClassLoader loader = Thread.currentThread().getContextClassLoader();
   private static HashMap<String, Object> classInstances = new HashMap<>();
 
+  /**
+   * Gets service.
+   *
+   * @param <T>    the type parameter
+   * @param tClass the t class
+   * @param type   the type
+   * @return the service
+   */
   public static <T extends ServiceInterface> T getService(Class<T> tClass, ApiType type) {
     if (classInstances.containsKey(tClass.getSimpleName())) return (T) classInstances.get(tClass.getSimpleName());
     try {
@@ -35,6 +46,14 @@ public class Container {
     }
   }
 
+  /**
+   * Gets repository.
+   *
+   * @param <T>    the type parameter
+   * @param tClass the t class
+   * @param type   the type
+   * @return the repository
+   */
   public static <T extends Repository> T getRepository(Class<T> tClass, DatabaseInterpreters type) {
     try {
       if (classInstances.containsKey(tClass.getSimpleName())) return (T) classInstances.get(tClass.getSimpleName());
@@ -52,6 +71,15 @@ public class Container {
     }
   }
 
+  /**
+   * Gets instance.
+   *
+   * @param <T>  the type parameter
+   * @param info the info
+   * @return the instance
+   * @throws IllegalAccessException the illegal access exception
+   * @throws InstantiationException the instantiation exception
+   */
   public static <T> T getInstance(ClassPath.ClassInfo info) throws IllegalAccessException, InstantiationException {
     if (classInstances.containsKey(info.getSimpleName())) return (T) classInstances.get(info.getSimpleName());
     T instance = (T) info.load().newInstance();
@@ -59,6 +87,13 @@ public class Container {
     return instance;
   }
 
+  /**
+   * Gets top level classes.
+   *
+   * @param t the t
+   * @return the top level classes
+   * @throws IOException the io exception
+   */
   public static Stream<ClassPath.ClassInfo> getTopLevelClasses(Class t) throws IOException {
     return ClassPath.from(loader).getTopLevelClassesRecursive(t.getPackage().getName().split("\\.")[0]).stream()
       .filter(classInfo -> {

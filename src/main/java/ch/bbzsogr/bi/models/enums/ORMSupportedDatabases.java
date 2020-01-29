@@ -72,6 +72,11 @@ public enum ORMSupportedDatabases {
     return this.dialect;
   }
 
+  /**
+   * Gets hibernate dialect.
+   *
+   * @return the hibernate dialect
+   */
   public String getHibernateDialect() {
     return this.hibernateDialect;
   }

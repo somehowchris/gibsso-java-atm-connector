@@ -25,6 +25,7 @@ public interface Connector {
    * @return the up
    * @throws IOException                the io exception
    * @throws ConnectionRefusedException the connection refused exception
+   * @throws AccessNotGrantedException  the access not granted exception
    */
   boolean setUp() throws IOException, ConnectionRefusedException, AccessNotGrantedException;
 

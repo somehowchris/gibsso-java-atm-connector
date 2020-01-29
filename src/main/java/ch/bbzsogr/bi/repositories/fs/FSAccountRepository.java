@@ -6,6 +6,9 @@ import ch.bbzsogr.bi.models.Account;
 import ch.bbzsogr.bi.models.enums.DatabaseInterpreters;
 import org.hibernate.Transaction;
 
+/**
+ * The type Fs account repository.
+ */
 @DatabaseType(type = DatabaseInterpreters.FS)
 public class FSAccountRepository implements AccountRepository {
 

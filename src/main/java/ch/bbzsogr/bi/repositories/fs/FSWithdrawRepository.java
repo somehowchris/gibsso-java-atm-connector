@@ -6,6 +6,9 @@ import ch.bbzsogr.bi.models.Withdraw;
 import ch.bbzsogr.bi.models.enums.DatabaseInterpreters;
 import org.hibernate.Transaction;
 
+/**
+ * The type Fs withdraw repository.
+ */
 @DatabaseType(type = DatabaseInterpreters.FS)
 public class FSWithdrawRepository implements WithdrawRepository {
 

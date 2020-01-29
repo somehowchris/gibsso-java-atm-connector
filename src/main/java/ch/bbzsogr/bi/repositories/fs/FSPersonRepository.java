@@ -6,6 +6,9 @@ import ch.bbzsogr.bi.models.Person;
 import ch.bbzsogr.bi.models.enums.DatabaseInterpreters;
 import org.hibernate.Transaction;
 
+/**
+ * The type Fs person repository.
+ */
 @DatabaseType(type = DatabaseInterpreters.FS)
 public class FSPersonRepository implements PeopleRepository {
 

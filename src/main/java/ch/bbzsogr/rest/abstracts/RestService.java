@@ -13,17 +13,26 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/**
+ * The type Rest service.
+ */
 public abstract class RestService {
 
 
-  public static final MediaType JSON
+    /**
+     * The constant JSON.
+     */
+    public static final MediaType JSON
     = MediaType.get("application/json; charset=utf-8");
   private final Moshi moshi = new Moshi.Builder()
     .add(Date.class, new DateAdapter())
     .build();
   private OkHttpClient client;
 
-  public RestService() {
+    /**
+     * Instantiates a new Rest service.
+     */
+    public RestService() {
     client = new OkHttpClient.Builder()
       .authenticator(new Authenticator() {
         @Override
@@ -46,24 +55,48 @@ public abstract class RestService {
       .build();
   }
 
-  public Request.Builder createRequestBuilder() throws IOException {
+    /**
+     * Create request builder request . builder.
+     *
+     * @return the request . builder
+     * @throws IOException the io exception
+     */
+    public Request.Builder createRequestBuilder() throws IOException {
     return new Request.Builder();
   }
 
-  public HttpUrl.Builder createUrl() {
+    /**
+     * Create url http url . builder.
+     *
+     * @return the http url . builder
+     */
+    public HttpUrl.Builder createUrl() {
     return HttpUrl.get(RestAPIConfig.getBaseUrl()).newBuilder();
   }
 
-  public OkHttpClient getClient() {
+    /**
+     * Gets client.
+     *
+     * @return the client
+     */
+    public OkHttpClient getClient() {
     return client;
   }
 
 
-  public Moshi getMoshiAdapter() {
+    /**
+     * Gets moshi adapter.
+     *
+     * @return the moshi adapter
+     */
+    public Moshi getMoshiAdapter() {
     return moshi;
   }
 
-  class DateAdapter extends JsonAdapter<Date> {
+    /**
+     * The type Date adapter.
+     */
+    class DateAdapter extends JsonAdapter<Date> {
 
     @Nullable
     @Override

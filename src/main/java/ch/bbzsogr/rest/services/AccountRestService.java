@@ -15,6 +15,9 @@ import okhttp3.Response;
 import javax.security.auth.login.AccountLockedException;
 import java.io.IOException;
 
+/**
+ * The type Account rest service.
+ */
 @Service(api = ApiType.REST)
 public class AccountRestService extends RestService implements AccountServiceInterface {
 

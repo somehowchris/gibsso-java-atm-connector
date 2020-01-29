@@ -6,6 +6,9 @@ import ch.bbzsogr.bi.models.Bancomat;
 import ch.bbzsogr.bi.models.enums.DatabaseInterpreters;
 import org.hibernate.Transaction;
 
+/**
+ * The type Fs bancomat repository.
+ */
 @DatabaseType(type = DatabaseInterpreters.FS)
 public class FSBancomatRepository implements BancomatRepository {
 

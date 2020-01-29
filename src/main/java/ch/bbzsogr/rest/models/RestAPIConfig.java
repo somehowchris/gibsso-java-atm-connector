@@ -1,41 +1,84 @@
 package ch.bbzsogr.rest.models;
 
+/**
+ * The type Rest api config.
+ */
 public class RestAPIConfig {
 
   private static String username;
   private static String password;
   private static String baseUrl;
 
-  public RestAPIConfig() {
+    /**
+     * Instantiates a new Rest api config.
+     */
+    public RestAPIConfig() {
   }
 
-  public RestAPIConfig(String username, String password, String baseUrl) {
+    /**
+     * Instantiates a new Rest api config.
+     *
+     * @param username the username
+     * @param password the password
+     * @param baseUrl  the base url
+     */
+    public RestAPIConfig(String username, String password, String baseUrl) {
     RestAPIConfig.username = username;
     RestAPIConfig.password = password;
     RestAPIConfig.baseUrl = baseUrl;
   }
 
-  public static String getUsername() {
+    /**
+     * Gets username.
+     *
+     * @return the username
+     */
+    public static String getUsername() {
     return username;
   }
 
-  public static void setUsername(String username) {
+    /**
+     * Sets username.
+     *
+     * @param username the username
+     */
+    public static void setUsername(String username) {
     RestAPIConfig.username = username;
   }
 
-  public static String getPassword() {
+    /**
+     * Gets password.
+     *
+     * @return the password
+     */
+    public static String getPassword() {
     return password;
   }
 
-  public static void setPassword(String password) {
+    /**
+     * Sets password.
+     *
+     * @param password the password
+     */
+    public static void setPassword(String password) {
     RestAPIConfig.password = password;
   }
 
-  public static String getBaseUrl() {
+    /**
+     * Gets base url.
+     *
+     * @return the base url
+     */
+    public static String getBaseUrl() {
     return baseUrl;
   }
 
-  public static void setBaseUrl(String baseUrl) {
+    /**
+     * Sets base url.
+     *
+     * @param baseUrl the base url
+     */
+    public static void setBaseUrl(String baseUrl) {
     RestAPIConfig.baseUrl = baseUrl;
   }
 }

@@ -5,12 +5,12 @@ package ch.bbzsogr.bi.exceptions;
  */
 public class ConnectionRefusedException extends Exception {
 
-  /**
-   * Instantiates a new Connection refused exception.
-   *
-   * @param message the message
-   */
-  public ConnectionRefusedException(String message) {
+    /**
+     * Instantiates a new Connection refused exception.
+     *
+     * @param message the message
+     */
+    public ConnectionRefusedException(String message) {
     super(message);
   }
 }

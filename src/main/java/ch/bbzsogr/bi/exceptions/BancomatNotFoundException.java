@@ -10,7 +10,7 @@ public class BancomatNotFoundException extends Exception {
   /**
    * Initiates a new Bancomat not found Exception
    *
-   * @param bancomatId
+   * @param bancomatId the bancomat id
    */
   public BancomatNotFoundException(String bancomatId) {
     super("Could not find a bancomat " + bancomatId);
@@ -20,7 +20,7 @@ public class BancomatNotFoundException extends Exception {
   /**
    * Gets the BancomatId
    *
-   * @return
+   * @return bancomat id
    */
   public String getBancomatId() {
     return bancomatId;

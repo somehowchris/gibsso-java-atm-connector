@@ -14,6 +14,9 @@ import okhttp3.Response;
 
 import java.io.IOException;
 
+/**
+ * The type Card rest service.
+ */
 @Service(api = ApiType.REST)
 public class CardRestService extends RestService implements CardServiceInterface {
 

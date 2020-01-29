@@ -27,6 +27,7 @@ public class OGMConnector implements Connector {
    * Instantiates a new Ogm connector.
    *
    * @param config the config
+   * @throws OGMNotYetSupportedException the ogm not yet supported exception
    */
   public OGMConnector(OGMConfig config) throws OGMNotYetSupportedException {
     /***this.config = config;

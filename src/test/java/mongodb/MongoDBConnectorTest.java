@@ -8,13 +8,22 @@ import org.testcontainers.containers.MySQLContainer;
 import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
 
+/**
+ * The type Mongo db connector test.
+ */
 @Testcontainers
 public class MongoDBConnectorTest {
 
-  @Container
+    /**
+     * The Mongodb.
+     */
+    @Container
   public GenericContainer mongodb = new GenericContainer<>("mongo:4.2.2-bionic").withExposedPorts(27017);
 
-  @BeforeEach
+    /**
+     * Sets up.
+     */
+    @BeforeEach
   public void setUp() {
     String address = mongodb.getContainerIpAddress();
     Integer port = mongodb.getFirstMappedPort();

@@ -6,6 +6,9 @@ import ch.bbzsogr.bi.models.Card;
 import ch.bbzsogr.bi.models.enums.DatabaseInterpreters;
 import org.hibernate.Transaction;
 
+/**
+ * The type Fs card repository.
+ */
 @DatabaseType(type = DatabaseInterpreters.FS)
 public class FSCardRepository implements CardRepository {
   @Override

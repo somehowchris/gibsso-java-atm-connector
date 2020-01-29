@@ -7,13 +7,22 @@ import java.security.spec.InvalidKeySpecException;
 import java.util.Arrays;
 import java.util.Base64;
 
+/**
+ * The type Hash util.
+ */
 public class HashUtil {
 
   private static final int ITERATIONS = 65536;
   private static final int KEY_LENGTH = 512;
   private static final String ALGORITHM = "PBKDF2WithHmacSHA512";
 
-  public static String hash(String password) {
+    /**
+     * Hash string.
+     *
+     * @param password the password
+     * @return the string
+     */
+    public static String hash(String password) {
 
     char[] chars = password.toCharArray();
     byte[] bytes = "salt".getBytes();

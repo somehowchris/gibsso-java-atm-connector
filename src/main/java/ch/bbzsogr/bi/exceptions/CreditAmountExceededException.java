@@ -12,9 +12,9 @@ public class CreditAmountExceededException extends Exception {
   /**
    * Initiates a new Credit amount exceeded Exception
    *
-   * @param credit
-   * @param balance
-   * @param amount
+   * @param credit  the credit
+   * @param balance the balance
+   * @param amount  the amount
    */
   public CreditAmountExceededException(double credit, double balance, double amount) {
     super("Could not meet the requested amount of " + amount + " with a balance of " + balance + " and a credit of " + credit);
@@ -26,7 +26,7 @@ public class CreditAmountExceededException extends Exception {
   /**
    * Gets the Credit
    *
-   * @return
+   * @return credit
    */
   public double getCredit() {
     return credit;
@@ -35,7 +35,7 @@ public class CreditAmountExceededException extends Exception {
   /**
    * Gets the balance
    *
-   * @return
+   * @return balance
    */
   public double getBalance() {
     return balance;
@@ -44,7 +44,7 @@ public class CreditAmountExceededException extends Exception {
   /**
    * Gets the amount
    *
-   * @return
+   * @return amount
    */
   public double getAmount() {
     return amount;

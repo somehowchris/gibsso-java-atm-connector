@@ -30,6 +30,11 @@ public class ORMConfig implements Config {
     this.type = ORMSupportedDatabases.get(url);
   }
 
+  /**
+   * Instantiates a new Orm config.
+   *
+   * @throws UrlDialectNotSupportedException the url dialect not supported exception
+   */
   public ORMConfig() throws UrlDialectNotSupportedException {
     DotEnvUtil envUtil = new DotEnvUtil();
     this.password = envUtil.get("DATABASE_PASSWORD");

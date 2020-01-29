@@ -6,9 +6,15 @@ import ch.bbzsogr.bi.utils.HashUtil;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 
+/**
+ * The type Card service test.
+ */
 public class CardServiceTest {
 
-    @Test
+  /**
+   * Lock card, card is locked.
+   */
+  @Test
     public void lockCard_CardIsLocked(){
         Card card = new Card();
         card.setLocked(true);
@@ -16,7 +22,10 @@ public class CardServiceTest {
         Assert.assertTrue(card.isLocked());
     }
 
-    @Test
+  /**
+   * Lock card, card is not locked.
+   */
+  @Test
     public void lockCard_CardIsNotLocked(){
         Card card = new Card();
         card.setLocked(false);
@@ -24,7 +33,10 @@ public class CardServiceTest {
         Assert.assertFalse(card.isLocked());
     }
 
-    @Test
+  /**
+   * Create card, card is not null.
+   */
+  @Test
     public void createCard_CardIsNotNull(){
         Card card = new Card();
         Account account = new Account();
@@ -41,7 +53,10 @@ public class CardServiceTest {
         Assert.assertNotNull(card.getAccount());
     }
 
-    @Test
+  /**
+   * Create card, card is null.
+   */
+  @Test
     public void createCard_CardIsNull(){
         Card card = new Card();
         card.setPin(null);
@@ -50,7 +65,10 @@ public class CardServiceTest {
         Assert.assertNull(card.getAccount());
     }
 
-    @Test
+  /**
+   * Change pin, pin equals set pin.
+   */
+  @Test
     public void changePin_PinEqualsSetPin(){
         Card card = new Card();
         String pin = "123456";
@@ -63,7 +81,10 @@ public class CardServiceTest {
         Assert.assertEquals(card.getPin(), "654321");
     }
 
-    @Test
+  /**
+   * Change pin, pin does not equal set pin.
+   */
+  @Test
     public void changePin_PinDoesNotEqualSetPin(){
         Card card = new Card();
         String pin = "123456";

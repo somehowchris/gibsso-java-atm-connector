@@ -6,7 +6,8 @@ package ch.bbzsogr.bi.exceptions;
 public class EntitySaveException extends Exception {
   /**
    * Initiates a new Entitiy save Exception
-   * @param type
+   *
+   * @param type the type
    */
   public EntitySaveException(Class type) {
     super("Could not save entity of " + type.getSimpleName());

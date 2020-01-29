@@ -10,7 +10,7 @@ public class CardLockedException extends Exception {
   /**
    * Initiates a new Card locked Exception
    *
-   * @param cardNr
+   * @param cardNr the card nr
    */
   public CardLockedException(String cardNr) {
     super("The card Nr. " + cardNr + " is locked");
@@ -20,7 +20,7 @@ public class CardLockedException extends Exception {
   /**
    * Gets the CardNr
    *
-   * @return
+   * @return card nr
    */
   public String getCardNr() {
     return cardNr;

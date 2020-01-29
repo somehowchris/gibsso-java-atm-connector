@@ -6,13 +6,22 @@ import org.testcontainers.containers.GenericContainer;
 import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
 
+/**
+ * The type Redis connector test.
+ */
 @Testcontainers
 public class RedisConnectorTest {
 
-  @Container
+    /**
+     * The Redis.
+     */
+    @Container
   public GenericContainer redis = new GenericContainer<>("redis:6.0-rc-alpine").withExposedPorts(6379);
 
-  @BeforeEach
+    /**
+     * Sets up.
+     */
+    @BeforeEach
   public void setUp() {
     String address = redis.getContainerIpAddress();
     Integer port = redis.getFirstMappedPort();

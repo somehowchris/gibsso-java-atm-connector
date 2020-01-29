@@ -9,10 +9,14 @@ import java.lang.annotation.Target;
 
 /**
  * DatabaseType Interface
- *
  */
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface DatabaseType {
+  /**
+   * Type database interpreters.
+   *
+   * @return the database interpreters
+   */
   DatabaseInterpreters type();
 }

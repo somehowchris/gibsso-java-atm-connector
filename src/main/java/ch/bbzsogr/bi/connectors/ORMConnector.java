@@ -28,6 +28,9 @@ public class ORMConnector implements Connector {
    * Instantiates a new Orm connector.
    *
    * @param config the config
+   * @throws AccessNotGrantedException  the access not granted exception
+   * @throws IOException                the io exception
+   * @throws ConnectionRefusedException the connection refused exception
    */
   public ORMConnector(ORMConfig config) throws AccessNotGrantedException, IOException, ConnectionRefusedException {
     this.config = config;

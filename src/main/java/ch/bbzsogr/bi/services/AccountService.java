@@ -19,6 +19,9 @@ import javax.security.auth.login.AccountLockedException;
 import java.util.ArrayList;
 import java.util.logging.Logger;
 
+/**
+ * The type Account service.
+ */
 @Service(api = ApiType.DIRECT)
 public class AccountService implements AccountServiceInterface {
 

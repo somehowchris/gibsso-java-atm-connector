@@ -13,8 +13,8 @@ public class SubZeroTransactionAmountException extends Exception {
   /**
    * Initiates a new Sub zero transaction amount Exception
    *
-   * @param amount
-   * @param currency
+   * @param amount   the amount
+   * @param currency the currency
    */
   public SubZeroTransactionAmountException(double amount, Currency currency) {
     super("Could not process a transaction with " + amount + " " + currency.name());
@@ -25,7 +25,7 @@ public class SubZeroTransactionAmountException extends Exception {
   /**
    * Gets the amount
    *
-   * @return
+   * @return amount
    */
   public double getAmount() {
     return amount;
@@ -34,7 +34,7 @@ public class SubZeroTransactionAmountException extends Exception {
   /**
    * Gets the currency
    *
-   * @return
+   * @return currency
    */
   public Currency getCurrency() {
     return currency;

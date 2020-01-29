@@ -12,6 +12,9 @@ import okhttp3.Response;
 
 import java.io.IOException;
 
+/**
+ * The type People rest service.
+ */
 @Service(api = ApiType.REST)
 public class PeopleRestService extends RestService implements PeopleServiceInterface {
 

@@ -15,6 +15,9 @@ import ch.bbzsogr.bi.utils.LoggingUtil;
 import java.util.List;
 import java.util.logging.Logger;
 
+/**
+ * The type Bancomat service.
+ */
 @Service(api = ApiType.DIRECT)
 public class BancomatService implements BancomatServiceInterface {
 
@@ -22,6 +25,12 @@ public class BancomatService implements BancomatServiceInterface {
 
   private Logger logger = new LoggingUtil(BancomatService.class).getLogger();
 
+  /**
+   * Gets bancomat.
+   *
+   * @param id the id
+   * @return the bancomat
+   */
   public Bancomat getBancomat(String id) {
     logger.info("Getting bancomat "+id);
     return bancomatRepository.find(id);

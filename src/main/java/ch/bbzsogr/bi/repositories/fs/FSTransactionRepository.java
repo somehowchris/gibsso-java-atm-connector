@@ -5,6 +5,9 @@ import ch.bbzsogr.bi.interfaces.repositories.TransactionRepository;
 import ch.bbzsogr.bi.models.Transaction;
 import ch.bbzsogr.bi.models.enums.DatabaseInterpreters;
 
+/**
+ * The type Fs transaction repository.
+ */
 @DatabaseType(type = DatabaseInterpreters.FS)
 public class FSTransactionRepository implements TransactionRepository {
 
